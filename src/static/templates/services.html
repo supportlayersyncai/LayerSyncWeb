@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Services & Pricing - {{ super() }}{% endblock %}
+
+{% block content %}
+<section class="section section-light">
+    <h2>Our Services & Transparent Pricing</h2>
+    <p>We offer a comprehensive package to get your local business online with a modern, professional website, quickly and affordably.</p>
+</section>
+
+<section class="section section-dark">
+    <h3>What's Included in Your New Website Package?</h3>
+    <ul>
+        <li><strong>Modern, Responsive Design:</strong> Choose from our professionally designed templates, all optimized for desktops, tablets, and mobile phones.</li>
+        <li><strong>Customization:</strong> We'll adapt the chosen template with your business name, logo, contact information, and initial content (you provide the basics, we make it look great!).</li>
+        <li><strong>Up to 5 Core Pages:</strong> Typically Home, About Us, Services/Products, Contact Us, and one other (e.g., Gallery, Testimonials). More pages can be added.</li>
+        <li><strong>Basic SEO Setup:</strong> We ensure your site is built with SEO best practices in mind to help customers find you on search engines.</li>
+        <li><strong>Fast & Secure Hosting:</strong> Reliable hosting is included in your monthly plan, ensuring your website is always available and loads quickly.</li>
+        <li><strong>Ongoing Maintenance & Security Updates:</strong> We handle the technical upkeep so you can focus on your business.</li>
+        <li><strong>Friendly Support:</strong> Need help or minor updates? We're here for you.</li>
+    </ul>
+</section>
+
+<section class="section section-light">
+    <h3>Simple, All-Inclusive Pricing</h3>
+    <p>No hidden fees, just straightforward value.</p>
+    
+    <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; background-color: #fff;">
+        <h4><strong>One-Time Setup Fee: ZAR 2500</strong></h4>
+        <p>This covers the initial design customization, content integration for up to 5 pages, and website launch.</p>
+    </div>
+
+    <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; background-color: #fff;">
+        <h4><strong>Monthly Hosting & Maintenance: ZAR 350 / month</strong></h4>
+        <p>Includes secure hosting, regular backups, security updates, and basic technical support.</p>
+    </div>
+
+    <p><em>Prices are indicative and may be subject to change. Final pricing will be confirmed upon consultation or checkout.</em></p>
+</section>
+
+<section class="section section-dark">
+    <h3>Need More? Additional Services</h3>
+    <p>We can also help with:</p>
+    <ul>
+        <li>Additional Pages or Complex Features</li>
+        <li>E-commerce Functionality</li>
+        <li>Advanced SEO Services</li>
+        <li>Content Writing & Logo Design</li>
+        <li>Custom Development Work</li>
+    </ul>
+    <p>Fees for these services are quoted on a case-by-case basis. Please <a href="{{ url_for("main.contact") }}">contact us</a> or <a href="{{ url_for("main.book_call") }}">book a call</a> to discuss your specific needs.</p>
+</section>
+
+<section class="section section-light">
+    <p>
+        <a href="{{ url_for("main.templates") }}" class="cta-button">Choose Your Template & Get Started</a>
+        <a href="{{ url_for("main.book_call") }}" class="cta-button-secondary">Book a Free Consultation</a>
+    </p>
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - {{ super() }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Transform Your Business with a Stunning New Website</h1>
+    <p>We build modern, effective websites for local businesses in Southern Africa, helping you attract more customers and grow online.</p>
+    <p>
+        <a href="{{ url_for("main.templates") }}" class="cta-button">Get Your New Website</a>
+        <a href="{{ url_for("main.book_call") }}" class="cta-button-secondary">Book a Free Consultation</a>
+    </p>
+</section>
+
+<section class="section section-light">
+    <h2>Is Your Current Website Holding You Back?</h2>
+    <p>Many local businesses struggle with outdated, slow, or poorly designed websites. This can mean lost customers and missed opportunities. We provide an affordable and fast solution to get you a professional online presence.</p>
+</section>
+
+<section class="section section-dark">
+    <h2>How It Works - Simple & Fast</h2>
+    <ol style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 15px;"><strong>1. Choose Your Design:</strong> Browse our industry-specific templates.</li>
+        <li style="margin-bottom: 15px;"><strong>2. Provide Your Info:</strong> Tell us about your business and content needs.</li>
+        <li style="margin-bottom: 15px;"><strong>3. We Build & Launch:</strong> Our experts (or AI!) build your site quickly.</li>
+        <li style="margin-bottom: 15px;"><strong>4. Grow Online:</strong> Enjoy your new website with ongoing hosting and support.</li>
+    </ol>
+</section>
+
+<section class="section section-light">
+    <h2>Explore Our Modern Website Templates</h2>
+    <p>We offer a range of professionally designed templates tailored for various local businesses. Find the perfect fit for you!</p>
+    <!-- Placeholder for a few featured templates -->
+    <div class="template-gallery" style="margin-top: 20px;">
+        <div class="template-card">
+            <img src="{{ url_for("static", filename="images/template_placeholder_1.png") }}" alt="Template Preview 1">
+            <h3>Restaurant Template</h3>
+            <p>A delicious design for eateries.</p>
+            <a href="{{ url_for("main.templates") }}" class="button">View Details</a>
+        </div>
+        <div class="template-card">
+            <img src="{{ url_for("static", filename="images/template_placeholder_2.png") }}" alt="Template Preview 2">
+            <h3>Retail Store Template</h3>
+            <p>Showcase your products effectively.</p>
+            <a href="{{ url_for("main.templates") }}" class="button">View Details</a>
+        </div>
+        <div class="template-card">
+            <img src="{{ url_for("static", filename="images/template_placeholder_3.png") }}" alt="Template Preview 3">
+            <h3>Consultant Template</h3>
+            <p>Professional look for service providers.</p>
+            <a href="{{ url_for("main.templates") }}" class="button">View Details</a>
+        </div>
+    </div>
+    <p style="margin-top: 20px;"><a href="{{ url_for("main.templates") }}" class="cta-button">View All Templates</a></p>
+</section>
+
+{% endblock %}
+

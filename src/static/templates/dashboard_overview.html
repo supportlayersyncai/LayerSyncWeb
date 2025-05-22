@@ -1,0 +1,64 @@
+{% extends "dashboard_base.html" %}
+
+{% block title %}Dashboard Overview - {{ super() }}{% endblock %}
+
+{% block dashboard_title %}Dashboard Overview{% endblock %}
+
+{% block dashboard_content %}
+<div class="dashboard-overview">
+    <div class="welcome-section">
+        <h3>Welcome, {{ current_user.business_name }}!</h3>
+        <p>This is your dashboard where you can manage your website, subscription, and account details.</p>
+    </div>
+
+    <div class="dashboard-cards">
+        <div class="dashboard-card">
+            <h4>My Websites</h4>
+            {% if websites %}
+                <p>You have {{ websites|length }} website(s) with us.</p>
+                <a href="{{ url_for('user.dashboard_websites') }}" class="button">View Websites</a>
+            {% else %}
+                <p>You don't have any websites with us yet.</p>
+                <a href="{{ url_for('main.templates') }}" class="button">Browse Templates</a>
+            {% endif %}
+        </div>
+
+        <div class="dashboard-card">
+            <h4>Subscription</h4>
+            {% if subscription %}
+                <p>Your subscription is <strong>{{ subscription.status }}</strong>.</p>
+                <p>Monthly fee: ZAR {{ subscription.monthly_fee }}</p>
+                <p>Next billing date: {{ next_billing_date }}</p>
+                <a href="{{ url_for('user.dashboard_subscription') }}" class="button">Manage Subscription</a>
+            {% else %}
+                <p>You don't have an active subscription.</p>
+                {% if websites %}
+                    <a href="{{ url_for('user.dashboard_subscription') }}" class="button">Set Up Subscription</a>
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <div class="dashboard-card">
+            <h4>Recent Activity</h4>
+            {% if recent_activity %}
+                <ul class="activity-list">
+                    {% for activity in recent_activity %}
+                        <li>{{ activity.date }}: {{ activity.description }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No recent activity to display.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="quick-actions">
+        <h4>Quick Actions</h4>
+        <div class="action-buttons">
+            <a href="{{ url_for('main.templates') }}" class="button">Order New Website</a>
+            <a href="{{ url_for('user.dashboard_changes') }}" class="button">Request Changes</a>
+            <a href="{{ url_for('main.book_call') }}" class="button">Book a Call</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

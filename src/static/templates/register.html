@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Register - {{ super() }}{% endblock %}
+
+{% block content %}
+<section class="section section-light">
+    <h2>Create Your Account</h2>
+    <p>Register to manage your website orders, subscriptions, and access exclusive features.</p>
+</section>
+
+<section class="section section-dark">
+    <div style="max-width: 600px; margin: 0 auto;">
+        <form method="POST" action="{{ url_for('user.register') }}">
+            {{ form.hidden_tag() }}
+            
+            <div style="margin-bottom: 20px;">
+                <label for="email">Email Address</label>
+                {{ form.email(class="form-control") }}
+                {% if form.email.errors %}
+                    <div class="error-message">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label for="business_name">Business Name</label>
+                {{ form.business_name(class="form-control") }}
+                {% if form.business_name.errors %}
+                    <div class="error-message">
+                        {% for error in form.business_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label for="contact_name">Contact Name</label>
+                {{ form.contact_name(class="form-control") }}
+                {% if form.contact_name.errors %}
+                    <div class="error-message">
+                        {% for error in form.contact_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label for="phone">Phone Number (Optional)</label>
+                {{ form.phone(class="form-control") }}
+                {% if form.phone.errors %}
+                    <div class="error-message">
+                        {% for error in form.phone.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label for="password">Password</label>
+                {{ form.password(class="form-control") }}
+                {% if form.password.errors %}
+                    <div class="error-message">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label for="confirm_password">Confirm Password</label>
+                {{ form.confirm_password(class="form-control") }}
+                {% if form.confirm_password.errors %}
+                    <div class="error-message">
+                        {% for error in form.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div style="margin-top: 30px;">
+                {{ form.submit(class="cta-button") }}
+            </div>
+        </form>
+        
+        <div style="margin-top: 20px; text-align: center;">
+            <p>Already have an account? <a href="{{ url_for('user.login') }}">Log in here</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="section section-light">
+    <h3>Benefits of Creating an Account</h3>
+    <ul>
+        <li>Track your website orders and development progress</li>
+        <li>Manage your monthly subscription</li>
+        <li>Request website changes easily</li>
+        <li>Access exclusive resources and support</li>
+    </ul>
+</section>
+{% endblock %}

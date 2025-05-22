@@ -1,0 +1,49 @@
+Test Results - Sun May 18 19:17:37 EDT 2025
+----------------------------------------
+[PASS] Main application file exists
+[PASS] Template exists: base.html
+[PASS] Template exists: index.html
+[PASS] Template exists: services.html
+[PASS] Template exists: templates_gallery.html
+[PASS] Template exists: book_call.html
+[PASS] Template exists: about.html
+[PASS] Template exists: contact.html
+[PASS] Template exists: privacy_policy.html
+[PASS] Template exists: terms_of_service.html
+[PASS] Template exists: register.html
+[PASS] Template exists: login.html
+[PASS] Template exists: dashboard_base.html
+[PASS] Template exists: dashboard_overview.html
+[PASS] Template exists: dashboard_websites.html
+[PASS] Template exists: dashboard_subscription.html
+[PASS] Template exists: dashboard_changes.html
+[PASS] Template exists: dashboard_account.html
+[PASS] Template exists: checkout.html
+[PASS] Template exists: checkout_confirmation.html
+[PASS] All required templates exist
+[PASS] Route exists: main_routes.py
+[PASS] Route exists: user_routes.py
+[PASS] Route exists: dashboard_routes.py
+[PASS] Route exists: checkout_routes.py
+[PASS] All required routes exist
+[PASS] Model exists: user.py
+[PASS] Model exists: business.py
+[PASS] All required models exist
+[PASS] Static file exists: style.css
+[PASS] Static file exists: template_placeholder_1.png
+[PASS] Static file exists: template_placeholder_2.png
+[PASS] Static file exists: template_placeholder_3.png
+[PASS] Static file exists: template_placeholder_4.png
+[PASS] Static file exists: template_placeholder_5.png
+[PASS] Static file exists: template_placeholder_general.png
+[PASS] All required static files exist
+[PASS] main.py is valid Python
+[PASS] main_routes.py is valid Python
+[PASS] user_routes.py is valid Python
+[PASS] dashboard_routes.py is valid Python
+[PASS] checkout_routes.py is valid Python
+[PASS] All route files are valid Python
+[PASS] user.py is valid Python
+[PASS] business.py is valid Python
+[PASS] All model files are valid Python
+[FAIL] Application can start

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Automated Web Agency{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="{{ url_for("main.index") }}">Automated Web Agency</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for("main.index") }}">Home</a></li>
+                    <li><a href="{{ url_for("main.services") }}">Services & Pricing</a></li>
+                    <li><a href="{{ url_for("main.templates") }}">Templates</a></li>
+                    {% if current_user.is_authenticated %}
+                        <li><a href="{{ url_for("user.dashboard") }}">Dashboard</a></li>
+                        <li><a href="{{ url_for("user.logout") }}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for("user.login") }}">Login</a></li>
+                        <li><a href="{{ url_for("user.register") }}">Register</a></li>
+                    {% endif %}
+                    <li><a href="{{ url_for("main.book_call") }}" class="cta-button-secondary">Book a Call</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Automated Web Agency. All Rights Reserved.</p>
+        <p>
+            <a href="{{ url_for("main.privacy_policy") }}">Privacy Policy</a> | 
+            <a href="{{ url_for("main.terms_of_service") }}">Terms of Service</a> | 
+            <a href="{{ url_for("main.contact") }}">Contact Us</a>
+        </p>
+    </footer>
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+    {% block scripts_extra %}{% endblock %}
+</body>
+</html>
+
