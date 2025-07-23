@@ -42,13 +42,13 @@ const teamMembers = [
     id: 2,
     name: "Tadiwa Gerald Chidzidzi",
     role: "Chief Marketing Officer",
-    bio: "With a background in marketing leadership across aviation and national tourism, Tadiwa brings a rare blend of global brand positioning and growth execution. His experience at the Zimbabwe Tourism Authority and Aviation Assistance GmbH gives him a deep understanding of cross-border storytelling, digital experience design, and scalable outreach.",
+    bio: "With a background in marketing leadership across aviation and national tourism, Tadiwa brings a rare blend of global brand positioning and growth execution. His experience gives him a deep understanding of cross-border storytelling, digital experience design, and scalable outreach.",
     expertise: ["Global Brand Positioning", "Growth Marketing", "Cross-Border Strategy", "Digital Experience Design"],
     quote:
       "Marketing should feel like momentum. At LayerSync, we're not just building visibility—we're creating gravity around a brand that moves with the future.",
     achievements: [
-      "Marketing leadership at Zimbabwe Tourism Authority",
-      "International experience with Aviation Assistance GmbH",
+      "Marketing leadership in tourism sector",
+      "International aviation marketing experience",
       "Expert in cross-border storytelling and brand positioning",
     ],
     focus: [
