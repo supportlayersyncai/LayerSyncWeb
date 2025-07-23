@@ -1,0 +1,389 @@
+"use client"
+
+import { useState, useEffect, useRef } from "react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Check, Star, Shield, Clock, CreditCard, Zap, Award } from "lucide-react"
+
+const pricingTiers = [
+  {
+    id: 1,
+    name: "Starter AI System",
+    price: 1500,
+    description:
+      "The essential AI system for businesses to automate lead generation, client engagement, content creation, and social media management without heavy overhead.",
+    popular: false,
+    featureGroups: [
+      {
+        title: "AI-powered Lead & Engagement System:",
+        features: [
+          "AI-powered lead generation (LinkedIn + cold email outreach)",
+          "Advanced 24/7 AI chatbot support",
+          "AI-generated email follow-up sequences",
+          "AI-powered lead capture and qualification",
+          "Automated appointment/booking scheduling",
+        ],
+      },
+      {
+        title: "AI-powered Content & Social Media System:",
+        features: [
+          "AI-powered content marketing (SEO blogs + social media)",
+          "Weekly AI-generated posts and scheduling",
+          "AI-generated video content & ad creatives",
+        ],
+      },
+    ],
+    cta: "Contact Sales",
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    id: 2,
+    name: "Growth AI System",
+    price: 3500,
+    description:
+      "An advanced AI system for teams focused on boosting visibility and scaling inbound marketing with deeper, integrated automation.",
+    popular: true,
+    featureGroups: [
+      {
+        title: "Everything in Starter AI System, plus:",
+        features: [],
+        highlight: true,
+      },
+      {
+        title: "AI-powered Marketing Funnel System:",
+        features: [
+          "Full marketing funnel automation (CRM workflows, email, retargeting)",
+          "Paid ad campaign setup & management (Meta, Google, LinkedIn)",
+        ],
+      },
+      {
+        title: "Dedicated AI Support & Strategy:",
+        features: [
+          "Dedicated account manager",
+          "Monthly strategy & optimization call",
+          "Custom reporting dashboards and analytics",
+        ],
+      },
+    ],
+    cta: "Contact Sales",
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    id: 3,
+    name: "Elite AI System",
+    price: 5000,
+    priceNote: "+",
+    description:
+      "A comprehensive, full-stack AI marketing & infrastructure system for high-revenue firms seeking to dominate their market with intelligent, custom automation.",
+    popular: false,
+    featureGroups: [
+      {
+        title: "Everything in Growth AI System, plus:",
+        features: [],
+        highlight: true,
+      },
+      {
+        title: "Custom AI Development & Integration System:",
+        features: [
+          "Custom AI model development tailored to your industry",
+          "Bespoke API integrations with your existing systems",
+          "Custom AI applications built specifically for your needs",
+          "White-label AI solutions for your clients",
+        ],
+      },
+      {
+        title: "Enterprise AI Operations & Support System:",
+        features: [
+          "Advanced workflow automation across all business processes",
+          "Enterprise-grade security and compliance features",
+          "24/7 priority technical support with dedicated engineering team",
+          "Quarterly business strategy sessions with AI specialists",
+          "Custom reporting dashboards and analytics",
+          "Unlimited revisions and feature requests",
+        ],
+      },
+    ],
+    cta: "Contact Sales",
+    color: "from-orange-500 to-orange-600",
+  },
+]
+
+const trustBadges = [
+  { icon: Shield, text: "90-Day ROI Guarantee" },
+  { icon: CreditCard, text: "No Setup Fees" },
+  { icon: Clock, text: "Cancel Anytime" },
+  { icon: Award, text: "SOC 2 Certified" },
+]
+
+export default function PricingSection() {
+  const [visibleCards, setVisibleCards] = useState<number[]>([])
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly")
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const scrollToSection = (href: string) => {
+    const element = document.getElementById(href.substring(1))
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Show all cards immediately to ensure visibility
+            setVisibleCards([1, 2, 3])
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const getPrice = (basePrice: number) => {
+    if (billingCycle === "annual") {
+      return Math.floor(basePrice * 0.85)
+    }
+    return basePrice
+  }
+
+  return (
+    <section
+      id="pricing"
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-64 h-64 border border-purple-200 rounded-full"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-blue-200 rounded-full"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+            <Zap className="w-4 h-4 mr-2" />
+            Pricing Plans
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Choose Your Growth Plan</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Transparent pricing with no hidden fees. All plans include our 90-day ROI guarantee and can be canceled
+            anytime.
+          </p>
+
+          {/* Billing Toggle */}
+          <div className="flex items-center justify-center mb-8">
+            <div className="bg-gray-100 p-1 rounded-lg flex">
+              <button
+                onClick={() => setBillingCycle("monthly")}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  billingCycle === "monthly" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setBillingCycle("annual")}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  billingCycle === "annual" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                Annual
+                <Badge className="ml-2 bg-green-100 text-green-700 text-xs">Save 15%</Badge>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing Cards - Single Layout for All Devices */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {pricingTiers.map((tier, index) => {
+            const price = getPrice(tier.price)
+
+            return (
+              <div key={tier.id} className="w-full">
+                <Card
+                  className={`relative h-full transition-all duration-300 hover:shadow-xl ${
+                    tier.popular ? "ring-2 ring-purple-500 shadow-xl lg:scale-105" : ""
+                  }`}
+                  onMouseEnter={() => setHoveredCard(tier.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {/* Popular Badge */}
+                  {tier.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <Badge className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 text-sm font-semibold">
+                        <Star className="w-4 h-4 mr-1" />
+                        Most Popular
+                      </Badge>
+                    </div>
+                  )}
+
+                  <CardHeader className="text-center pb-6 px-6 pt-8">
+                    <CardTitle className="text-2xl font-bold text-gray-900 mb-3">{tier.name}</CardTitle>
+                    <p className="text-gray-600 mb-6 text-base leading-relaxed">{tier.description}</p>
+
+                    {/* Price */}
+                    <div className="mb-6">
+                      <div className="flex items-baseline justify-center">
+                        <span className="text-4xl md:text-5xl font-bold text-gray-900">${price.toLocaleString()}</span>
+                        {tier.priceNote && <span className="text-2xl font-bold text-gray-900">{tier.priceNote}</span>}
+                        <span className="text-gray-600 ml-2 text-base">/month</span>
+                      </div>
+                      {billingCycle === "annual" && (
+                        <p className="text-sm text-green-600 mt-2">Save ${(tier.price - price) * 12}/year</p>
+                      )}
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="px-6 pb-8 flex-1 flex flex-col">
+                    {/* Features List */}
+                    <div className="mb-8 flex-1">
+                      {tier.featureGroups ? (
+                        // Render grouped features
+                        <div className="space-y-6">
+                          {tier.featureGroups.map((group, groupIndex) => (
+                            <div key={groupIndex}>
+                              <h4
+                                className={`font-bold mb-3 text-sm ${
+                                  group.highlight ? "text-purple-700" : "text-gray-900"
+                                }`}
+                              >
+                                {group.title}
+                              </h4>
+                              {group.features.length > 0 && (
+                                <ul className="space-y-3">
+                                  {group.features.map((feature, featureIndex) => (
+                                    <li key={featureIndex} className="flex items-start text-gray-700">
+                                      <div className="w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
+                                        <Check className="w-3 h-3 text-green-600" />
+                                      </div>
+                                      <span className="leading-relaxed text-sm">{feature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        // Render regular features for other tiers (fallback)
+                        <ul className="space-y-4">
+                          {tier.features?.map((feature, featureIndex) => {
+                            const FeatureIcon = feature.icon
+                            return (
+                              <li
+                                key={featureIndex}
+                                className={`flex items-start ${
+                                  feature.highlight ? "text-purple-700 font-semibold" : "text-gray-700"
+                                }`}
+                              >
+                                <div
+                                  className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 ${
+                                    feature.highlight ? "bg-purple-100" : "bg-green-100"
+                                  }`}
+                                >
+                                  <FeatureIcon
+                                    className={`w-3 h-3 ${feature.highlight ? "text-purple-600" : "text-green-600"}`}
+                                  />
+                                </div>
+                                <span className="leading-relaxed text-sm md:text-base">{feature.text}</span>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      )}
+                    </div>
+
+                    {/* CTA Button */}
+                    <Button
+                      size="lg"
+                      onClick={() => scrollToSection("#contact")}
+                      className={`w-full h-12 md:h-14 text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 ${
+                        tier.popular
+                          ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 shadow-lg"
+                          : `bg-gradient-to-r ${tier.color} hover:shadow-lg`
+                      }`}
+                    >
+                      {tier.cta}
+                    </Button>
+
+                    {/* Additional Info */}
+                    <p className="text-center text-sm text-gray-500 mt-4">
+                      Setup in 24-48 hours • No long-term contracts
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            )
+          })}
+        </div>
+
+        {/* Trust Elements */}
+        <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+          <h3 className="text-center text-xl font-bold text-gray-900 mb-8">Why Choose LayerSync AI?</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {trustBadges.map((badge, index) => {
+              const BadgeIcon = badge.icon
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-3">
+                    <BadgeIcon className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <span className="font-semibold text-gray-900">{badge.text}</span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* FAQ Preview */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Questions About Our Pricing?</h3>
+          <p className="text-gray-600 mb-6">We're here to help you choose the right plan for your business needs.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              onClick={() => scrollToSection("#contact")}
+              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-3 font-semibold transition-all duration-300 hover:scale-105"
+            >
+              Schedule Free Consultation
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 bg-transparent"
+            >
+              View FAQ
+            </Button>
+          </div>
+        </div>
+
+        {/* Bottom Guarantee */}
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-2xl p-8 text-center">
+          <div className="flex items-center justify-center mb-4">
+            <Shield className="w-8 h-8 text-green-600 mr-3" />
+            <h3 className="text-2xl font-bold text-gray-900">90-Day ROI Guarantee</h3>
+          </div>
+          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            We're so confident in our AI automation solutions that we guarantee measurable ROI within 90 days, or we'll
+            refund your investment. No questions asked.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
