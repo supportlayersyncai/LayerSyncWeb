@@ -7,20 +7,21 @@ import React from "react"
 
 const navigation = [
   { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
+  { name: "How It Works", href: "#how-it-works" },
   { name: "Pricing", href: "#pricing" },
-  { name: "Resources", href: "#resources" },
+  { name: "Case Studies", href: "#case-studies" },
+  { name: "FAQ", href: "#faq" },
+  { name: "Contact", href: "#contact" },
 ]
 
 const MemoizedNavigation = React.memo(({ navigation, activeSection, scrollToSection }) => (
-  <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+  <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
     {navigation.map((item) => (
       <button
         key={item.name}
         onClick={() => scrollToSection(item.href)}
-        className={`relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 group px-3 py-2 rounded-xl hover:bg-blue-50 ${
-          activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50" : ""
+        className={`relative text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 group px-3 py-2 rounded-xl hover:bg-blue-50/80 ${
+          activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50/80" : ""
         }`}
       >
         {item.name}
@@ -92,10 +93,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 safe-area-top ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 safe-area-top ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-xl border-b border-gray-200/50"
-          : "bg-white/90 backdrop-blur-sm border-b border-gray-100/50"
+          ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/60"
+          : "bg-white/80 backdrop-blur-md border-b border-gray-100/40"
       }`}
     >
       <div className="container-responsive">
@@ -116,13 +117,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <MemoizedNavigation navigation={navigation} activeSection={activeSection} scrollToSection={scrollToSection} />
 
-          {/* Get Started Button - Enhanced for mobile */}
+          {/* Book Free Strategy Session Button - Enhanced for mobile */}
           <div className="hidden sm:block">
             <Button
               onClick={() => scrollToSection("#contact")}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-0 text-sm sm:text-base"
+              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl border-0 text-sm sm:text-base whitespace-nowrap"
             >
-              Get Started
+              Book Free Strategy Session
             </Button>
           </div>
 
@@ -149,8 +150,8 @@ export default function Header() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-left py-3 px-4 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-all duration-200 touch-manipulation ${
-                  activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50" : ""
+                className={`text-left py-3 px-4 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-blue-50/80 font-medium transition-all duration-200 touch-manipulation ${
+                  activeSection === item.href.substring(1) ? "text-blue-600 bg-blue-50/80" : ""
                 }`}
               >
                 {item.name}
@@ -159,9 +160,9 @@ export default function Header() {
             <div className="pt-3">
               <Button
                 onClick={() => scrollToSection("#contact")}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 border-0 touch-manipulation"
+                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 border-0 touch-manipulation"
               >
-                Get Started
+                Book Free Strategy Session
               </Button>
             </div>
           </nav>
