@@ -33,16 +33,16 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="hero-section relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center overflow-hidden pt-20 sm:pt-24 lg:pt-20 safe-area-top"
+      className="hero-section relative min-h-screen bg-dark-gradient flex items-center justify-center overflow-hidden pt-20 sm:pt-24 lg:pt-20 safe-area-top"
     >
       {/* Enhanced AI-Tech Background with Abstract Lines */}
       <div className="absolute inset-0 top-20 sm:top-24 lg:top-20">
         {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
+        <div className="absolute inset-0 bg-dark-gradient"></div>
         
         {/* AI-tech gradient overlays */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 via-purple-600/5 to-cyan-600/10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-blue-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-cyan-600/10 via-purple-600/5 to-green-600/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent"></div>
         
         {/* Abstract lines and geometric patterns */}
         <div className="absolute inset-0 opacity-20">
@@ -103,11 +103,11 @@ export default function HeroSection() {
           <div className="text-center lg:text-left">
             {/* Animated Badge */}
             <div
-              className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-sm font-medium mb-6 sm:mb-8 transition-all duration-700 hover:bg-white/20 hover:scale-105 cursor-pointer ${
+              className={`inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-green-500/10 backdrop-blur-sm border border-green-500/20 rounded-full text-green-400 text-sm font-medium mb-6 sm:mb-8 transition-all duration-700 hover:bg-green-500/20 hover:scale-105 cursor-pointer ${
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              <Zap className="w-4 h-4 mr-2 text-blue-300 animate-pulse" />
+              <Zap className="w-4 h-4 mr-2 text-green-400 animate-pulse" />
               AI-Powered Growth Systems
             </div>
 
@@ -117,7 +117,7 @@ export default function HeroSection() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
                 Double Your Leads
               </span>{" "}
               with AI-Powered Growth Systems
@@ -162,16 +162,16 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("#contact")}
-                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl border-0 min-h-[56px] touch-manipulation animate-pulse-glow"
+                className="w-full sm:w-auto btn-neon px-8 py-4 text-lg font-semibold rounded-2xl min-h-[56px] touch-manipulation"
               >
                 Get My Free AI Plan
-                <Sparkles className="ml-2 w-5 h-5 animate-spin" />
+                <Sparkles className="ml-2 w-5 h-5" />
               </Button>
 
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:scale-110 hover:border-white/50 bg-transparent min-h-[56px] touch-manipulation group"
+                className="w-full sm:w-auto btn-ghost-neon px-8 py-4 text-lg font-semibold rounded-2xl min-h-[56px] touch-manipulation group"
               >
                 <BarChart3 className="mr-2 w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
                 See Case Studies

@@ -145,7 +145,7 @@ export default function PricingSection() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+      className="section-spacing bg-dark-gradient relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
@@ -156,22 +156,22 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-4 py-2 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
             <Zap className="w-4 h-4 mr-2" />
             Pricing Plans
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Choose Your Revenue Growth Plan</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Choose Your Revenue Growth Plan</h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Pick the plan that matches your growth goals. All plans include our 90-day money-back guarantee if you don't see results.
           </p>
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center mb-8">
-            <div className="bg-gray-100 p-1 rounded-lg flex">
+            <div className="bg-gray-800/50 p-1 rounded-lg flex border border-gray-700/50">
               <button
                 onClick={() => setBillingCycle("monthly")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  billingCycle === "monthly" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
+                  billingCycle === "monthly" ? "bg-gray-700 text-white shadow-sm" : "text-gray-400 hover:text-white"
                 }`}
               >
                 Monthly
@@ -179,11 +179,11 @@ export default function PricingSection() {
               <button
                 onClick={() => setBillingCycle("annual")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  billingCycle === "annual" ? "bg-white text-gray-900 shadow-sm" : "text-gray-600 hover:text-gray-900"
+                  billingCycle === "annual" ? "bg-gray-700 text-white shadow-sm" : "text-gray-400 hover:text-white"
                 }`}
               >
                 Annual
-                <Badge className="ml-2 bg-green-100 text-green-700 text-xs">Save 15%</Badge>
+                <Badge className="ml-2 bg-green-500/20 text-green-400 text-xs">Save 15%</Badge>
               </button>
             </div>
           </div>
@@ -197,8 +197,8 @@ export default function PricingSection() {
             return (
               <div key={tier.id} className="w-full">
                 <Card
-                  className={`relative h-full transition-all duration-300 hover:shadow-xl ${
-                    tier.popular ? "ring-2 ring-purple-500 shadow-xl" : ""
+                  className={`relative h-full transition-all duration-300 hover:shadow-xl card-dark ${
+                    tier.popular ? "ring-2 ring-green-500 shadow-xl" : ""
                   }`}
                   onMouseEnter={() => setHoveredCard(tier.id)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -206,7 +206,7 @@ export default function PricingSection() {
                   {/* Popular Badge */}
                   {tier.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                      <Badge className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 text-sm font-semibold">
+                      <Badge className="bg-gradient-to-r from-green-500 to-cyan-500 text-white px-4 py-2 text-sm font-semibold">
                         <Star className="w-4 h-4 mr-1" />
                         Most Popular
                       </Badge>
@@ -214,22 +214,22 @@ export default function PricingSection() {
                   )}
 
                   <CardHeader className="text-center pb-4 px-4 pt-6">
-                    <CardTitle className="text-lg font-bold text-gray-900 mb-2">{tier.name}</CardTitle>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{tier.description}</p>
+                    <CardTitle className="text-lg font-bold text-white mb-2">{tier.name}</CardTitle>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{tier.description}</p>
 
                     {/* Price */}
                     <div className="mb-6">
                       <div className="flex items-baseline justify-center">
-                        <span className="text-3xl md:text-4xl font-bold text-gray-900">${price.toLocaleString()}</span>
-                        {tier.priceNote && <span className="text-xl font-bold text-gray-900">{tier.priceNote}</span>}
-                        <span className="text-gray-600 ml-2 text-sm">/month</span>
+                        <span className="text-3xl md:text-4xl font-bold text-white">${price.toLocaleString()}</span>
+                        {tier.priceNote && <span className="text-xl font-bold text-white">{tier.priceNote}</span>}
+                        <span className="text-gray-400 ml-2 text-sm">/month</span>
                       </div>
                       {billingCycle === "annual" && (
                         <p className="text-sm text-green-600 mt-2">Save ${(tier.price - price) * 12}/year</p>
                       )}
                       {/* Guarantee Text */}
                       <div className="mt-3 text-center">
-                        <p className="text-xs text-gray-600 font-medium">
+                        <p className="text-xs text-gray-400 font-medium">
                           90-Day ROI Guarantee | Cancel Anytime | No Setup Fees
                         </p>
                       </div>
@@ -239,12 +239,12 @@ export default function PricingSection() {
                   <CardContent className="px-4 pb-6 flex-1 flex flex-col">
                     {/* Deliverables List */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-3 text-center">What You Get:</h4>
+                      <h4 className="text-sm font-semibold text-white mb-3 text-center">What You Get:</h4>
                       <ul className="space-y-2">
                         {tier.deliverables.map((deliverable, deliverableIndex) => (
-                          <li key={deliverableIndex} className="flex items-start text-gray-700">
-                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-blue-100">
-                              <Check className="w-2.5 h-2.5 text-blue-600" />
+                          <li key={deliverableIndex} className="flex items-start text-gray-300">
+                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-cyan-500/20">
+                              <Check className="w-2.5 h-2.5 text-cyan-400" />
                             </div>
                             <span className="leading-relaxed text-xs">{deliverable}</span>
                           </li>
@@ -254,12 +254,12 @@ export default function PricingSection() {
 
                     {/* Benefits List */}
                     <div className="mb-6 flex-1">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-3 text-center">Key Benefits:</h4>
+                      <h4 className="text-sm font-semibold text-white mb-3 text-center">Key Benefits:</h4>
                       <ul className="space-y-2">
                         {tier.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-start text-gray-700">
-                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-100">
-                              <Check className="w-2.5 h-2.5 text-green-600" />
+                          <li key={benefitIndex} className="flex items-start text-gray-300">
+                            <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-500/20">
+                              <Check className="w-2.5 h-2.5 text-green-400" />
                             </div>
                             <span className="leading-relaxed text-xs">{benefit}</span>
                           </li>
@@ -273,7 +273,7 @@ export default function PricingSection() {
                       onClick={() => scrollToSection("#contact")}
                       className={`w-full h-10 md:h-12 text-sm md:text-base font-semibold transition-all duration-300 hover:scale-105 ${
                         tier.popular
-                          ? "bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 shadow-lg"
+                          ? "btn-neon"
                           : `bg-gradient-to-r ${tier.color} hover:shadow-lg`
                       }`}
                     >
@@ -281,7 +281,7 @@ export default function PricingSection() {
                     </Button>
 
                     {/* Additional Info */}
-                    <p className="text-center text-xs text-gray-500 mt-3">
+                    <p className="text-center text-xs text-gray-400 mt-3">
                       Setup in 24-48 hours • No long-term contracts
                     </p>
                   </CardContent>
@@ -310,7 +310,7 @@ export default function PricingSection() {
                       <span className="font-semibold text-gray-900">{badge.text}</span>
                     </Tooltip>
                   ) : (
-                    <span className="font-semibold text-gray-900">{badge.text}</span>
+                  <span className="font-semibold text-gray-900">{badge.text}</span>
                   )}
                 </div>
               )
