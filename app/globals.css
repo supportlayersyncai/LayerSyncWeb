@@ -685,6 +685,20 @@ img {
   .section-spacing {
     @apply py-24 sm:py-32;
   }
+
+  .chat-widget-visible {
+    @apply fixed bottom-6 right-6 z-50;
+  }
+
+  .chat-widget-mobile {
+    @apply fixed bottom-4 right-4 z-50;
+  }
+
+  @media (max-width: 640px) {
+    .chat-widget-visible {
+      @apply bottom-4 right-4;
+    }
+  }
 }
 
 .tap-highlight-transparent {

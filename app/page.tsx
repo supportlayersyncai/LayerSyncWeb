@@ -8,6 +8,7 @@ import SuccessStoriesSection from "@/components/success-stories-section"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import LeadMagnetSection from "@/components/lead-magnet-section"
+import ChatWidget from "@/components/chat-widget"
 import Footer from "@/components/footer"
 
 export default function Home() {
@@ -33,6 +34,9 @@ export default function Home() {
       <LeadMagnetSection />
 
       <Footer />
+
+      {/* Chat Widget - Fixed Position */}
+      <ChatWidget />
     </div>
   )
 }
