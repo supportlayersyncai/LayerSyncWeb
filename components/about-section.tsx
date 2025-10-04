@@ -260,11 +260,11 @@ export default function AboutSection() {
                   <div className="text-center mb-4 sm:mb-6">
                     <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">{member.name}</h4>
                     <p className="text-blue-600 font-semibold mb-3 text-sm sm:text-base">{member.role}</p>
-                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{member.bio}</p>
+                    <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{member.bio}</p>
                   </div>
 
                   {/* Quote */}
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 mb-4 sm:mb-6 italic text-gray-700 text-sm sm:text-base">
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 mb-4 sm:mb-6 italic text-gray-800 text-sm sm:text-base">
                     "{member.quote}"
                   </div>
 
@@ -273,7 +273,7 @@ export default function AboutSection() {
                     <h5 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Current Focus:</h5>
                     <ul className="space-y-1 sm:space-y-2">
                       {member.focus.map((focus, index) => (
-                        <li key={index} className="flex items-start text-sm text-gray-600">
+                        <li key={index} className="flex items-start text-sm text-gray-700">
                           <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2 flex-shrink-0"></div>
                           {focus}
                         </li>
@@ -305,7 +305,7 @@ export default function AboutSection() {
                       </h5>
                       <ul className="space-y-1 sm:space-y-2">
                         {member.achievements.map((achievement, index) => (
-                          <li key={index} className="flex items-center text-sm text-gray-600">
+                          <li key={index} className="flex items-center text-sm text-gray-700">
                             <Star className="w-3 sm:w-4 h-3 sm:h-4 text-yellow-500 mr-2 flex-shrink-0" />
                             {achievement}
                           </li>
@@ -371,9 +371,9 @@ export default function AboutSection() {
                       <div>
                         <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">{prop.title}</h4>
                         <div className="space-y-1">
-                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description}</p>
-                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description2}</p>
-                          <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{prop.description3}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{prop.description}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{prop.description2}</p>
+                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{prop.description3}</p>
                         </div>
                       </div>
                     </div>

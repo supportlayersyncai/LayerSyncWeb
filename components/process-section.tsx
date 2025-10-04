@@ -132,7 +132,7 @@ export default function ProcessSection() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
             How We Help You Double Revenue in 4 Simple Steps
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-4 leading-relaxed">
             Our proven process has helped 50+ businesses double their revenue - here's exactly how we'll do it for you.
           </p>
         </div>
@@ -182,7 +182,7 @@ export default function ProcessSection() {
                           isHovered ? "bg-blue-200 scale-110" : ""
                         }`}
                       >
-                        <IconComponent className="w-6 h-6 text-blue-600" />
+                        <IconComponent className="w-6 h-6 text-blue-700" />
                       </div>
                     </div>
 
@@ -197,14 +197,14 @@ export default function ProcessSection() {
                     >
                       <CardContent className="p-6">
                         <h3 className="text-xl font-bold text-gray-900 mb-3">{step.headline}</h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
+                        <p className="text-gray-700 mb-4 leading-relaxed">{step.description}</p>
 
                         <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             {step.duration}
                           </div>
-                          <div className="text-blue-600 font-medium">{step.deliverable}</div>
+                          <div className="text-blue-700 font-medium">{step.deliverable}</div>
                         </div>
 
                         {/* Benefits List - Always visible */}
@@ -212,7 +212,7 @@ export default function ProcessSection() {
                           <h4 className="font-semibold text-gray-900 mb-3">What You Get:</h4>
                           <ul className="space-y-2">
                             {step.benefits.map((benefit, benefitIndex) => (
-                              <li key={benefitIndex} className="text-sm text-gray-600 leading-relaxed">
+                              <li key={benefitIndex} className="text-sm text-gray-700 leading-relaxed">
                                 {benefit}
                               </li>
                             ))}
@@ -275,19 +275,19 @@ export default function ProcessSection() {
                       <CardContent className="p-4 md:p-6">
                         <div className="flex items-start mb-3">
                           <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                            <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                            <IconComponent className="w-4 h-4 md:w-5 md:h-5 text-blue-700" />
                           </div>
                           <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">{step.headline}</h3>
                         </div>
 
-                        <p className="text-gray-600 mb-4 leading-relaxed text-sm md:text-base">{step.description}</p>
+                        <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">{step.description}</p>
 
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-4 gap-2">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             {step.duration}
                           </div>
-                          <div className="text-blue-600 font-medium">{step.deliverable}</div>
+                          <div className="text-blue-700 font-medium">{step.deliverable}</div>
                         </div>
 
                         {/* Benefits List - Always visible */}
@@ -295,7 +295,7 @@ export default function ProcessSection() {
                           <h4 className="font-semibold text-gray-900 mb-3">What You Get:</h4>
                           <ul className="space-y-2">
                             {step.benefits.map((benefit, benefitIndex) => (
-                              <li key={benefitIndex} className="text-sm text-gray-600 leading-relaxed">
+                              <li key={benefitIndex} className="text-sm text-gray-700 leading-relaxed">
                                 {benefit}
                               </li>
                             ))}
@@ -314,10 +314,10 @@ export default function ProcessSection() {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 border border-blue-100">
             <div className="flex items-center justify-center mb-4">
-              <Users className="w-6 h-6 mr-2 text-blue-600" />
+              <Users className="w-6 h-6 mr-2 text-blue-700" />
               <span className="text-lg font-semibold text-gray-900">Ready to Get Started?</span>
             </div>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
               Schedule your free AI audit today and discover how our proven process can transform your business
               operations.
             </p>

@@ -219,7 +219,7 @@ export default function SuccessStoriesSection() {
                   </div>
                   <div className="text-center sm:text-left">
                     <h3 className="text-lg font-bold text-gray-900">{testimonials[currentTestimonial].clientName}</h3>
-                    <p className="text-gray-600">{testimonials[currentTestimonial].clientTitle}</p>
+                    <p className="text-gray-700">{testimonials[currentTestimonial].clientTitle}</p>
                     <div className="flex items-center justify-center sm:justify-start mt-2">
                       {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
@@ -233,7 +233,7 @@ export default function SuccessStoriesSection() {
                   {Object.entries(testimonials[currentTestimonial].metrics).map(([key, value], index) => (
                     <div key={index} className="bg-white/60 rounded-lg p-4 text-center">
                       <div className="text-2xl font-bold text-blue-600">{value}</div>
-                      <div className="text-sm text-gray-600 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                      <div className="text-sm text-gray-700 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
                     </div>
                   ))}
                 </div>
@@ -303,7 +303,7 @@ export default function SuccessStoriesSection() {
                     <CardTitle className="text-lg font-bold text-gray-900 mb-2">
                       {study.company}
                     </CardTitle>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm text-gray-700 leading-relaxed">
                       <strong>Challenge:</strong> {study.challenge}
                     </p>
                   </CardHeader>
@@ -311,7 +311,7 @@ export default function SuccessStoriesSection() {
                   <CardContent className="pt-0">
                     <div className="mb-6">
                       <h4 className="font-semibold text-gray-900 mb-2">Solution:</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">{study.solution}</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{study.solution}</p>
                     </div>
 
                     {/* Results */}
@@ -321,8 +321,8 @@ export default function SuccessStoriesSection() {
                         {study.results.map((result, index) => (
                           <div key={index} className="flex items-center justify-between bg-gray-50 rounded-lg p-3">
                             <div>
-                              <div className="text-sm text-gray-600">{result.metric}</div>
-                              <div className="text-xs text-gray-500">{result.improvement}</div>
+                              <div className="text-sm text-gray-700">{result.metric}</div>
+                              <div className="text-xs text-gray-600">{result.improvement}</div>
                             </div>
                             <div className={`text-xl font-bold bg-gradient-to-r ${study.color} bg-clip-text text-transparent`}>
                               {result.value}
@@ -335,7 +335,7 @@ export default function SuccessStoriesSection() {
                     {/* Testimonial */}
                     <div className="bg-gray-50 rounded-lg p-4 mb-4">
                       <Quote className="w-4 h-4 text-gray-400 mb-2" />
-                      <p className="text-sm text-gray-700 italic leading-relaxed">
+                      <p className="text-sm text-gray-800 italic leading-relaxed">
                         "{study.testimonial}"
                       </p>
                     </div>

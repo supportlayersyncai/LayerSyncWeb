@@ -46,7 +46,7 @@ export default function Header() {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 10)
+          setIsScrolled(window.scrollY > 100)
           ticking = false
         })
         ticking = true
@@ -93,10 +93,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 safe-area-top ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/60"
-          : "bg-white/80 backdrop-blur-md border-b border-gray-100/40"
+      className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 safe-area-top ${
+        isScrolled ? "navbar--solid" : ""
       }`}
     >
       <div className="container-responsive">

@@ -215,21 +215,21 @@ export default function PricingSection() {
 
                   <CardHeader className="text-center pb-4 px-4 pt-6">
                     <CardTitle className="text-lg font-bold text-white mb-2">{tier.name}</CardTitle>
-                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{tier.description}</p>
+                    <p className="text-gray-200 mb-4 text-sm leading-relaxed">{tier.description}</p>
 
                     {/* Price */}
                     <div className="mb-6">
                       <div className="flex items-baseline justify-center">
                         <span className="text-3xl md:text-4xl font-bold text-white">${price.toLocaleString()}</span>
                         {tier.priceNote && <span className="text-xl font-bold text-white">{tier.priceNote}</span>}
-                        <span className="text-gray-400 ml-2 text-sm">/month</span>
+                        <span className="text-gray-300 ml-2 text-sm">/month</span>
                       </div>
                       {billingCycle === "annual" && (
-                        <p className="text-sm text-green-600 mt-2">Save ${(tier.price - price) * 12}/year</p>
+                        <p className="text-sm text-green-400 mt-2">Save ${(tier.price - price) * 12}/year</p>
                       )}
                       {/* Guarantee Text */}
                       <div className="mt-3 text-center">
-                        <p className="text-xs text-gray-400 font-medium">
+                        <p className="text-xs text-gray-300 font-medium">
                           90-Day ROI Guarantee | Cancel Anytime | No Setup Fees
                         </p>
                       </div>
@@ -242,7 +242,7 @@ export default function PricingSection() {
                       <h4 className="text-sm font-semibold text-white mb-3 text-center">What You Get:</h4>
                       <ul className="space-y-2">
                         {tier.deliverables.map((deliverable, deliverableIndex) => (
-                          <li key={deliverableIndex} className="flex items-start text-gray-300">
+                          <li key={deliverableIndex} className="flex items-start text-gray-200">
                             <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-cyan-500/20">
                               <Check className="w-2.5 h-2.5 text-cyan-400" />
                             </div>
@@ -257,7 +257,7 @@ export default function PricingSection() {
                       <h4 className="text-sm font-semibold text-white mb-3 text-center">Key Benefits:</h4>
                       <ul className="space-y-2">
                         {tier.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-start text-gray-300">
+                          <li key={benefitIndex} className="flex items-start text-gray-200">
                             <div className="w-4 h-4 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-green-500/20">
                               <Check className="w-2.5 h-2.5 text-green-400" />
                             </div>
@@ -281,7 +281,7 @@ export default function PricingSection() {
                     </Button>
 
                     {/* Additional Info */}
-                    <p className="text-center text-xs text-gray-400 mt-3">
+                    <p className="text-center text-xs text-gray-300 mt-3">
                       Setup in 24-48 hours • No long-term contracts
                     </p>
                   </CardContent>

@@ -125,7 +125,7 @@ export default function ResultsSection() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 px-4 leading-tight">
             Real Results From Real Businesses
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto px-4 leading-relaxed">
             These aren't just numbers - they're real revenue increases from businesses just like yours that trusted us to help them grow.
           </p>
         </div>
@@ -169,7 +169,7 @@ export default function ResultsSection() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">{metric.description}</p>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">{metric.description}</p>
 
                   {/* Hover Effect - Additional Info */}
                   <div
@@ -178,7 +178,7 @@ export default function ResultsSection() {
                     }`}
                   >
                     <div className="border-t border-gray-200 pt-4">
-                      <div className="flex items-center justify-center text-sm text-blue-600 font-medium">
+                      <div className="flex items-center justify-center text-sm text-blue-700 font-medium">
                         <CheckCircle className="w-4 h-4 mr-1" />
                         Verified Results
                       </div>
@@ -232,7 +232,7 @@ export default function ResultsSection() {
                   className="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300"
                   style={{ minWidth: logo.width }}
                 >
-                  <div className="bg-gray-200 rounded-lg px-4 py-2 text-gray-600 font-semibold text-sm">
+                  <div className="bg-gray-200 rounded-lg px-4 py-2 text-gray-700 font-semibold text-sm">
                     {logo.name}
                   </div>
                 </div>

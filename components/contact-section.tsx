@@ -474,7 +474,7 @@ export default function ContactSection() {
                         <h3 className="font-bold text-white group-hover:text-blue-300 transition-colors text-sm sm:text-base">
                           {method.title}
                         </h3>
-                        <p className="text-xs sm:text-sm text-white/70 truncate">{method.description}</p>
+                        <p className="text-xs sm:text-sm text-white/80 truncate">{method.description}</p>
                         <p className="text-xs sm:text-sm font-medium text-blue-300 truncate">{method.action}</p>
                       </div>
                     </a>
@@ -500,7 +500,7 @@ export default function ContactSection() {
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">
                       45-Minute Strategy Session
                     </h4>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
                       Deep dive into your business processes and automation opportunities
                     </p>
                   </div>
@@ -511,7 +511,7 @@ export default function ContactSection() {
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">Custom ROI Projection</h4>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
                       Personalized analysis of potential revenue increases
                     </p>
                   </div>
@@ -522,7 +522,7 @@ export default function ContactSection() {
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-bold text-white mb-1 sm:mb-2 text-sm sm:text-base">Implementation Roadmap</h4>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
                       Step-by-step plan tailored to your business needs
                     </p>
                   </div>
@@ -561,7 +561,7 @@ export default function ContactSection() {
                   <h4 className="font-bold text-white mb-3 sm:mb-4 text-base sm:text-lg leading-tight">
                     {item.question}
                   </h4>
-                  <p className="text-white/80 leading-relaxed text-sm sm:text-base">{item.answer}</p>
+                  <p className="text-white/90 leading-relaxed text-sm sm:text-base">{item.answer}</p>
                 </CardContent>
               </Card>
             ))}

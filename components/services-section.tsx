@@ -186,25 +186,25 @@ export default function ServicesSection() {
                   >
                     <IconComponent className="w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 text-white" />
                   </div>
-                  <CardTitle className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-white leading-tight mb-3 sm:mb-4">
+                  <CardTitle className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800 leading-tight mb-3 sm:mb-4">
                     {service.headline}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent className="pt-0 px-4 sm:px-6 pb-6 sm:pb-8">
-                  <CardDescription className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+                  <CardDescription className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                     {service.description}
                   </CardDescription>
 
                   {/* Benefits List - Always visible */}
                   <div className="mb-4 sm:mb-6">
-                    <h4 className="font-bold text-white mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
-                      <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-green-400" />
+                    <h4 className="font-bold text-gray-800 mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
+                      <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-green-600" />
                       What You Get:
                     </h4>
                     <ul className="space-y-2 sm:space-y-3">
                       {service.benefits.map((benefit, index) => (
-                        <li key={index} className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                        <li key={index} className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                           {benefit}
                         </li>
                       ))}
