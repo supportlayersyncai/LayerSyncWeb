@@ -239,7 +239,7 @@ export default function PricingSection() {
                   <CardContent className="px-4 pb-6 flex-1 flex flex-col">
                     {/* Deliverables List */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-white mb-3 text-center">What You Get:</h4>
+                      <h4 className="what-you-get-label mb-3 text-center">What You Get:</h4>
                       <ul className="space-y-2">
                         {tier.deliverables.map((deliverable, deliverableIndex) => (
                           <li key={deliverableIndex} className="flex items-start text-white">
@@ -254,7 +254,7 @@ export default function PricingSection() {
 
                     {/* Benefits List */}
                     <div className="mb-6 flex-1">
-                      <h4 className="text-sm font-semibold text-white mb-3 text-center">Key Benefits:</h4>
+                      <h4 className="what-you-get-label mb-3 text-center">Key Benefits:</h4>
                       <ul className="space-y-2">
                         {tier.benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-start text-white">
@@ -271,7 +271,7 @@ export default function PricingSection() {
                     <Button
                       size="lg"
                       onClick={() => scrollToSection("#contact")}
-                      className={`w-full h-10 md:h-12 text-sm md:text-base font-semibold transition-all duration-300 hover:scale-105 ${
+                      className={`w-full h-10 md:h-12 text-sm md:text-base font-semibold transition-all duration-300 hover:scale-105 cta-button ${
                         tier.popular
                           ? "btn-neon"
                           : `bg-gradient-to-r ${tier.color} hover:shadow-lg`

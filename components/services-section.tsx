@@ -198,7 +198,7 @@ export default function ServicesSection() {
 
                   {/* Benefits List - Always visible */}
                   <div className="mb-4 sm:mb-6">
-                    <h4 className="font-bold text-gray-800 mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
+                    <h4 className="what-you-get-label mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
                       <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-green-600" />
                       What You Get:
                     </h4>
@@ -213,7 +213,7 @@ export default function ServicesSection() {
 
                   <Button
                     onClick={() => scrollToSection("#contact")}
-                    className={`w-full bg-gradient-to-r ${service.color} hover:shadow-2xl transition-all duration-500 group-hover:scale-105 rounded-lg sm:rounded-xl lg:rounded-2xl py-2.5 sm:py-3 font-semibold text-white border-0 text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px]`}
+                    className={`w-full bg-gradient-to-r ${service.color} hover:shadow-2xl transition-all duration-500 group-hover:scale-105 rounded-lg sm:rounded-xl lg:rounded-2xl py-2.5 sm:py-3 font-semibold text-white border-0 text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px] cta-button`}
                   >
                     Learn More
                     <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -249,14 +249,14 @@ export default function ServicesSection() {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("#contact")}
-                  className="w-full sm:w-auto btn-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[250px] touch-manipulation min-h-[48px]"
+                  className="w-full sm:w-auto btn-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[250px] touch-manipulation min-h-[48px] cta-button"
                 >
                   Schedule Free Consultation
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto btn-ghost-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[200px] touch-manipulation min-h-[48px]"
+                  className="w-full sm:w-auto btn-ghost-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[200px] touch-manipulation min-h-[48px] cta-button"
                 >
                   View Case Studies
                 </Button>

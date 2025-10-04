@@ -424,6 +424,83 @@ img {
 
 .card-dark {
   @apply bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-3xl shadow-2xl;
+  position: relative;
+}
+
+.card-dark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-dark > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dark card headings */
+.card-dark h2,
+.card-dark h3 {
+  color: #ffffff !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+@media (min-width: 768px) {
+  .card-dark h2,
+  .card-dark h3 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Dark card body text */
+.card-dark p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+}
+
+/* What You Get labels */
+.card-dark .what-you-get-label {
+  color: #38bdf8 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+/* Bullet points in dark cards */
+.card-dark ul li {
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding-left: 1.5rem !important;
+  position: relative;
+}
+
+.card-dark ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+/* CTA buttons in dark cards */
+.card-dark .cta-button {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.card-dark .cta-button:hover {
+  background-color: #f3f4f6 !important;
 }
 
 /* Mobile-optimized cards */
