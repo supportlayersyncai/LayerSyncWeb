@@ -101,7 +101,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo - Enhanced for mobile */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10">
+            <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
               <img 
                 src="/LayerSyncAI_icon.svg" 
                 alt="LayerSync AI" 
@@ -112,7 +112,7 @@ export default function Header() {
               <img 
                 src="/LayerSyncAI_full.svg" 
                 alt="LayerSync AI" 
-                className="h-6 sm:h-8 object-contain"
+                className="h-8 sm:h-10 object-contain"
               />
             </div>
           </div>
