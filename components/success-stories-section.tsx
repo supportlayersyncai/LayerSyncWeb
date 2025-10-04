@@ -296,7 +296,7 @@ export default function SuccessStoriesSection() {
                         <Target className="w-6 h-6 text-white" />
                       </div>
                       <div className="text-right">
-                        <div className="text-sm text-gray-500">{study.industry}</div>
+                        <div className="text-sm text-gray-600">{study.industry}</div>
                         <div className="font-bold text-gray-900">{study.logo}</div>
                       </div>
                     </div>
@@ -334,7 +334,7 @@ export default function SuccessStoriesSection() {
 
                     {/* Testimonial */}
                     <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                      <Quote className="w-4 h-4 text-gray-400 mb-2" />
+                      <Quote className="w-4 h-4 text-gray-500 mb-2" />
                       <p className="text-sm text-gray-800 italic leading-relaxed">
                         "{study.testimonial}"
                       </p>

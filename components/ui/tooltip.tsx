@@ -19,7 +19,7 @@ export default function Tooltip({ content, children }: TooltipProps) {
         onMouseLeave={() => setIsVisible(false)}
       >
         {children}
-        <Info className="w-3 h-3 ml-1 text-gray-400 hover:text-gray-600 cursor-help" />
+        <Info className="w-3 h-3 ml-1 text-gray-500 hover:text-gray-700 cursor-help" />
       </div>
       
       {isVisible && (

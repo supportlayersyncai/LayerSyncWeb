@@ -129,7 +129,7 @@ export default function LeadMagnetSection() {
                 Download PDF Now
               </Button>
 
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-gray-400 mt-4">
                 Didn't receive the email? Check your spam folder or contact support.
               </p>
             </CardContent>
@@ -241,7 +241,7 @@ export default function LeadMagnetSection() {
                   )}
                 </Button>
 
-                <p className="text-xs text-gray-500 text-center">
+                <p className="text-xs text-gray-400 text-center">
                   We respect your privacy. Unsubscribe at any time.
                 </p>
               </form>

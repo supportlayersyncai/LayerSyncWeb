@@ -161,7 +161,7 @@ export default function PricingSection() {
             Pricing Plans
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Choose Your Revenue Growth Plan</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8">
             Pick the plan that matches your growth goals. All plans include our 90-day money-back guarantee if you don't see results.
           </p>
 
@@ -171,7 +171,7 @@ export default function PricingSection() {
               <button
                 onClick={() => setBillingCycle("monthly")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  billingCycle === "monthly" ? "bg-gray-700 text-white shadow-sm" : "text-gray-400 hover:text-white"
+                  billingCycle === "monthly" ? "bg-gray-700 text-white shadow-sm" : "text-gray-200 hover:text-white"
                 }`}
               >
                 Monthly
@@ -179,7 +179,7 @@ export default function PricingSection() {
               <button
                 onClick={() => setBillingCycle("annual")}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  billingCycle === "annual" ? "bg-gray-700 text-white shadow-sm" : "text-gray-400 hover:text-white"
+                  billingCycle === "annual" ? "bg-gray-700 text-white shadow-sm" : "text-gray-200 hover:text-white"
                 }`}
               >
                 Annual
@@ -222,14 +222,14 @@ export default function PricingSection() {
                       <div className="flex items-baseline justify-center">
                         <span className="text-3xl md:text-4xl font-bold text-white">${price.toLocaleString()}</span>
                         {tier.priceNote && <span className="text-xl font-bold text-white">{tier.priceNote}</span>}
-                        <span className="text-gray-300 ml-2 text-sm">/month</span>
+                        <span className="text-gray-100 ml-2 text-sm">/month</span>
                       </div>
                       {billingCycle === "annual" && (
                         <p className="text-sm text-green-400 mt-2">Save ${(tier.price - price) * 12}/year</p>
                       )}
                       {/* Guarantee Text */}
                       <div className="mt-3 text-center">
-                        <p className="text-xs text-gray-300 font-medium">
+                        <p className="text-xs text-gray-100 font-medium">
                           90-Day ROI Guarantee | Cancel Anytime | No Setup Fees
                         </p>
                       </div>
@@ -281,7 +281,7 @@ export default function PricingSection() {
                     </Button>
 
                     {/* Additional Info */}
-                    <p className="text-center text-xs text-gray-300 mt-3">
+                    <p className="text-center text-xs text-gray-100 mt-3">
                       Setup in 24-48 hours • No long-term contracts
                     </p>
                   </CardContent>

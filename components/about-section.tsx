@@ -227,7 +227,7 @@ export default function AboutSection() {
                       {stat.number}
                     </div>
                     <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">{stat.label}</h4>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{stat.description}</p>
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{stat.description}</p>
                   </CardContent>
                 </Card>
               )

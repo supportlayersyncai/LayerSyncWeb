@@ -26,18 +26,18 @@ export default function Footer() {
                 <span className="text-sm font-medium text-blue-400 leading-tight">AI</span>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-100 mb-6 max-w-md leading-relaxed">
               We're currently automating growth for a select group of businesses ready to scale with AI. Transform your
               operations with intelligent automation that delivers measurable results.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-200 hover:text-blue-400 transition-colors duration-200">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#home")}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Home
                 </button>
@@ -58,7 +58,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#services")}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Services
                 </button>
@@ -66,7 +66,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#about")}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   About
                 </button>
@@ -74,7 +74,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#pricing")}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Pricing
                 </button>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("#contact")}
-                  className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-left"
+                  className="text-gray-100 hover:text-blue-400 transition-colors duration-200 text-left"
                 >
                   Contact
                 </button>

@@ -293,7 +293,7 @@ export default function ChatWidget() {
           {/* Messages Area */}
           <CardContent className="flex-1 p-4 overflow-y-auto space-y-4">
             {messages.length === 0 && (
-              <div className="text-center text-gray-500 dark:text-gray-400">
+              <div className="text-center text-gray-400 dark:text-gray-300">
                 <Bot className="w-8 h-8 mx-auto mb-2 text-green-500" />
                 <p className="text-sm">Hi! I'm here to help you discover how AI can grow your business. What would you like to know?</p>
               </div>
@@ -337,7 +337,7 @@ export default function ChatWidget() {
           {/* Quick Select Options */}
           {messages.length === 0 && (
             <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">Quick options:</p>
+              <p className="text-xs text-gray-400 dark:text-gray-300 mb-3">Quick options:</p>
               <div className="space-y-2">
                 {quickSelectOptions.map((option) => {
                   const IconComponent = option.icon

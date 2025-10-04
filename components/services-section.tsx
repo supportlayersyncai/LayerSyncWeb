@@ -126,7 +126,7 @@ export default function ServicesSection() {
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             How We Help You Double Your Revenue
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-100 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
             Our AI systems work 24/7 to find more customers, close more deals, and grow your business while you focus on what matters most.
           </p>
 
@@ -140,7 +140,7 @@ export default function ServicesSection() {
                 Unified CRM Integration
               </span>
             </div>
-            <p className="text-xs sm:text-sm lg:text-lg text-gray-300 leading-relaxed text-center">
+            <p className="text-xs sm:text-sm lg:text-lg text-gray-100 leading-relaxed text-center">
               Everything connects to your existing systems - no technical headaches, just results
             </p>
 

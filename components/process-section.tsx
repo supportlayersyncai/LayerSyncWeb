@@ -199,7 +199,7 @@ export default function ProcessSection() {
                         <h3 className="text-xl font-bold text-gray-900 mb-3">{step.headline}</h3>
                         <p className="text-gray-700 mb-4 leading-relaxed">{step.description}</p>
 
-                        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             {step.duration}
@@ -282,7 +282,7 @@ export default function ProcessSection() {
 
                         <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">{step.description}</p>
 
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-500 mb-4 gap-2">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600 mb-4 gap-2">
                           <div className="flex items-center">
                             <Clock className="w-4 h-4 mr-1" />
                             {step.duration}
