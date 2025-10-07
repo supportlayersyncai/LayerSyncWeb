@@ -117,10 +117,11 @@ export default function HeroSection() {
                 isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                Double Your Leads
+              We Build{" "}
+              <span className="bg-gradient-to-r from-green-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                Scalable AI Systems
               </span>{" "}
-              with AI-Powered Growth Systems
+              That Drive Business Growth
             </h1>
 
             {/* Animated Subheadline */}
@@ -130,7 +131,7 @@ export default function HeroSection() {
               }`}
             >
               <p className="text-lg sm:text-xl lg:text-2xl text-white mb-8 sm:mb-12 leading-relaxed font-light">
-                We help law firms, solar companies, and financial professionals automate operations, close more deals, and scale efficiently with custom AI solutions.
+                From sales automation to data intelligence — LayerSync helps you deploy AI that solves real business challenges.
               </p>
             </div>
 
@@ -164,7 +165,7 @@ export default function HeroSection() {
                 onClick={() => scrollToSection("#contact")}
                 className="w-full sm:w-auto btn-neon px-8 py-4 text-lg font-semibold rounded-2xl min-h-[56px] touch-manipulation"
               >
-                Get My Free AI Plan
+                Book Your Free Consultation
                 <Sparkles className="ml-2 w-5 h-5" />
               </Button>
 
