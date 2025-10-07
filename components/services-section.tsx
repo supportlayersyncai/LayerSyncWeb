@@ -2,93 +2,133 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Database, Users, PenTool, MessageCircle, ArrowRight, TrendingUp, Clock, Target, Sparkles } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { 
+  Target, 
+  PenTool, 
+  Workflow, 
+  BarChart3, 
+  ArrowRight, 
+  Sparkles, 
+  Search,
+  Users,
+  Mail,
+  TrendingUp,
+  Award,
+  FileText,
+  Globe,
+  Zap,
+  UserCheck,
+  FileCheck,
+  HeadphonesIcon,
+  Shield,
+  Calendar,
+  Database,
+  Brain,
+  Activity,
+  Eye,
+  PieChart
+} from "lucide-react"
 
-const services = [
+const systems = [
   {
     id: 1,
-    icon: Database,
-    headline: "Turn Your Existing Data Into Revenue",
+    icon: Target,
+    title: "Sales & Lead Generation Systems",
     description:
-      "Transform dormant customer databases into active revenue streams that generate 3x more sales from your current customer base.",
-    benefits: [
-      "• Recover 40% more revenue from existing customers",
-      "• Automatically identify high-value prospects in your database", 
-      "• Send personalized messages that convert 5x better",
-      "• Track every interaction to optimize your approach"
+      "Comprehensive AI-driven sales infrastructures that identify, research, engage, and convert high-value prospects automatically.",
+    components: [
+      { icon: Search, text: "Intelligent Prospect Identification" },
+      { icon: Database, text: "Automated Research & Enrichment" },
+      { icon: Mail, text: "Multi-Channel Outreach" },
+      { icon: TrendingUp, text: "Dynamic Nurturing Sequences" },
+      { icon: Award, text: "Intelligent Lead Scoring" },
     ],
+    cta: "See How It Works",
     color: "from-blue-500 to-cyan-500",
     delay: 0,
   },
   {
     id: 2,
-    icon: Users,
-    headline: "Generate Qualified Leads 24/7",
+    icon: PenTool,
+    title: "Content Creation Systems",
     description:
-      "Never miss another opportunity with AI that finds, qualifies, and nurtures leads while you sleep - delivering ready-to-buy prospects.",
-    benefits: [
-      "• Find 10x more qualified leads automatically",
-      "• Qualify prospects with 95% accuracy",
-      "• Follow up instantly - even at 2 AM",
-      "• Convert 3x more leads into paying customers"
+      "AI content engines that research, generate, optimize, and distribute high-performing content across platforms.",
+    components: [
+      { icon: Eye, text: "Automated Market & Competitor Research" },
+      { icon: FileText, text: "Multi-Format Content Generation" },
+      { icon: TrendingUp, text: "SEO Optimization" },
+      { icon: Sparkles, text: "Brand Voice Consistency" },
+      { icon: Activity, text: "Performance Tracking & Optimization" },
     ],
-    color: "from-purple-500 to-pink-500",
+    cta: "Build My Content Engine",
+    color: "from-emerald-500 to-green-500",
     delay: 200,
   },
   {
     id: 3,
-    icon: PenTool,
-    headline: "Create Content That Sells",
+    icon: Workflow,
+    title: "Operational Workflow Systems",
     description:
-      "Generate high-converting content that sounds like you wrote it - blogs, social posts, emails, and ads that drive real business results.",
-    benefits: [
-      "• Write 50+ pieces of content per week automatically",
-      "• Maintain your unique brand voice in every piece",
-      "• Create SEO-optimized content that ranks higher",
-      "• Save 20+ hours per week on content creation"
+      "End-to-end AI solutions that streamline onboarding, support, and project management for scalable operations.",
+    components: [
+      { icon: UserCheck, text: "Client Onboarding Automation" },
+      { icon: FileCheck, text: "Document Processing & Management" },
+      { icon: HeadphonesIcon, text: "Customer Support Automation" },
+      { icon: Shield, text: "Quality Control & Compliance Monitoring" },
+      { icon: Calendar, text: "Project Management & Resource Allocation" },
     ],
-    color: "from-emerald-500 to-green-500",
+    cta: "Automate My Operations",
+    color: "from-purple-500 to-pink-500",
     delay: 400,
   },
   {
     id: 4,
-    icon: MessageCircle,
-    headline: "Never Miss a Customer Again",
+    icon: BarChart3,
+    title: "Data Processing & Analytics Systems",
     description:
-      "AI agents that work around the clock to answer questions, qualify leads, and book appointments - so you never lose a potential sale.",
-    benefits: [
-      "• Answer customer questions instantly, 24/7",
-      "• Qualify leads and book appointments automatically",
-      "• Handle 10x more inquiries without hiring staff",
-      "• Convert 40% more website visitors into customers"
+      "Data intelligence platforms that unify, analyze, and visualize business insights for better decision-making.",
+    components: [
+      { icon: PieChart, text: "Advanced Analytics Platforms" },
+      { icon: Brain, text: "Predictive Modeling" },
+      { icon: Zap, text: "Real-Time Optimization" },
+      { icon: Eye, text: "Competitive Intelligence Gathering" },
+      { icon: BarChart3, text: "Executive Dashboards & Reporting" },
     ],
+    cta: "Unlock My Data Insights",
     color: "from-orange-500 to-red-500",
     delay: 600,
   },
 ]
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.querySelector(sectionId)
+  if (element) {
+    const headerOffset = 80
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })
+  }
+}
 
 export default function ServicesSection() {
   const [visibleCards, setVisibleCards] = useState<number[]>([])
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
-  const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.substring(1))
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            services.forEach((service, index) => {
+            systems.forEach((system, index) => {
               setTimeout(() => {
-                setVisibleCards((prev) => [...prev, service.id])
-              }, service.delay)
+                setVisibleCards((prev) => [...prev, system.id])
+              }, system.delay)
             })
           }
         })
@@ -109,7 +149,7 @@ export default function ServicesSection() {
       ref={sectionRef}
       className="section-spacing bg-dark-gradient relative overflow-hidden"
     >
-      {/* Enhanced Background Pattern - Mobile optimized */}
+      {/* Enhanced Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-32 sm:w-48 lg:w-72 h-32 sm:h-48 lg:h-72 bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-full blur-xl sm:blur-2xl lg:blur-3xl"></div>
         <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-28 sm:w-40 lg:w-64 h-28 sm:h-40 lg:h-64 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl sm:blur-2xl lg:blur-3xl"></div>
@@ -117,106 +157,93 @@ export default function ServicesSection() {
       </div>
 
       <div className="container-responsive relative z-10">
-        {/* Section Header - Mobile optimized */}
+        {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 backdrop-blur-sm">
             <Sparkles className="w-3 sm:w-4 h-3 sm:h-4 mr-1.5 sm:mr-2" />
-            Our Services
+            AI Systems That Scale Your Business
           </div>
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            How We Help You Double Your Revenue
+            Intelligent Automation for Every Business Function
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-white max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
-            Our AI systems work 24/7 to find more customers, close more deals, and grow your business while you focus on what matters most.
+            From lead generation to data analytics, our AI systems work 24/7 to automate operations, optimize performance, and drive measurable growth.
           </p>
-
-          {/* CRM Integration Message - Mobile responsive */}
-          <div className="card-dark rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
-            <div className="flex flex-col sm:flex-row items-center justify-center mb-3 sm:mb-4">
-              <div className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-gradient-to-r from-green-500 to-cyan-500 rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 shadow-lg">
-                <Target className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-white" />
-              </div>
-              <span className="text-sm sm:text-base lg:text-xl font-bold text-green-400 text-center sm:text-left">
-                Unified CRM Integration
-              </span>
-            </div>
-            <p className="text-xs sm:text-sm lg:text-lg text-white leading-relaxed text-center">
-              Everything connects to your existing systems - no technical headaches, just results
-            </p>
-
-            {/* Connection Lines Visual - Mobile responsive */}
-            <div className="flex items-center justify-center mt-4 sm:mt-6 space-x-1 sm:space-x-2 lg:space-x-3 overflow-x-auto pb-2">
-              {services.map((service, index) => (
-                <div key={index} className="flex items-center flex-shrink-0">
-                  <div
-                    className={`w-2 sm:w-3 lg:w-4 h-2 sm:h-3 lg:h-4 bg-gradient-to-r ${service.color} rounded-full shadow-lg`}
-                  ></div>
-                  {index < services.length - 1 && (
-                    <div className="w-2 sm:w-4 lg:w-8 h-0.5 bg-gradient-to-r from-blue-300 to-purple-300 mx-0.5 sm:mx-1 lg:mx-2"></div>
-                  )}
-                </div>
-              ))}
-              <ArrowRight className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 text-blue-600 ml-2 sm:ml-4 flex-shrink-0" />
-              <div className="w-4 sm:w-6 lg:w-8 h-4 sm:h-6 lg:h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-md sm:rounded-lg lg:rounded-xl flex items-center justify-center ml-1 sm:ml-2 shadow-lg flex-shrink-0">
-                <Database className="w-2 sm:w-3 lg:w-4 h-2 sm:h-3 lg:h-4 text-white" />
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Services Grid - Mobile vertical stacking */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          {services.map((service) => {
-            const IconComponent = service.icon
-            const isVisible = visibleCards.includes(service.id)
-            const isHovered = hoveredCard === service.id
+        {/* Systems Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-20">
+          {systems.map((system) => {
+            const Icon = system.icon
+            const isVisible = visibleCards.includes(system.id)
+            const isHovered = hoveredCard === system.id
 
             return (
               <Card
-                key={service.id}
-                className={`group cursor-pointer transition-all duration-700 hover:shadow-2xl bg-white/90 backdrop-blur-xl border border-white/30 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-xl touch-manipulation ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-                } ${isHovered ? "lg:scale-105 lg:-translate-y-4" : ""}`}
-                onMouseEnter={() => setHoveredCard(service.id)}
+                key={system.id}
+                className={`card-modern group relative overflow-hidden transition-all duration-700 cursor-pointer ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                } ${isHovered ? "scale-[1.02] shadow-2xl" : ""}`}
+                onMouseEnter={() => setHoveredCard(system.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <CardHeader className="text-center pb-3 sm:pb-4 px-4 sm:px-6 pt-6 sm:pt-8">
-                  <div
-                    className={`w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 mx-auto mb-4 sm:mb-6 rounded-xl sm:rounded-2xl lg:rounded-3xl bg-gradient-to-r ${service.color} flex items-center justify-center transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-2xl`}
-                  >
-                    <IconComponent className="w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 text-white" />
+                {/* Gradient overlay on hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${system.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                ></div>
+
+                <CardHeader className="pb-4">
+                  <div className="flex items-start space-x-4">
+                    <div
+                      className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r ${system.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500`}
+                    >
+                      <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-gray-900 group-hover:to-gray-700 transition-all duration-500">
+                        {system.title}
+                      </CardTitle>
+                    </div>
                   </div>
-                  <CardTitle className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800 leading-tight mb-3 sm:mb-4">
-                    {service.headline}
-                  </CardTitle>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-3">
+                    {system.description}
+                  </p>
                 </CardHeader>
 
-                <CardContent className="pt-0 px-4 sm:px-6 pb-6 sm:pb-8">
-                  <CardDescription className="text-gray-700 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                    {service.description}
-                  </CardDescription>
-
-                  {/* Benefits List - Always visible */}
-                  <div className="mb-4 sm:mb-6">
+                <CardContent>
+                  {/* Key Components */}
+                  <div className="mb-6">
                     <h4 className="what-you-get-label mb-3 sm:mb-4 flex items-center text-xs sm:text-sm">
-                      <TrendingUp className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-green-600" />
-                      What You Get:
+                      <Zap className="w-3 sm:w-4 h-3 sm:h-4 mr-2 text-cyan-500" />
+                      Key Components:
                     </h4>
                     <ul className="space-y-2 sm:space-y-3">
-                      {service.benefits.map((benefit, index) => (
-                        <li key={index} className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                          {benefit}
-                        </li>
-                      ))}
+                      {system.components.map((component, index) => {
+                        const ComponentIcon = component.icon
+                        return (
+                          <li
+                            key={index}
+                            className="flex items-start text-gray-700 text-sm sm:text-base group/item"
+                          >
+                            <div
+                              className={`w-5 h-5 rounded-lg flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 bg-gradient-to-r ${system.color} bg-opacity-10 group-hover/item:scale-110 transition-transform duration-300`}
+                            >
+                              <ComponentIcon className="w-3 h-3 text-gray-700" />
+                            </div>
+                            <span className="leading-relaxed">{component.text}</span>
+                          </li>
+                        )
+                      })}
                     </ul>
                   </div>
 
+                  {/* CTA Button */}
                   <Button
                     onClick={() => scrollToSection("#contact")}
-                    className={`w-full bg-gradient-to-r ${service.color} hover:shadow-2xl transition-all duration-500 group-hover:scale-105 rounded-lg sm:rounded-xl lg:rounded-2xl py-2.5 sm:py-3 font-semibold text-white border-0 text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px] cta-button`}
+                    className={`w-full bg-gradient-to-r ${system.color} hover:shadow-2xl transition-all duration-500 group-hover:scale-105 rounded-lg sm:rounded-xl lg:rounded-2xl py-2.5 sm:py-3 font-semibold text-white border-0 text-sm sm:text-base touch-manipulation min-h-[44px] sm:min-h-[48px] cta-button`}
                   >
-                    Learn More
-                    <ArrowRight className="w-3 sm:w-4 h-3 sm:h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                    {system.cta}
+                    <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </Button>
                 </CardContent>
               </Card>
@@ -224,7 +251,7 @@ export default function ServicesSection() {
           })}
         </div>
 
-        {/* Bottom CTA Section - Mobile optimized */}
+        {/* Bottom CTA Section */}
         <div className="text-center mt-16 sm:mt-20">
           <div className="card-dark rounded-xl sm:rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 text-white relative overflow-hidden">
             {/* Background decoration */}
@@ -234,31 +261,28 @@ export default function ServicesSection() {
             </div>
 
             <div className="relative z-10">
-              <div className="flex flex-col sm:flex-row items-center justify-center mb-4 sm:mb-6">
-                <div className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl flex items-center justify-center mb-2 sm:mb-0 sm:mr-3 border border-white/20 shadow-lg">
-                  <Clock className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-blue-300" />
-                </div>
-                <span className="text-base sm:text-lg lg:text-2xl font-bold text-center sm:text-left">
-                  Ready to Transform Your Business?
-                </span>
-              </div>
-              <p className="text-blue-100 mb-6 sm:mb-8 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg leading-relaxed">
-                Join businesses that are already seeing 3x more leads, 40% higher conversion rates, and 20+ hours saved per week.
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+                Let's build a custom AI system tailored to your unique business needs. Book a free consultation to get started.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("#contact")}
                   className="w-full sm:w-auto btn-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[250px] touch-manipulation min-h-[48px] cta-button"
                 >
-                  Schedule Free Consultation
+                  Book Your Free Consultation
+                  <Sparkles className="ml-2 w-4 sm:w-5 h-4 sm:h-5" />
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto btn-ghost-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[200px] touch-manipulation min-h-[48px] cta-button"
                 >
-                  View Case Studies
+                  <BarChart3 className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
+                  See Case Studies
                 </Button>
               </div>
             </div>
