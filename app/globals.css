@@ -469,7 +469,7 @@ img {
 
 /* Dark card body text */
 .card-dark p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: #FFFFFF !important;
   line-height: 1.6 !important;
   font-weight: 400 !important;
 }
@@ -485,7 +485,7 @@ img {
 
 /* Bullet points in dark cards */
 .card-dark ul li {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #FFFFFF !important;
   padding-left: 1.5rem !important;
   position: relative;
 }
@@ -508,6 +508,23 @@ img {
 
 .card-dark .cta-button:hover {
   background-color: #f3f4f6 !important;
+}
+
+/* Force all text elements in dark cards to be fully white */
+.card-dark div,
+.card-dark span,
+.card-dark li,
+.card-dark label,
+.card-dark a {
+  color: #FFFFFF !important;
+}
+
+/* Specific overrides for different text types on dark backgrounds */
+.bg-dark-gradient p,
+.bg-dark-gradient div,
+.bg-dark-gradient span,
+.bg-dark-gradient li {
+  color: #FFFFFF !important;
 }
 
 /* Mobile-optimized cards */
