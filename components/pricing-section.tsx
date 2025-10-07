@@ -77,8 +77,8 @@ export default function PricingSection() {
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                     <Sparkles className="w-6 h-6 text-white" />
                             </div>
-                  <h3 className="text-white font-semibold mb-2">Proven Results</h3>
-                  <p className="text-white/80 text-sm">Real ROI, guaranteed.</p>
+                  <h3 className="text-white font-semibold mb-2">Transparent Process</h3>
+                  <p className="text-white/80 text-sm">Clear milestones, real progress.</p>
                             </div>
                     </div>
 

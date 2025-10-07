@@ -135,24 +135,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            {/* Client Logos */}
-            <div
-              className={`mb-8 sm:mb-12 transition-all duration-1000 delay-500 ${
-                isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <p className="text-sm text-white mb-4 font-medium">Trusted by industry leaders</p>
-              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 sm:gap-8">
-                {["Client A", "Client B", "Client C"].map((client, index) => (
-                  <div
-                    key={index}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-white text-sm font-medium hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                  >
-                    {client}
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Animated CTA Buttons */}
             <div
@@ -172,10 +154,11 @@ export default function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
+                onClick={() => scrollToSection("#services")}
                 className="w-full sm:w-auto btn-ghost-neon px-8 py-4 text-lg font-semibold rounded-2xl min-h-[56px] touch-manipulation group"
               >
                 <BarChart3 className="mr-2 w-5 h-5 group-hover:scale-125 transition-transform duration-300" />
-                See Case Studies
+                Explore AI Systems
               </Button>
             </div>
           </div>

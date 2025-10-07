@@ -279,10 +279,11 @@ export default function ServicesSection() {
                 <Button
                   size="lg"
                   variant="outline"
+                  onClick={() => scrollToSection("#about")}
                   className="w-full sm:w-auto btn-ghost-neon px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-lg sm:rounded-xl lg:rounded-2xl min-w-[200px] touch-manipulation min-h-[48px] cta-button"
                 >
                   <BarChart3 className="mr-2 w-4 sm:w-5 h-4 sm:h-5" />
-                  See Case Studies
+                  Learn About Us
                 </Button>
               </div>
             </div>

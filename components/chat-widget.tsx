@@ -66,10 +66,10 @@ export default function ChatWidget() {
       action: () => handleQuickSelect('package')
     },
     {
-      id: 'case-studies',
-      label: 'Show me case studies',
+      id: 'ai-systems',
+      label: 'Show me AI systems',
       icon: BarChart3,
-      action: () => handleQuickSelect('case-studies')
+      action: () => handleQuickSelect('ai-systems')
     },
     {
       id: 'strategy-call',
@@ -117,8 +117,8 @@ export default function ChatWidget() {
     switch (optionId) {
       case 'package':
         return "Great question! I'd recommend starting with our Entry Plan at $1,500/month if you're a small business, or the Growth AI System at $3,500/month if you're ready to scale fast. Would you like me to show you a detailed comparison?"
-      case 'case-studies':
-        return "I'd love to show you our success stories! We've helped businesses achieve 340% revenue growth, 45% conversion increases, and save 25+ hours per week. Let me take you to our case studies section."
+      case 'ai-systems':
+        return "We offer four core AI systems: Sales & Lead Generation, Content Creation, Operational Workflow Automation, and Data Processing & Analytics. Each system is designed to scale your business efficiently. Which area interests you most?"
       case 'strategy-call':
         return "Perfect! I can help you book a free strategy session with our AI experts. This 30-minute call will show you exactly how AI can grow your business. Let me get that scheduled for you."
       default:
@@ -189,8 +189,8 @@ export default function ChatWidget() {
       return "Our packages start at $1,500/month for the Entry Plan, $3,500/month for Growth AI System, and $5,000+/month for Elite AI System. All include our 90-day ROI guarantee. Would you like to see detailed pricing?"
     }
     
-    if (message.includes('case study') || message.includes('success') || message.includes('results')) {
-      return "We've helped businesses achieve amazing results! One client increased revenue by 340% in 4 months, another saved 25 hours per week, and many see 45%+ conversion increases. Would you like to see specific case studies?"
+    if (message.includes('results') || message.includes('success') || message.includes('track record')) {
+      return "We're focused on building AI systems that deliver measurable growth. We'll be sharing detailed results as our client base expands. For now, I can show you our four AI system offerings and help you understand which one fits your needs best. Interested?"
     }
     
     if (message.includes('book') || message.includes('call') || message.includes('meeting') || message.includes('consultation')) {

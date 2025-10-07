@@ -82,8 +82,8 @@ const companyStats = [
   {
     icon: TrendingUp,
     number: "300%",
-    label: "Average ROI",
-    description: "Proven results across all implementations",
+    label: "Growth Target",
+    description: "Our benchmark for client success",
     color: "from-green-500 to-green-600",
   },
   {
@@ -406,9 +406,10 @@ export default function AboutSection() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => scrollToSection("#pricing")}
               className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-blue-700 px-6 sm:px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 bg-transparent min-h-[48px] touch-manipulation"
             >
-              View Case Studies
+              View Consultation Options
               <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
           </div>
