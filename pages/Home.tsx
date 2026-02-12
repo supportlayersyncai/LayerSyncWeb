@@ -1,11 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, Suspense, lazy } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import { useOutletContext, Link } from 'react-router-dom';
 import { ScrollCanvas } from '../components/ScrollCanvas';
 import { TextBeat } from '../components/TextBeat';
 
-import { Pricing } from '../components/home/Pricing';
-import { FAQ } from '../components/home/FAQ';
+// Lazy Load Heavy Components
+const Pricing = lazy(() => import('../components/home/Pricing').then(module => ({ default: module.Pricing })));
+const FAQ = lazy(() => import('../components/home/FAQ').then(module => ({ default: module.FAQ })));
 import {
     ArrowRight,
     Building2,
@@ -152,6 +153,10 @@ export const Home: React.FC = () => {
                                 <img
                                     src="/harambe-ai.png"
                                     alt="AI Gorilla"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="520"
+                                    height="520"
                                     className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(107,76,255,0.15)]"
                                 />
                             </motion.div>
@@ -222,6 +227,10 @@ export const Home: React.FC = () => {
                                 <img
                                     src="/lion-ai.png"
                                     alt="AI Lion"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="520"
+                                    height="520"
                                     className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
                                     style={{ animationDelay: '2s' }}
                                 />
@@ -259,7 +268,13 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                <Pricing isDarkMode={safeDarkMode} />
+                <Suspense fallback={
+                    <div className="py-20 flex items-center justify-center">
+                        <div className="w-8 h-8 border-2 border-gray-200 border-t-blue-500 rounded-full animate-spin opacity-50" />
+                    </div>
+                }>
+                    <Pricing isDarkMode={safeDarkMode} />
+                </Suspense>
 
                 {/* ===== FAQ with Buffalo — Text LEFT, Buffalo RIGHT ===== */}
                 <section id="faq" className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden">
@@ -284,12 +299,22 @@ export const Home: React.FC = () => {
                                 <img
                                     src="/buffalo-ai.png"
                                     alt="AI Buffalo"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="440"
+                                    height="440"
                                     className="w-[280px] md:w-[380px] lg:w-[440px] animate-float drop-shadow-[0_0_40px_rgba(75,107,255,0.15)]"
                                     style={{ animationDelay: '4s' }}
                                 />
                             </motion.div>
                         </div>
-                        <FAQ isDarkMode={safeDarkMode} />
+                        <Suspense fallback={
+                            <div className="py-10 flex items-center justify-center">
+                                <div className="w-6 h-6 border-2 border-gray-200 border-t-purple-500 rounded-full animate-spin opacity-50" />
+                            </div>
+                        }>
+                            <FAQ isDarkMode={safeDarkMode} />
+                        </Suspense>
                     </div>
                 </section>
 
