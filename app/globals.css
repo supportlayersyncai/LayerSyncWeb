@@ -41,4 +41,12 @@ body {
   .preserve-3d {
     transform-style: preserve-3d;
   }
+
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/60 shadow-sm;
+  }
+  
+  .dark .glass-card {
+    @apply bg-white/5 shadow-none;
+  }
 }

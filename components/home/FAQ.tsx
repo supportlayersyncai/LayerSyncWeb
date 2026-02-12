@@ -18,18 +18,17 @@ export const FAQ: React.FC<FAQProps> = ({ isDarkMode }) => {
     ];
 
     return (
-        <section className="relative py-32 sm:py-60 px-6 max-w-4xl mx-auto z-20">
-            <h2 className="hero-heading mb-20 text-center text-shimmer">Common *Questions*</h2>
+        <section className="relative py-0 px-0 md:px-0 max-w-4xl mx-auto z-20">
             <div className="space-y-5">
                 {faqs.map((faq, i) => (
-                    <div key={i} className={`rounded-[32px] border ${borderSubtle} cursor-pointer overflow-hidden transition-colors`} onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
+                    <div key={i} className={`rounded-[32px] border border-black/5 dark:border-white/5 cursor-pointer overflow-hidden transition-colors`} onClick={() => setActiveFaq(activeFaq === i ? null : i)}>
                         <div className="p-8 flex items-center justify-between">
-                            <h6 className="text-xl font-light">{faq.q}</h6>
-                            <ChevronDown className={`w-5 h-5 transition-transform ${activeFaq === i ? 'rotate-180' : ''}`} />
+                            <h6 className="text-xl font-light text-gray-900 dark:text-white">{faq.q}</h6>
+                            <ChevronDown className={`w-5 h-5 text-gray-900 dark:text-white transition-transform ${activeFaq === i ? 'rotate-180' : ''}`} />
                         </div>
                         <AnimatePresence>
                             {activeFaq === i && (
-                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="px-8 pb-8 opacity-40 text-lg">
+                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="px-8 pb-8 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                                     {faq.a}
                                 </motion.div>
                             )}

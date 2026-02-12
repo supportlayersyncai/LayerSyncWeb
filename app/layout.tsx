@@ -32,7 +32,7 @@ export default function RootLayout({
         className={cn(
           orbitron.variable,
           rajdhani.variable,
-          "antialiased bg-bg-primary text-white overflow-hidden"
+          "antialiased bg-[#f5f5f7] dark:bg-bg-primary text-gray-900 dark:text-white overflow-hidden"
         )}
       >
         {children}

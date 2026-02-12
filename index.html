@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LayerSync AI | Synchronize Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-dark: #050505;
@@ -44,51 +46,53 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
+
         .text-shimmer {
-            background: linear-gradient(
-                to right,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 1) 50%,
-                rgba(255, 255, 255, 0.4) 100%
-            );
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0.9) 50%,
+                    rgba(0, 0, 0, 0.3) 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shimmer 12s infinite linear;
         }
 
-        .light-mode .text-shimmer {
-            background: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0.3) 0%,
-                rgba(0, 0, 0, 0.9) 50%,
-                rgba(0, 0, 0, 0.3) 100%
-            );
+        .dark .text-shimmer {
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0.4) 0%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0.4) 100%);
             -webkit-background-clip: text;
         }
 
         @keyframes shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(0, 0, 0, 0.02);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .light-mode .glass-card {
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        .dark .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .hero-heading {
-            font-size: clamp(2.5rem, 7vw, 6rem);
-            line-height: 1.05;
-            letter-spacing: -0.05em;
+            font-size: clamp(2.25rem, 6vw, 6rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
             font-weight: 300;
         }
 
@@ -101,21 +105,49 @@
         }
 
         .nav-scrolled {
-            background: rgba(5, 5, 5, 0.8) !important;
+            background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(20px) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             padding-top: 1rem !important;
             padding-bottom: 1rem !important;
         }
 
-        .light-mode .nav-scrolled {
-            background: rgba(255, 255, 255, 0.8) !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        .dark .nav-scrolled {
+            background: rgba(5, 5, 5, 0.8) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-thumb { background: rgba(107, 76, 255, 0.3); border-radius: 10px; }
-        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(107, 76, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* ===== Global Button Hover ===== */
+        button,
+        a[class*="btn"],
+        a[class*="rounded-full"] {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        button:hover,
+        a[class*="btn"]:hover,
+        a[class*="rounded-full"]:hover {
+            transform: translateY(-1px);
+        }
+
+        button:active,
+        a[class*="btn"]:active,
+        a[class*="rounded-full"]:active {
+            transform: translateY(0px) scale(0.98);
+        }
 
         /* ===== Button Shimmer / Glow ===== */
         .btn-glow {
@@ -123,6 +155,7 @@
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .btn-glow::before {
             content: '';
             position: absolute;
@@ -130,17 +163,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(255,255,255,0.15) 40%,
-                rgba(255,255,255,0.3) 50%,
-                rgba(255,255,255,0.15) 60%,
-                transparent 100%
-            );
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.15) 40%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0.15) 60%,
+                    transparent 100%);
             animation: btn-shimmer 3s ease-in-out infinite;
             pointer-events: none;
         }
+
         .btn-glow:hover {
             transform: translateY(-2px);
             box-shadow:
@@ -150,17 +182,34 @@
         }
 
         @keyframes btn-shimmer {
-            0% { left: -100%; }
-            50% { left: 100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            50% {
+                left: 100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         /* ===== Gradient Animation ===== */
         @keyframes gradient-x {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
         .animate-gradient-x {
             background-size: 200% 200%;
             animation: gradient-x 4s ease infinite;
@@ -170,9 +219,15 @@
         .ambient-glow {
             animation: pulse-glow 6s ease-in-out infinite alternate;
         }
+
         @keyframes pulse-glow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+            0% {
+                opacity: 0.3;
+            }
+
+            100% {
+                opacity: 0.7;
+            }
         }
 
         /* ===== Card Hover Glow ===== */
@@ -180,6 +235,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .card-hover-glow::after {
             content: '';
             position: absolute;
@@ -192,23 +248,34 @@
             opacity: 0;
             transition: opacity 0.4s;
         }
+
         .card-hover-glow:hover::after {
             opacity: 1;
         }
 
         /* ===== Float Animation ===== */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
+
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
+
 <body class="bg-[#050505]">
     <div class="noise-overlay"></div>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

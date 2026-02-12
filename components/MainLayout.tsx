@@ -1,18 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 
 export const MainLayout: React.FC = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    // Initialize with localStorage or default to true
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved === 'dark';
+        }
+        return true;
+    });
+
+    const { pathname } = useLocation();
+
+    // Scroll to top on route change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     useEffect(() => {
+        const root = window.document.documentElement;
         if (isDarkMode) {
-            document.body.classList.remove('light-mode');
-            document.body.style.backgroundColor = '#050505';
+            root.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
         } else {
-            document.body.classList.add('light-mode');
-            document.body.style.backgroundColor = '#f5f5f7';
+            root.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
         }
     }, [isDarkMode]);
 

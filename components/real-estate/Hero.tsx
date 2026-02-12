@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { ArrowRight, Play } from 'lucide-react';
+import { useOutletContext } from 'react-router-dom';
 
 export const RealEstateHero: React.FC = () => {
+    const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
+    const safeDarkMode = isDarkMode ?? true;
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -17,10 +18,10 @@ export const RealEstateHero: React.FC = () => {
         <div ref={ref} className="relative h-[85vh] md:h-[80vh] w-full overflow-hidden flex items-center justify-center pt-20 md:pt-0">
             {/* Background Parallax with Gradient Overlay */}
             <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
+                <div className={`absolute inset-0 transition-colors duration-700 ${safeDarkMode ? 'bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]' : 'bg-gradient-to-br from-gray-100 via-white to-gray-100'}`} />
                 {/* Animated ambient orbs */}
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] animate-float" />
-                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-600/15 rounded-full blur-[100px] animate-float" style={{ animationDelay: '3s' }} />
+                <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-purple-600/20 rounded-full blur-[80px] md:blur-[120px] animate-float" />
+                <div className="absolute bottom-1/4 right-1/4 w-60 h-60 md:w-80 md:h-80 bg-pink-600/15 rounded-full blur-[70px] md:blur-[100px] animate-float" style={{ animationDelay: '3s' }} />
             </motion.div>
 
             {/* Content */}
@@ -39,21 +40,15 @@ export const RealEstateHero: React.FC = () => {
                         <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
                         AI Agency Partner
                     </motion.div>
-                    <h1 className="hero-heading mb-6 md:mb-8 text-white">
+                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-white">
                         Automate <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 animate-gradient-x">Luxury Real Estate</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Luxury Real Estate</span>
                     </h1>
-                    <p className="sub-heading text-white/70 mb-8 md:mb-10 max-w-2xl mx-auto">
+                    <p className="sub-heading text-gray-600 dark:text-white/70 mb-8 md:mb-10 max-w-2xl mx-auto">
                         LayerSync empowers agencies to scale with AI-driven virtual staging, automated lead qualification, and 24/7 client engagement.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full px-4 md:px-0">
-                        <button className="w-full sm:w-auto btn-glow px-8 md:px-10 py-4 rounded-full bg-white text-black font-bold uppercase tracking-widest text-[10px] md:text-xs flex items-center justify-center gap-3">
-                            Request Audit <ArrowRight className="w-4 h-4" />
-                        </button>
-                        <button className="w-full sm:w-auto btn-glow px-8 md:px-10 py-4 rounded-full border border-white/20 text-white font-bold uppercase tracking-widest text-[10px] md:text-xs flex items-center justify-center gap-3 hover:bg-white/5 transition-colors">
-                            <Play className="w-4 h-4" /> Watch Demo
-                        </button>
-                    </div>
+
+
                 </motion.div>
             </div>
 
@@ -62,8 +57,8 @@ export const RealEstateHero: React.FC = () => {
                 style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
             >
-                <span className="text-[10px] uppercase tracking-[0.3em] text-white/30 font-bold">Scroll</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-white/30 to-transparent" />
+                <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 dark:text-white/30 font-bold">Scroll</span>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent dark:from-white/30 dark:to-transparent" />
             </motion.div>
         </div>
     );

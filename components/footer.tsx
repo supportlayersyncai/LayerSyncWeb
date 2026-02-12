@@ -6,12 +6,12 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
-  const borderSubtle = isDarkMode ? "border-white/5" : "border-black/5";
+  // const borderSubtle = isDarkMode ? "border-white/5" : "border-black/5";
 
   return (
-    <footer className={`relative py-20 border-t ${borderSubtle} opacity-30 text-center z-20`}>
+    <footer className={`relative py-20 border-t border-black/5 dark:border-white/5 opacity-30 text-center z-20`}>
       <Logo isDarkMode={isDarkMode} className="h-12 mx-auto mb-8" />
-      <p className="text-[10px] tracking-[0.4em] font-black uppercase">© 2025 LayerSync AI • Zimbabwe Regional Launch</p>
+      <p className="text-[10px] tracking-[0.4em] font-black uppercase text-gray-900 dark:text-white">© 2025 LayerSync AI • Zimbabwe Regional Launch</p>
     </footer>
   );
 };
