@@ -34,7 +34,7 @@ export const TextBeat: React.FC<TextBeatProps> = ({ title, subtitle, scrollYProg
     const parts = title.split('*');
     return parts.map((part, i) => (
       i % 2 === 1
-        ? <span key={i} className="italic font-extralight text-gray-400 dark:text-white/40">{part}</span>
+        ? <span key={i} className="italic font-extralight text-gray-400 dark:text-gray-200">{part}</span>
         : <span key={i} className="text-gray-900 dark:text-white">{part}</span>
     ));
   };

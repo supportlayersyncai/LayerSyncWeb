@@ -132,7 +132,7 @@ export const Home: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="text-left"
                             >
-                                <div className="inline-flex items-center gap-2 mb-8 py-2 px-6 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 dark:text-white/40">
+                                <div className="inline-flex items-center gap-2 mb-8 py-2 px-6 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 dark:text-gray-400">
                                     <Sparkles className="w-3 h-3" /> Our Solutions
                                 </div>
                                 <h2 className="hero-heading mb-6 text-shimmer">
@@ -180,9 +180,9 @@ export const Home: React.FC = () => {
 
                                             {/* Content */}
                                             <div className="flex-1">
-                                                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-white/30 font-bold mb-3">{s.subtitle}</div>
+                                                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-gray-300 font-bold mb-3">{s.subtitle}</div>
                                                 <h3 className="text-2xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white group-hover:text-shimmer transition-all">{s.title}</h3>
-                                                <p className="text-gray-600 dark:text-white/50 text-sm md:text-base leading-relaxed max-w-xl">{s.desc}</p>
+                                                <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">{s.desc}</p>
                                             </div>
 
                                             {/* Stats */}
@@ -190,7 +190,7 @@ export const Home: React.FC = () => {
                                                 {s.stats.map((stat, j) => (
                                                     <div key={j} className="text-center lg:text-right">
                                                         <div className={`text-xl md:text-2xl font-light bg-gradient-to-r ${s.gradient} bg-clip-text text-transparent`}>{stat.value}</div>
-                                                        <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-500 dark:text-white/30 font-bold">{stat.label}</div>
+                                                        <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">{stat.label}</div>
                                                     </div>
                                                 ))}
                                             </div>
@@ -252,7 +252,7 @@ export const Home: React.FC = () => {
                                 >
                                     <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8`}>{item.icon}</div>
                                     <h4 className="text-xl md:text-2xl font-light mb-4 text-gray-900 dark:text-white">{item.title}</h4>
-                                    <p className="text-gray-500 dark:text-white/40 leading-relaxed text-sm">{item.desc}</p>
+                                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>

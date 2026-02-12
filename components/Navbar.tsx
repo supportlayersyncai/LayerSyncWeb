@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => 
                 {/* Logo */}
                 <Link to="/" className="flex items-center gap-2 sm:gap-3 group cursor-pointer z-[101]" onClick={() => { setIsMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                     <Logo isDarkMode={isDarkMode || isMobileMenuOpen} className={`transition-all duration-500 ${isScrolled ? 'h-6 sm:h-7' : 'h-8 sm:h-10'}`} />
-                    <span className={`font-light tracking-widest uppercase transition-all duration-500 ${isScrolled ? 'text-sm sm:text-lg' : 'text-lg sm:text-2xl'} ${isMobileMenuOpen ? 'text-white' : 'text-gray-900 dark:text-white'}`}>LayerSync</span>
+                    <span className={`font-medium tracking-widest uppercase transition-all duration-500 ${isScrolled ? 'text-sm sm:text-lg' : 'text-lg sm:text-2xl'} ${isMobileMenuOpen ? 'text-white' : 'text-gray-900 dark:text-white'}`}>LayerSync</span>
                 </Link>
 
                 {/* Desktop Links */}
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => 
                                             </div>
                                             <div className="text-left">
                                                 <div className={`text-[11px] font-bold tracking-wider normal-case ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{s.name}</div>
-                                                <div className={`text-[9px] tracking-wider normal-case mt-0.5 ${isDarkMode ? 'text-white/70' : 'text-gray-500'}`}>{s.desc}</div>
+                                                <div className={`text-[9px] tracking-wider normal-case mt-0.5 ${isDarkMode ? 'text-gray-300' : 'text-gray-500'}`}>{s.desc}</div>
                                             </div>
                                         </Link>
                                     ))}

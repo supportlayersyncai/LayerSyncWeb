@@ -41,7 +41,7 @@ export const ROICalculator: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode })
                                 <label className={`text-xs md:text-sm uppercase tracking-widest font-bold ${isDarkMode ? 'text-white/70' : 'text-gray-500'}`}>Admin Hours / Week</label>
                                 <div className={`font-mono text-lg md:text-xl ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>{hoursSaved} Hours</div>
                             </div>
-                            <div className={`flex justify-between text-[10px] md:text-xs mb-2 ${isDarkMode ? 'text-white/30' : 'text-gray-400'}`}>
+                            <div className={`flex justify-between text-[10px] md:text-xs mb-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-400'}`}>
                                 <span>Low Efficiency</span>
                                 <span>High Burnout</span>
                             </div>
@@ -75,7 +75,7 @@ export const ROICalculator: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode })
                         <div key={annualSavings} className={`text-4xl md:text-7xl font-light mb-4 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-500 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                             {format(annualSavings)}
                         </div>
-                        <p className={`text-xs md:text-base ${isDarkMode ? 'text-white/40' : 'text-gray-600'}`}>
+                        <p className={`text-xs md:text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                             That's <span className={`font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{format(weeklySavings)}</span> lost every single week to manual tasks.
                         </p>
 
