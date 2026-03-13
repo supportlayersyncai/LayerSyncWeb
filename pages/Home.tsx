@@ -113,7 +113,7 @@ export const Home: React.FC = () => {
                     />
 
                     <motion.div style={{ opacity: indicatorOpacity }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
-                        <span className="text-[10px] uppercase tracking-[0.4em] opacity-30 font-bold">Scroll to Explore</span>
+                        <span className="text-[10px] uppercase tracking-[0.4em] text-gray-400 dark:text-dark-text-tertiary font-bold">Scroll to Explore</span>
                         <div className={`w-[1px] h-16 bg-gradient-to-b from-current opacity-30 to-transparent`} />
                     </motion.div>
                 </div>
@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
                                 viewport={{ once: true }}
                                 className="text-left"
                             >
-                                <div className="inline-flex items-center gap-2 mb-8 py-2 px-6 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 dark:text-gray-400">
+                                <div className="inline-flex items-center gap-2 mb-8 py-2 px-6 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 dark:text-dark-text-tertiary">
                                     <Sparkles className="w-3 h-3" /> Our Solutions
                                 </div>
                                 <h2 className="hero-heading mb-6 text-shimmer">
@@ -185,9 +185,9 @@ export const Home: React.FC = () => {
 
                                             {/* Content */}
                                             <div className="flex-1">
-                                                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-gray-300 font-bold mb-3">{s.subtitle}</div>
-                                                <h3 className="text-2xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white group-hover:text-shimmer transition-all">{s.title}</h3>
-                                                <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">{s.desc}</p>
+                                                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-dark-text-tertiary font-bold mb-3">{s.subtitle}</div>
+                                                <h3 className="text-2xl md:text-4xl font-light mb-4 text-gray-900 dark:text-dark-text-primary group-hover:text-shimmer transition-all">{s.title}</h3>
+                                                <p className="text-gray-600 dark:text-dark-text-secondary text-sm md:text-base leading-relaxed max-w-xl">{s.desc}</p>
                                             </div>
 
                                             {/* Stats */}
@@ -195,7 +195,7 @@ export const Home: React.FC = () => {
                                                 {s.stats.map((stat, j) => (
                                                     <div key={j} className="text-center lg:text-right">
                                                         <div className={`text-xl md:text-2xl font-light bg-gradient-to-r ${s.gradient} bg-clip-text text-transparent`}>{stat.value}</div>
-                                                        <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-500 dark:text-gray-400 font-bold">{stat.label}</div>
+                                                        <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-500 dark:text-dark-text-tertiary font-bold">{stat.label}</div>
                                                     </div>
                                                 ))}
                                             </div>
@@ -260,8 +260,8 @@ export const Home: React.FC = () => {
                                     className={`glass-card card-hover-glow rounded-[32px] p-8 md:p-10 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 transition-all duration-300`}
                                 >
                                     <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8`}>{item.icon}</div>
-                                    <h4 className="text-xl md:text-2xl font-light mb-4 text-gray-900 dark:text-white">{item.title}</h4>
-                                    <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">{item.desc}</p>
+                                    <h4 className="text-xl md:text-2xl font-light mb-4 text-gray-900 dark:text-dark-text-primary">{item.title}</h4>
+                                    <p className="text-gray-500 dark:text-dark-text-secondary leading-relaxed text-sm">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -333,7 +333,7 @@ export const Home: React.FC = () => {
                             <button className={`btn-glow px-10 md:px-16 py-5 md:py-6 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm shadow-2xl inline-flex items-center gap-4 bg-black text-white dark:bg-white dark:text-black`}>
                                 Request AI Audit <ArrowRight className="w-5 h-5" />
                             </button>
-                            <p className="mt-10 md:mt-12 text-[10px] uppercase tracking-widest opacity-30 font-bold">Limited Onboarding Slots Available</p>
+                            <p className="mt-10 md:mt-12 text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">Limited Onboarding Slots Available</p>
                         </div>
                     </motion.div>
                 </section>

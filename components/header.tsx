@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import React from "react"
+import { LayerSyncLogo } from "./LayerSyncLogo"
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -100,11 +101,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo - Clean single logo design */}
           <div className="flex items-center">
-            <img 
-              src="/LayerSyncAI_full.svg" 
-              alt="LayerSync AI" 
-              className="h-8 sm:h-10 object-contain"
-            />
+            <LayerSyncLogo className="h-8 sm:h-10 text-[#3A0CA3] dark:text-dark-brand-wordmark" />
           </div>
 
           {/* Desktop Navigation */}

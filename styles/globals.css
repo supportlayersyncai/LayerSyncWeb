@@ -43,6 +43,11 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark mode explicit overrides for light mode contexts if needed, but defaults are fine here */
+    --dark-text-primary: 210 40% 98%;    /* #F8FAFC */
+    --dark-text-secondary: 210 40% 84%;  /* #CBD5E1 */
+    --dark-text-tertiary: 215 16% 65%;   /* #94A3B8 */
+    --dark-brand-wordmark: 262 83% 58%;  /* Darker purple for light mode, e.g. #7C3AED */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -77,6 +82,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Semantic Dark Mode Typography overrides */
+    --dark-text-primary: 210 40% 98%;    /* #F8FAFC */
+    --dark-text-secondary: 210 40% 84%;  /* #CBD5E1 */
+    --dark-text-tertiary: 215 16% 65%;   /* #94A3B8 */
+    --dark-brand-wordmark: 252 94% 85%;  /* #C4B5FD (light lavender) */
   }
 }
 

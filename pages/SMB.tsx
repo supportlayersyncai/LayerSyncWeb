@@ -15,11 +15,11 @@ export const SMB: React.FC = () => {
             {/* Simple Hero */}
             <section className="text-center px-4 md:px-6 max-w-4xl mx-auto mb-20 md:mb-32">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-white text-4xl md:text-7xl">
+                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary text-4xl md:text-7xl">
                         Smarter Business <br />
                         <span className="text-blue-600 dark:text-blue-500">*Automation*</span>
                     </h1>
-                    <p className="sub-heading text-gray-600 dark:text-white/70 mb-8 md:mb-10 text-sm md:text-xl">
+                    <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 text-sm md:text-xl">
                         LayerSync identifies repetitive tasks in your workflow and builds custom AI agents to handle them.
                         Reduce overhead, eliminate errors, and scale without hiring.
                     </p>
@@ -42,8 +42,8 @@ export const SMB: React.FC = () => {
                             <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
                                 <Check className="w-5 h-5" />
                             </div>
-                            <h3 className={`text-xl font-bold mb-4 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>{f.title}</h3>
-                            <p className={`leading-relaxed text-sm ${safeDarkMode ? 'text-white/50' : 'text-gray-600'}`}>{f.desc}</p>
+                            <h3 className={`text-xl font-bold mb-4 ${safeDarkMode ? 'text-dark-text-primary' : 'text-gray-900'}`}>{f.title}</h3>
+                            <p className={`leading-relaxed text-sm ${safeDarkMode ? 'text-dark-text-secondary' : 'text-gray-600'}`}>{f.desc}</p>
                         </div>
                     ))}
                 </div>

@@ -38,7 +38,7 @@ export const ChatbotViz: React.FC = () => {
                             <div className="w-3 h-3 rounded-full bg-red-500" />
                             <div className="w-3 h-3 rounded-full bg-yellow-500" />
                             <div className="w-3 h-3 rounded-full bg-green-500" />
-                            <span className="ml-2 text-xs text-gray-400 dark:text-white/40 font-mono">LayerSync Agent v2.0</span>
+                            <span className="ml-2 text-xs text-gray-400 dark:text-dark-text-tertiary font-mono">LayerSync Agent v2.0</span>
                         </div>
 
                         <div className="flex-1 overflow-y-auto space-y-4 pr-2 custom-scrollbar">
@@ -51,7 +51,7 @@ export const ChatbotViz: React.FC = () => {
                                         className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
                                         <div className={`max-w-[80%] rounded-2xl p-4 text-sm leading-relaxed ${msg.sender === 'user'
-                                            ? 'bg-black/5 dark:bg-white/10 text-gray-800 dark:text-white rounded-br-none'
+                                            ? 'bg-black/5 dark:bg-white/10 text-gray-800 dark:text-dark-text-primary rounded-br-none'
                                             : 'bg-purple-600 text-white rounded-bl-none shadow-lg shadow-purple-900/20'
                                             }`}>
                                             {msg.text}
@@ -69,27 +69,27 @@ export const ChatbotViz: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="order-1 md:order-2 flex flex-col justify-center text-gray-900 dark:text-white">
+                    <div className="order-1 md:order-2 flex flex-col justify-center text-gray-900 dark:text-dark-text-primary">
                         <div className="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-8 text-purple-500 dark:text-purple-400">
                             <MessageSquare className="w-8 h-8" />
                         </div>
                         <h2 className="text-4xl md:text-5xl font-light mb-6">Automated <span className="text-purple-600 dark:text-purple-400 font-normal">*Lead Qual*</span></h2>
-                        <p className="text-lg text-gray-600 dark:text-white/60 mb-8 leading-relaxed">
+                        <p className="text-lg text-gray-600 dark:text-dark-text-secondary mb-8 leading-relaxed">
                             Never miss a lead again. Our AI agent handles inquiries via WhatsApp, SMS, and Web 24/7. It qualifies budgets, answers property questions, and syncs directly with your CRM.
                         </p>
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
                                 <div className="p-2 rounded-lg bg-green-500/10 text-green-500 mt-1"><Check className="w-4 h-4" /></div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">Instant Response</h4>
-                                    <p className="text-sm text-gray-600 dark:text-white/50">Engagement under 3 seconds drastically increases conversion.</p>
+                                    <h4 className="font-bold text-gray-900 dark:text-dark-text-primary mb-1">Instant Response</h4>
+                                    <p className="text-sm text-gray-600 dark:text-dark-text-secondary">Engagement under 3 seconds drastically increases conversion.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500 mt-1"><User className="w-4 h-4" /></div>
                                 <div>
-                                    <h4 className="font-bold text-gray-900 dark:text-white mb-1">CRM Sync</h4>
-                                    <p className="text-sm text-gray-600 dark:text-white/50">Automatically creates contacts in Follow Up Boss or HubSpot.</p>
+                                    <h4 className="font-bold text-gray-900 dark:text-dark-text-primary mb-1">CRM Sync</h4>
+                                    <p className="text-sm text-gray-600 dark:text-dark-text-secondary">Automatically creates contacts in Follow Up Boss or HubSpot.</p>
                                 </div>
                             </div>
                         </div>

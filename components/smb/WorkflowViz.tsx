@@ -13,8 +13,8 @@ export const WorkflowViz: React.FC = () => {
     return (
         <section className="relative py-20 px-6 max-w-7xl mx-auto z-20">
             <div className="text-center mb-20">
-                <h2 className="text-4xl font-light mb-6 text-gray-900 dark:text-white">The <span className="text-blue-600 dark:text-blue-500">Invisible</span> Workforce</h2>
-                <p className="sub-heading max-w-2xl mx-auto text-gray-600 dark:text-white/70">LayerSync replaces your "Busy Work" with intelligent, tireless agents that run 24/7.</p>
+                <h2 className="text-4xl font-light mb-6 text-gray-900 dark:text-dark-text-primary">The <span className="text-blue-600 dark:text-blue-500">Invisible</span> Workforce</h2>
+                <p className="sub-heading max-w-2xl mx-auto text-gray-600 dark:text-dark-text-secondary">LayerSync replaces your "Busy Work" with intelligent, tireless agents that run 24/7.</p>
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 relative">
@@ -34,8 +34,8 @@ export const WorkflowViz: React.FC = () => {
                                 {step.icon}
                             </div>
                             <div className="text-center">
-                                <div className="text-xs uppercase tracking-widest font-bold text-gray-500 dark:text-white mb-1">Step 0{i + 1}</div>
-                                <div className="text-lg text-gray-900 dark:text-white">{step.label}</div>
+                                <div className="text-xs uppercase tracking-widest font-bold text-gray-500 dark:text-dark-text-tertiary mb-1">Step 0{i + 1}</div>
+                                <div className="text-lg text-gray-900 dark:text-dark-text-primary">{step.label}</div>
                             </div>
                         </motion.div>
 
@@ -68,7 +68,7 @@ export const WorkflowViz: React.FC = () => {
             </div>
 
             <div className="mt-20 text-center">
-                <p className="text-sm opacity-50 mb-4">Zero Human Intervention Required</p>
+                <p className="text-sm text-gray-500 dark:text-dark-text-tertiary mb-4">Zero Human Intervention Required</p>
             </div>
         </section>
     );

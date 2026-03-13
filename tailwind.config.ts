@@ -62,6 +62,14 @@ const config: Config = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			'dark-text': {
+  				primary: 'hsl(var(--dark-text-primary))',
+  				secondary: 'hsl(var(--dark-text-secondary))',
+  				tertiary: 'hsl(var(--dark-text-tertiary))'
+  			},
+  			'dark-brand': {
+  				wordmark: 'hsl(var(--dark-brand-wordmark))'
   			}
   		},
   		borderRadius: {

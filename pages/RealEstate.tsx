@@ -23,11 +23,11 @@ export const RealEstate: React.FC = () => {
             </div>
 
             <section className="py-20 text-center px-6">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 mb-8 font-bold">Trusted by Top Agencies</p>
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-30 grayscale">
-                    <div className="text-xl md:text-2xl font-serif text-gray-900 dark:text-white">Sotheby's</div>
-                    <div className="text-xl md:text-2xl font-serif text-gray-900 dark:text-white">Compass</div>
-                    <div className="text-xl md:text-2xl font-serif text-gray-900 dark:text-white">RE/MAX</div>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-dark-text-tertiary mb-8 font-bold">Trusted by Top Agencies</p>
+                <div className="flex flex-wrap justify-center gap-8 md:gap-12 grayscale">
+                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">Sotheby's</div>
+                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">Compass</div>
+                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">RE/MAX</div>
                 </div>
             </section>
         </div>

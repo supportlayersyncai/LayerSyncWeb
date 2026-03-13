@@ -29,17 +29,17 @@ export const ROITable: React.FC<ROITableProps> = ({ isDarkMode }) => {
           <table className="w-full text-left border-collapse min-w-[700px]">
             <thead>
               <tr className={`border-b ${borderSubtle} bg-current opacity-[0.02]`}>
-                <th className="p-10 text-[10px] uppercase tracking-[0.4em] opacity-30">Service Layer</th>
-                <th className="p-10 text-[10px] uppercase tracking-[0.4em] opacity-30">Traditional Cost</th>
-                <th className="p-10 text-[10px] uppercase tracking-[0.4em] opacity-30 text-blue-500">LayerSync AI</th>
-                <th className="p-10 text-[10px] uppercase tracking-[0.4em] opacity-30">Savings</th>
+                <th className="p-10 text-[10px] uppercase tracking-[0.4em] text-gray-500 dark:text-dark-text-tertiary">Service Layer</th>
+                <th className="p-10 text-[10px] uppercase tracking-[0.4em] text-gray-500 dark:text-dark-text-tertiary">Traditional Cost</th>
+                <th className="p-10 text-[10px] uppercase tracking-[0.4em] text-blue-500">LayerSync AI</th>
+                <th className="p-10 text-[10px] uppercase tracking-[0.4em] text-gray-500 dark:text-dark-text-tertiary">Savings</th>
               </tr>
             </thead>
             <tbody className={`divide-y ${borderSubtle}`}>
               {marketROI.map((row, i) => (
                 <tr key={i} className="hover:bg-current hover:opacity-[0.01] transition-colors group">
-                  <td className="p-10 font-medium group-hover:text-blue-500">{row.name}</td>
-                  <td className="p-10 opacity-50">{row.traditional}</td>
+                  <td className="p-10 font-medium group-hover:text-blue-500 text-gray-900 dark:text-dark-text-primary">{row.name}</td>
+                  <td className="p-10 text-gray-500 dark:text-dark-text-tertiary">{row.traditional}</td>
                   <td className="p-10 font-bold text-blue-500">{row.layerSync}</td>
                   <td className="p-10 text-green-500 font-bold">{row.savings}</td>
                 </tr>

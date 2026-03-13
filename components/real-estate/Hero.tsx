@@ -40,11 +40,11 @@ export const RealEstateHero: React.FC = () => {
                         <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
                         AI Agency Partner
                     </motion.div>
-                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-white">
+                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
                         Automate <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Luxury Real Estate</span>
                     </h1>
-                    <p className="sub-heading text-gray-600 dark:text-white/70 mb-8 md:mb-10 max-w-2xl mx-auto">
+                    <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
                         LayerSync empowers agencies to scale with AI-driven virtual staging, automated lead qualification, and 24/7 client engagement.
                     </p>
 
@@ -57,7 +57,7 @@ export const RealEstateHero: React.FC = () => {
                 style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
             >
-                <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 dark:text-white/30 font-bold">Scroll</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-gray-400 dark:text-dark-text-tertiary font-bold">Scroll</span>
                 <div className="w-[1px] h-12 bg-gradient-to-b from-gray-400 to-transparent dark:from-white/30 dark:to-transparent" />
             </motion.div>
         </div>
