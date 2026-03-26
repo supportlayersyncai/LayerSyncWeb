@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
   return (
     <footer className={`relative py-20 border-t border-black/5 dark:border-white/5 text-center z-20`}>
       <Logo isDarkMode={isDarkMode} className="h-12 mx-auto mb-8" />
-      <p className="text-[10px] tracking-[0.4em] font-black uppercase text-gray-500 dark:text-dark-text-tertiary">© 2025 LayerSync AI • Zimbabwe Regional Launch</p>
+      <p className="text-[10px] tracking-[0.4em] font-black uppercase text-gray-500 dark:text-dark-text-tertiary">© 2025 LAYER SYNC TECHNOLGIES (PRIVATE) LIMITED</p>
     </footer>
   );
 };

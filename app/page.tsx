@@ -34,8 +34,8 @@ export default function Home() {
         </form>
       </div>
 
-      <div className="absolute bottom-8 text-xs text-gray-600 font-rajdhani tracking-[0.2em]">
-        © 2026 LAYERSYNC SYSTEMS. ALL RIGHTS RESERVED.
+      <div className="absolute bottom-8 text-xs text-gray-600 font-rajdhani tracking-[0.2em] text-center w-full">
+        © 2026 LAYER SYNC TECHNOLGIES (PRIVATE) LIMITED. ALL RIGHTS RESERVED.
       </div>
     </main>
   );
