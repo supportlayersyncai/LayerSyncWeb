@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useScroll, useMotionValueEvent, AnimatePresence, motion } from 'framer-motion';
-import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, Building2, Cpu, Globe, Phone } from 'lucide-react';
+import { Sun, Moon, Menu, X, ArrowRight, ChevronDown, Building2, Cpu, Globe, Phone, ShieldCheck } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 
@@ -38,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, setIsDarkMode }) => 
         { name: "Real Estate AI", href: "/solutions/real-estate", icon: <Building2 className="w-4 h-4" />, desc: "Virtual staging & lead gen" },
         { name: "SMB Automation", href: "/solutions/smb", icon: <Cpu className="w-4 h-4" />, desc: "Workflow & process automation" },
         { name: "Web Development", href: "/solutions/web-dev", icon: <Globe className="w-4 h-4" />, desc: "Premium digital experiences" },
+        { name: "Enterprise AI", href: "/solutions/enterprise", icon: <ShieldCheck className="w-4 h-4" />, desc: "Secure agent ecosystems" },
     ];
 
     const sectionLinks = [

@@ -15,6 +15,7 @@ import {
     Sparkles,
     Zap,
     Shield,
+    ShieldCheck,
     TrendingUp
 } from 'lucide-react';
 
@@ -73,6 +74,20 @@ export const Home: React.FC = () => {
                 { value: "3x", label: "Conversion Rate" },
                 { value: "100%", label: "Responsive" },
                 { value: "A+", label: "Performance" }
+            ]
+        },
+        {
+            title: "Enterprise AI",
+            subtitle: "Agent Orchestration • Private LLMs • Compliance",
+            desc: "Deploy highly-secure, dedicated AI agents across your organization. Transform ops, finance, HR, and sales with intelligent workflows.",
+            href: "/solutions/enterprise",
+            gradient: "from-emerald-600 to-teal-600",
+            glowColor: "emerald",
+            icon: <ShieldCheck className="w-7 h-7" />,
+            stats: [
+                { value: "10x", label: "Efficiency Gain" },
+                { value: "99.9%", label: "Uptime" },
+                { value: "SOC 2", label: "Compliant" }
             ]
         }
     ];

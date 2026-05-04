@@ -1,10 +1,14 @@
 import React from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { RealEstateHero } from '../components/real-estate/Hero';
 import { RealEstateFeatures } from '../components/real-estate/BeforeAfter';
+import { AgentPipeline } from '../components/real-estate/AgentPipeline';
+import { VirtualStagingGallery } from '../components/real-estate/VirtualStagingGallery';
+import { ListingCopyDemo } from '../components/real-estate/ListingCopyDemo';
 import { ChatbotViz } from '../components/real-estate/ChatbotViz';
-import { motion } from 'framer-motion';
-
-import { useOutletContext } from 'react-router-dom';
+import { IntegrationMap } from '../components/real-estate/IntegrationMap';
+import { RETestimonials } from '../components/real-estate/RETestimonials';
+import { ArrowRight } from 'lucide-react';
 
 export const RealEstate: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -16,20 +20,37 @@ export const RealEstate: React.FC = () => {
 
             <div className="relative">
                 <div className={`absolute top-0 left-0 w-full h-[150px] transition-colors duration-700 z-10 pointer-events-none ${safeDarkMode ? 'bg-gradient-to-b from-[#050505] to-transparent' : 'bg-gradient-to-b from-[#f5f5f7] to-transparent'}`} />
-                <div className="px-0 sm:px-6"> {/* Remove padding on mobile for full-width slider feel, keep on desktop */}
+
+                <AgentPipeline />
+
+                <div className="px-0 sm:px-6">
                     <RealEstateFeatures />
                 </div>
-                <ChatbotViz />
-            </div>
 
-            <section className="py-20 text-center px-6">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-dark-text-tertiary mb-8 font-bold">Trusted by Top Agencies</p>
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12 grayscale">
-                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">Sotheby's</div>
-                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">Compass</div>
-                    <div className="text-xl md:text-2xl font-serif text-gray-500 dark:text-dark-text-secondary">RE/MAX</div>
-                </div>
-            </section>
+                <VirtualStagingGallery />
+
+                <ListingCopyDemo />
+
+                <ChatbotViz />
+
+                <IntegrationMap />
+
+                <RETestimonials />
+
+                {/* Final CTA */}
+                <section className="relative py-20 md:py-32 px-4 md:px-6 max-w-5xl mx-auto z-20">
+                    <div className={`glass-card rounded-[40px] md:rounded-[64px] p-10 md:p-20 border text-center relative overflow-hidden ${safeDarkMode ? 'border-white/5' : 'border-black/5'}`}>
+                        <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/5 to-purple-600/10 pointer-events-none" />
+                        <div className="relative z-10">
+                            <h3 className={`hero-heading mb-8 text-shimmer`}>Ready to <span className="italic">Transform</span> Your Agency?</h3>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>Get a free AI audit and see exactly how LayerSync can automate your listings, leads, and sales pipeline.</p>
+                            <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white cursor-pointer">
+                                Request Free AI Audit <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };

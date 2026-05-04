@@ -1,53 +1,53 @@
 import React from 'react';
-import { ROICalculator } from '../components/smb/Calculator';
-import { WorkflowViz } from '../components/smb/WorkflowViz';
-import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
-
 import { useOutletContext } from 'react-router-dom';
+import { SMBHero } from '../components/smb/SMBHero';
+import { PainPoints } from '../components/smb/PainPoints';
+import { AgentShowcase } from '../components/smb/AgentShowcase';
+import { DeploymentTimeline } from '../components/smb/DeploymentTimeline';
+import { IntegrationGrid } from '../components/smb/IntegrationGrid';
+import { SMBCalculator } from '../components/smb/SMBCalculator';
+import { SMBTestimonials } from '../components/smb/SMBTestimonials';
+import { ArrowRight } from 'lucide-react';
 
 export const SMB: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
     const safeDarkMode = isDarkMode ?? true;
 
     return (
-        <div className={`min-h-screen pb-20 pt-24 md:pt-32 overflow-x-hidden transition-colors duration-700 ${safeDarkMode ? 'bg-[#050505]' : 'bg-[#f5f5f7]'}`}>
-            {/* Simple Hero */}
-            <section className="text-center px-4 md:px-6 max-w-4xl mx-auto mb-20 md:mb-32">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary text-4xl md:text-7xl">
-                        Smarter Business <br />
-                        <span className="text-blue-600 dark:text-blue-500">*Automation*</span>
-                    </h1>
-                    <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 text-sm md:text-xl">
-                        LayerSync identifies repetitive tasks in your workflow and builds custom AI agents to handle them.
-                        Reduce overhead, eliminate errors, and scale without hiring.
-                    </p>
-                </motion.div>
-            </section>
+        <div className={`min-h-screen pb-20 overflow-x-hidden transition-colors duration-700 ${safeDarkMode ? 'bg-[#050505]' : 'bg-[#f5f5f7]'}`}>
+            <SMBHero />
 
-            <WorkflowViz />
+            <div className="relative">
+                <div className={`absolute top-0 left-0 w-full h-[150px] transition-colors duration-700 z-10 pointer-events-none ${safeDarkMode ? 'bg-gradient-to-b from-[#050505] to-transparent' : 'bg-gradient-to-b from-[#f5f5f7] to-transparent'}`} />
 
-            <ROICalculator isDarkMode={safeDarkMode} />
+                <PainPoints />
 
-            {/* Features Grid */}
-            <section className="py-20 px-4 md:px-6 max-w-7xl mx-auto">
-                <div className={`grid md:grid-cols-3 gap-6 md:gap-8 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    {[
-                        { title: "No-Code Integration", desc: "Connects with Gmail, Slack, Excel, and 5,000+ apps via Zapier/Make." },
-                        { title: "100% Accuracy", desc: "AI agents don't make typos, forget deadlines, or take sick days." },
-                        { title: "Rapid Deployment", desc: "Most custom workflows are live within 48 hours of our audit." }
-                    ].map((f, i) => (
-                        <div key={i} className={`p-8 rounded-[32px] border transition-colors shadow-sm ${safeDarkMode ? 'border-white/5 bg-white/5 hover:bg-white/10 shadow-none' : 'border-black/5 bg-white hover:border-black/10'}`}>
-                            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-6">
-                                <Check className="w-5 h-5" />
-                            </div>
-                            <h3 className={`text-xl font-bold mb-4 ${safeDarkMode ? 'text-dark-text-primary' : 'text-gray-900'}`}>{f.title}</h3>
-                            <p className={`leading-relaxed text-sm ${safeDarkMode ? 'text-dark-text-secondary' : 'text-gray-600'}`}>{f.desc}</p>
-                        </div>
-                    ))}
+                <AgentShowcase />
+
+                <DeploymentTimeline />
+                
+                <IntegrationGrid />
+
+                <div className="py-20">
+                    <SMBCalculator />
                 </div>
-            </section>
+
+                <SMBTestimonials />
+
+                {/* Final CTA */}
+                <section className="relative py-20 md:py-32 px-4 md:px-6 max-w-5xl mx-auto z-20">
+                    <div className={`glass-card rounded-[40px] md:rounded-[64px] p-10 md:p-20 border text-center relative overflow-hidden ${safeDarkMode ? 'border-white/5' : 'border-black/5'}`}>
+                        <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-600/5 to-blue-600/10 pointer-events-none" />
+                        <div className="relative z-10">
+                            <h3 className={`hero-heading mb-8 text-shimmer`}>Stop Doing <span className="italic">Manual Work</span></h3>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>Get a free workflow audit and see exactly how many hours LayerSync can save your team every week.</p>
+                            <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white cursor-pointer">
+                                Request Free Workflow Audit <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };
