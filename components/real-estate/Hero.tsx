@@ -18,7 +18,7 @@ export const RealEstateHero: React.FC = () => {
     ];
 
     return (
-        <div ref={ref} className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 md:pt-0">
+        <div ref={ref} className="relative min-h-screen w-full overflow-hidden flex flex-col items-center justify-center pt-32 md:pt-40">
             <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
                 <div className={`absolute inset-0 transition-colors duration-700 ${safeDarkMode ? 'bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]' : 'bg-gradient-to-br from-gray-100 via-white to-gray-100'}`} />
                 <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-purple-600/20 rounded-full blur-[80px] md:blur-[120px] animate-float" />
@@ -26,10 +26,17 @@ export const RealEstateHero: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-60 md:h-60 bg-violet-500/10 rounded-full blur-[60px] md:blur-[80px] animate-float" style={{ animationDelay: '6s' }} />
             </motion.div>
 
-            <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto">
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto flex flex-col items-center">
+                <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 flex flex-col items-center">
+                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4">
+                        <img src="/syncrm-logo.svg" alt="SynCRM Logo" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-xl md:text-2xl font-bold tracking-wider text-[#254A32] dark:text-emerald-400">SynCRM</span>
+                </motion.div>
 
-                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
+                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
+
+                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary mt-4">
                         The Technology Layer That Powers <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Modern Agencies.</span>
                     </h1>

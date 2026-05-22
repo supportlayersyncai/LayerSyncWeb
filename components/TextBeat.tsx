@@ -48,13 +48,6 @@ export const TextBeat: React.FC<TextBeatProps> = ({ title, subtitle, scrollYProg
       }}
       className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 sm:px-12 text-center"
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        className="mb-6 sm:mb-8 py-1.5 px-4 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-medium text-gray-600 dark:text-dark-text-secondary"
-      >
-        Real Estate Intelligence
-      </motion.div>
 
       <h2
         className="hero-heading mb-6 sm:mb-10 text-shimmer select-none cursor-default break-words max-w-[100vw] px-4"
