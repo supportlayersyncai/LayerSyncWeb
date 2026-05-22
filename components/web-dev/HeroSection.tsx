@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
     isDarkMode: boolean;
@@ -16,18 +16,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
             </div>
 
             <div className="relative max-w-5xl mx-auto text-center z-10">
-                {/* Eyebrow */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="mb-8"
-                >
-                    <span className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium border ${isDarkMode ? 'bg-white/[0.03] border-white/[0.08] text-white/60' : 'bg-black/[0.02] border-black/[0.06] text-black/50'}`}>
-                        <Sparkles className="w-3.5 h-3.5" />
-                        Web Design & Website Rebuilds
-                    </span>
-                </motion.div>
+
 
                 {/* Headline */}
                 <motion.h1

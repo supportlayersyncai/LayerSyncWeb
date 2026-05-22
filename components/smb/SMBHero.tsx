@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useOutletContext } from 'react-router-dom';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const SMBHero: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -15,7 +15,7 @@ export const SMBHero: React.FC = () => {
     ];
 
     return (
-        <div className="relative h-[90vh] md:h-[85vh] w-full overflow-hidden flex items-center justify-center pt-20 md:pt-0">
+        <div className="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-20 md:pt-0">
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <div className={`absolute inset-0 transition-colors duration-700 ${safeDarkMode ? 'bg-gradient-to-br from-[#0a1628] via-[#0d1f3c] to-[#091a30]' : 'bg-gradient-to-br from-blue-50 via-white to-cyan-50'}`} />
@@ -26,11 +26,7 @@ export const SMBHero: React.FC = () => {
 
             <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto">
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
-                        className="inline-flex items-center gap-2 mb-6 py-2 px-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold"
-                    >
-                        <Zap className="w-3 h-3" /> Workflow Intelligence
-                    </motion.div>
+
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
                         Smarter Business <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 dark:from-blue-400 dark:via-cyan-400 dark:to-blue-400 animate-gradient-x">Automation</span>
