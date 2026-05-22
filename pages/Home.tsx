@@ -123,14 +123,14 @@ export const Home: React.FC = () => {
 
                     <TextBeat
                         title="95% Cost *Savings*"
-                        subtitle="Virtual staging for $2 instead of $500. Listing copy for $5 instead of $50. Enterprise-grade AI at startup prices."
+                        subtitle="Automate manual admin workflows for pennies on the dollar. Eliminate operational bottlenecks and access enterprise-grade AI capabilities without the enterprise overhead."
                         scrollYProgress={localScrollYProgress}
                         range={[0.25, 0.45]}
                     />
 
                     <TextBeat
                         title="24/7 *Growth*"
-                        subtitle="Capture leads while you sleep. Our AI agents qualify prospects, book meetings, and sync with your CRM — automatically."
+                        subtitle="Scale your output without scaling headcount. Our intelligent agents handle operations, customer engagement, and data sync — working flawlessly around the clock."
                         scrollYProgress={localScrollYProgress}
                         range={[0.5, 0.7]}
                     />

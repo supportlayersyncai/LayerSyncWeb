@@ -12,22 +12,19 @@ export const WhoIsItFor: React.FC = () => {
             title: "Enterprises",
             icon: <Building className="w-8 h-8" />,
             desc: "Mid-to-large organisations (100+ staff) that have rolled out AI licences company-wide and need to drive adoption across departments.",
-            entryPoint: "Executive Track + 2–3 department tracks",
-            investment: "$15K–$60K depending on scope"
+            entryPoint: "Executive Track + 2–3 department tracks"
         },
         {
             title: "Growing SMEs",
             icon: <Layers className="w-8 h-8" />,
             desc: "Businesses scaling past 25 staff that want to embed AI literacy into their culture before bad habits set in.",
-            entryPoint: "Condensed cross-functional programme",
-            investment: "$5K–$15K"
+            entryPoint: "Condensed cross-functional programme"
         },
         {
             title: "Professional Services Firms",
             icon: <Scale className="w-8 h-8" />,
             desc: "Law firms, accounting practices, consultancies, and agencies whose entire output is knowledge work — and where AI fluency directly translates to billable hours saved.",
-            entryPoint: "Department-specific deep dive",
-            investment: "$8K–$25K"
+            entryPoint: "Department-specific deep dive"
         }
     ];
 
@@ -63,7 +60,6 @@ export const WhoIsItFor: React.FC = () => {
                             </p>
                             <div className="space-y-3 pt-6 border-t border-gray-200 dark:border-white/10">
                                 <p className="text-xs text-gray-500 dark:text-gray-400"><span className="font-bold uppercase tracking-widest">Typical Entry Point:</span><br/><span className="text-gray-900 dark:text-white mt-1 block">{a.entryPoint}</span></p>
-                                <p className="text-xs text-gray-500 dark:text-gray-400"><span className="font-bold uppercase tracking-widest">Typical Investment:</span><br/><span className="text-indigo-600 dark:text-indigo-400 font-semibold mt-1 block">{a.investment}</span></p>
                             </div>
                         </motion.div>
                     ))}

@@ -41,6 +41,16 @@ export const ProblemGap: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="mb-10 w-full max-w-[300px] aspect-square rounded-[32px] overflow-hidden shadow-2xl shadow-indigo-500/20"
+                        >
+                            <img src="/academy-brain.png" alt="Abstract AI Brain Mesh" className="w-full h-full object-cover mix-blend-screen opacity-90" />
+                        </motion.div>
+
                         <h2 className="text-3xl md:text-5xl font-light mb-8 text-gray-900 dark:text-dark-text-primary leading-tight">
                             The Real AI Gap Isn’t Tools. <br/>
                             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400">It’s Confidence.</span>

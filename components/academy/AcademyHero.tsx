@@ -9,8 +9,8 @@ export const AcademyHero: React.FC = () => {
 
     const stats = [
         { value: "7", label: "Department Tracks" },
-        { value: "8-Week", label: "Programmes" },
-        { value: "100%", label: "Practical" },
+        { value: "1-2 Day", label: "Literacy Workshops" },
+        { value: "8-Week", label: "Intensive Programmes" },
         { value: "90-Day", label: "Embedded Support" },
     ];
 
@@ -25,11 +25,11 @@ export const AcademyHero: React.FC = () => {
             </div>
 
             <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto">
-                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-4xl mx-auto">
                     
-                    <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
-                        Make AI a Skill Your <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 dark:from-indigo-400 dark:via-violet-400 dark:to-indigo-400 animate-gradient-x">Whole Organisation Owns.</span>
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-light mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary leading-tight md:leading-[1.1]">
+                        Make AI a Skill Your{' '}
+                        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 dark:from-indigo-400 dark:via-violet-400 dark:to-indigo-400 animate-gradient-x inline-block">Whole Organisation Owns.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
                         Most companies buy AI tools and hope their teams figure it out. We train your people — department by department — to use AI confidently in the workflows they actually run. From the executive floor to the frontline. On-site, virtual, or hybrid.
