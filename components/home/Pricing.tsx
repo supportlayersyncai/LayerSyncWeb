@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Phone, Sparkles } from 'lucide-react';
+import { Check, Phone, Sparkles, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface PricingProps {
     isDarkMode: boolean;
@@ -106,6 +107,22 @@ export const Pricing: React.FC<PricingProps> = ({ isDarkMode }) => {
                     </motion.div>
                 ))}
             </div>
+
+            {/* Sync Academy Cross-Sell Banner */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`mt-10 p-6 md:p-8 rounded-[24px] md:rounded-[32px] glass-card border border-indigo-500/20 bg-indigo-500/5 hover:border-indigo-500/40 transition-colors flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left`}
+            >
+                <div>
+                    <h3 className="text-xl md:text-2xl font-light mb-2 text-gray-900 dark:text-white">Need to train your team to use any of the above?</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">Sync Academy delivers AI fluency training for every department.</p>
+                </div>
+                <Link to="/solutions/academy" className="btn-glow px-6 py-3 rounded-full font-bold uppercase tracking-widest text-[10px] bg-indigo-600 text-white flex items-center justify-center gap-3 flex-shrink-0 whitespace-nowrap hover:bg-indigo-700">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+            </motion.div>
         </section>
     );
 };

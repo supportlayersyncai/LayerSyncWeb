@@ -16,7 +16,8 @@ import {
     Zap,
     Shield,
     ShieldCheck,
-    TrendingUp
+    TrendingUp,
+    GraduationCap
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -77,6 +78,20 @@ export const Home: React.FC = () => {
             ]
         },
         {
+            title: "Sync Academy",
+            subtitle: "Executive Strategy • Department Tracks • Embedded Support",
+            desc: "AI training that turns your whole organisation into operators. Seven department tracks, hands-on workflow-based sessions, and 90 days of embedded reinforcement. Built by the team that ships AI systems for clients.",
+            href: "/solutions/academy",
+            gradient: "from-indigo-600 to-violet-600",
+            glowColor: "indigo",
+            icon: <GraduationCap className="w-7 h-7" />,
+            stats: [
+                { value: "7", label: "Tracks" },
+                { value: "8", label: "Weeks" },
+                { value: "90-Day", label: "Support" }
+            ]
+        },
+        {
             title: "Enterprise AI",
             subtitle: "Agent Orchestration • Private LLMs • Compliance",
             desc: "Deploy highly-secure, dedicated AI agents across your organization. Transform ops, finance, HR, and sales with intelligent workflows.",
@@ -122,9 +137,16 @@ export const Home: React.FC = () => {
 
                     <TextBeat
                         title="Systematic *Sync*"
-                        subtitle="Three verticals. One partner. We architect custom AI ecosystems that layer perfectly over your existing stack."
+                        subtitle="Five verticals. One partner. We architect custom AI ecosystems that layer perfectly over your existing stack."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.75, 0.95]}
+                        range={[0.75, 0.85]}
+                    />
+
+                    <TextBeat
+                        title="Sync *Academy*"
+                        subtitle="Make AI a skill your whole organisation owns. Department-specific curriculum, hands-on sessions, and 90 days of embedded support."
+                        scrollYProgress={localScrollYProgress}
+                        range={[0.85, 0.95]}
                     />
 
                     <motion.div style={{ opacity: indicatorOpacity }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
@@ -152,10 +174,10 @@ export const Home: React.FC = () => {
                                     <Sparkles className="w-3 h-3" /> Our Solutions
                                 </div>
                                 <h2 className="hero-heading mb-6 text-shimmer">
-                                    Three Verticals. <br className="hidden md:block" />One *Partner*.
+                                    Five Verticals. <br className="hidden md:block" />One *Partner*.
                                 </h2>
                                 <p className="sub-heading max-w-xl">
-                                    Choose the transformation that fits your business. Each solution is a complete AI ecosystem, built to scale.
+                                    Every business is different. Choose the vertical that fits — or combine them. From building AI systems to training your team to use them, we cover the full stack of organisational AI.
                                 </p>
                             </motion.div>
                             <motion.div
@@ -264,7 +286,8 @@ export const Home: React.FC = () => {
                             {[
                                 { icon: <Zap className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
                                 { icon: <Shield className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
-                                { icon: <TrendingUp className="w-6 h-6" />, title: "Measurable ROI", desc: "Every deployment includes a custom ROI dashboard. If we don't save you money, we work for free.", color: "text-blue-400", bg: "bg-blue-500/10" }
+                                { icon: <TrendingUp className="w-6 h-6" />, title: "Measurable ROI", desc: "Every deployment includes a custom ROI dashboard. If we don't save you money, we work for free.", color: "text-blue-400", bg: "bg-blue-500/10" },
+                                { icon: <GraduationCap className="w-6 h-6" />, title: "Build and Train", desc: "Most agencies ship AI and leave. Most trainers teach AI but cannot ship it. We do both — so the systems we deploy and the people who use them grow together.", color: "text-indigo-400", bg: "bg-indigo-500/10" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
