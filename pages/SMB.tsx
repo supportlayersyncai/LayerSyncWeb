@@ -39,8 +39,8 @@ export const SMB: React.FC = () => {
                     <div className={`glass-card rounded-[40px] md:rounded-[64px] p-10 md:p-20 border text-center relative overflow-hidden ${safeDarkMode ? 'border-white/5' : 'border-black/5'}`}>
                         <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-600/5 to-blue-600/10 pointer-events-none" />
                         <div className="relative z-10">
-                            <h3 className={`hero-heading mb-8 text-shimmer`}>Stop Doing <span className="italic">Manual Work</span></h3>
-                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>Get a free workflow audit and see exactly how many hours LayerSync can save your team every week.</p>
+                            <h3 className={`hero-heading mb-8 text-shimmer`}>Stop Paying Humans to Do <span className="italic">Machine Work.</span></h3>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>A free workflow audit takes 30 minutes. We will show you exactly which tasks AI can take over, how many hours per week you recover, and what the cost savings look like over 12 months. No commitment required.</p>
                             <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white cursor-pointer">
                                 Request Free Workflow Audit <ArrowRight className="w-4 h-4" />
                             </button>

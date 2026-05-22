@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useOutletContext } from 'react-router-dom';
-import { Mail, Calendar, FileSpreadsheet, Database, CreditCard, MessageSquare } from 'lucide-react';
+import { Mail, Calendar, FileSpreadsheet, Database, CreditCard, MessageSquare, MessageCircle } from 'lucide-react';
 
 const agents = [
     {
@@ -57,6 +57,15 @@ const agents = [
         bg: "bg-indigo-500/10",
         text: "text-indigo-500",
         workflow: ["Usage Drop", "AI Personalization", "Outreach"]
+    },
+    {
+        icon: <MessageCircle className="w-6 h-6" />,
+        title: "WhatsApp Business Agent",
+        desc: "Handles customer enquiries, price requests, order confirmations, and follow-ups on WhatsApp — the communication channel your customers already use every day.",
+        color: "from-green-600 to-emerald-600",
+        bg: "bg-green-500/10",
+        text: "text-green-500",
+        workflow: ["WhatsApp Msg", "AI Triage", "Instant Reply"]
     }
 ];
 
@@ -68,7 +77,7 @@ export const AgentShowcase: React.FC = () => {
         <section className="relative py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto z-20">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16 md:mb-24">
                 <h2 className={`hero-heading mb-6 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    Meet Your New <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400">Digital Employees</span>
+                    Meet Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400">AI Workforce.</span>
                 </h2>
                 <p className={`sub-heading max-w-2xl mx-auto ${safeDarkMode ? 'text-white/60' : 'text-gray-600'}`}>
                     Custom-built agents designed to execute specific workflows flawlessly.

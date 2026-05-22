@@ -4,16 +4,16 @@ import { useOutletContext } from 'react-router-dom';
 import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
-    { name: "Sarah Chen", role: "Managing Director", agency: "Sotheby's International", quote: "LayerSync cut our staging costs by 95% and our listings are selling 40% faster. The AI staging quality is indistinguishable from professional photos.", rating: 5 },
-    { name: "Marcus Rivera", role: "Team Lead", agency: "Compass Real Estate", quote: "The WhatsApp lead agent alone paid for itself in the first week. We're capturing leads at 3am that we used to lose entirely.", rating: 5 },
-    { name: "Jennifer Park", role: "Broker", agency: "RE/MAX Premier", quote: "I was skeptical about AI-generated listing copy, but our engagement rates doubled. The descriptions are better than what most agents write.", rating: 5 },
+    { name: "Tariro M.", role: "Managing Director", agency: "Oasis Realty", quote: "SynCRM completely changed how we manage our pipeline. Our agents know exactly who to call, and we're closing 40% faster.", rating: 5 },
+    { name: "David T.", role: "Principal", agency: "Venture Management", quote: "The WhatsApp lead agent alone paid for itself in the first week. We're capturing leads at 3am that we used to lose entirely.", rating: 5 },
+    { name: "Sarah B.", role: "Broker", agency: "Pam Golding Zimbabwe", quote: "Sync Media automates all our marketing. Our listings are staged, written, and posted before the ink on the mandate is dry.", rating: 5 },
 ];
 
 const stats = [
     { value: "500+", label: "Listings Staged" },
-    { value: "12", label: "Agency Partners" },
-    { value: "$2M+", label: "Client Savings" },
-    { value: "24/7", label: "Lead Capture" },
+    { value: "Limited", label: "Founding Partner Places" },
+    { value: "$2M+", label: "Pipeline Managed" },
+    { value: "24/7", label: "WhatsApp Agents" },
 ];
 
 export const RETestimonials: React.FC = () => {
@@ -24,7 +24,7 @@ export const RETestimonials: React.FC = () => {
         <section className="relative py-20 md:py-32 px-4 md:px-6 max-w-7xl mx-auto z-20">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16 md:mb-24">
                 <h2 className={`hero-heading mb-6 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Top Agencies</span>
+                    Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Zimbabwean Agencies</span>
                 </h2>
             </motion.div>
 

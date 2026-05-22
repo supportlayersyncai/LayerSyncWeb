@@ -12,35 +12,35 @@ export const Pricing: React.FC<PricingProps> = ({ isDarkMode }) => {
 
     const packages = [
         {
-            name: "Lead Management System",
+            name: "Growth Engine",
             tagline: "Capture. Qualify. Convert.",
             icon: "📡",
             features: [
                 "AI Chatbot (WhatsApp, Web & SMS)",
                 "Automated Lead Qualification",
-                "CRM Auto-Sync (HubSpot, Salesforce)",
+                "CRM Auto-Sync (SynCRM, HubSpot, Salesforce)",
                 "Smart Appointment Scheduling",
-                "Lead Scoring & Prioritization",
+                "Lead Scoring & Prioritisation",
                 "Monthly Performance Reports"
             ]
         },
         {
-            name: "Content Creation System",
+            name: "Content Engine",
             tagline: "Create. Distribute. Dominate.",
             icon: "✨",
             popular: true,
             features: [
-                "AI Virtual Staging (Unlimited)",
-                "Automated Listing Descriptions",
+                "AI Content Generation (Unlimited)",
+                "Automated Marketing Copy",
                 "Social Media Content Packs",
                 "AI Video Marketing (Reels & Tours)",
                 "Multi-Channel Distribution",
-                "Brand Voice Customization",
-                "SEO-Optimized Blog Generation"
+                "Brand Voice Customisation",
+                "SEO-Optimised Blog Generation"
             ]
         },
         {
-            name: "Digital Transformation",
+            name: "Operations Engine",
             tagline: "Automate. Scale. Evolve.",
             icon: "🚀",
             features: [
@@ -67,7 +67,7 @@ export const Pricing: React.FC<PricingProps> = ({ isDarkMode }) => {
                     <Sparkles className="w-3 h-3" /> Solutions
                 </div>
                 <h2 className="hero-heading mb-6">Our *Systems*</h2>
-                <p className="sub-heading max-w-2xl mx-auto text-gray-600 dark:text-dark-text-secondary">Tailored AI systems designed around your business needs. No one-size-fits-all. No hidden fees.</p>
+                <p className="sub-heading max-w-2xl mx-auto text-gray-600 dark:text-dark-text-secondary">Tailored AI systems designed around your business. Whether you are a real estate agency, a growing SME, or a large enterprise — we build the system that fits.</p>
             </motion.div>
             <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
                 {packages.map((p, i) => (

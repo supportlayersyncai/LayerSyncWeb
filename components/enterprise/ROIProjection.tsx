@@ -9,7 +9,7 @@ export const EnterpriseROI: React.FC = () => {
 
     const [departments, setDepartments] = useState(5);
     const [employees, setEmployees] = useState(500);
-    const [avgSalary, setAvgSalary] = useState(85000);
+    const [avgSalary, setAvgSalary] = useState(15000);
 
     // Calculations based on 25% efficiency gain
     const totalPayroll = employees * avgSalary;
@@ -56,10 +56,10 @@ export const EnterpriseROI: React.FC = () => {
 
                             <div>
                                 <div className="flex justify-between mb-2">
-                                    <label className={`text-sm font-bold ${safeDarkMode ? 'text-white/80' : 'text-gray-700'}`}>Average Annual Salary</label>
+                                    <label className={`text-sm font-bold ${safeDarkMode ? 'text-white/80' : 'text-gray-700'}`}>Average Annual Salary (USD)</label>
                                     <span className={`text-sm font-bold ${safeDarkMode ? 'text-emerald-400' : 'text-emerald-600'}`}>${avgSalary.toLocaleString()}</span>
                                 </div>
-                                <input type="range" min="40000" max="200000" step="5000" value={avgSalary} onChange={(e) => setAvgSalary(Number(e.target.value))} className="w-full accent-emerald-500" />
+                                <input type="range" min="5000" max="60000" step="1000" value={avgSalary} onChange={(e) => setAvgSalary(Number(e.target.value))} className="w-full accent-emerald-500" />
                             </div>
                         </div>
                     </div>

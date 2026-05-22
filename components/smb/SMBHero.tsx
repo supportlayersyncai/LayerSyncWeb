@@ -28,11 +28,11 @@ export const SMBHero: React.FC = () => {
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
 
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
-                        Smarter Business <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 dark:from-blue-400 dark:via-cyan-400 dark:to-blue-400 animate-gradient-x">Automation</span>
+                        Your Business, <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 dark:from-blue-400 dark:via-cyan-400 dark:to-blue-400 animate-gradient-x">Running Itself.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
-                        LayerSync identifies repetitive tasks in your workflow and builds custom AI agents to handle them. Reduce overhead, eliminate errors, and scale without hiring.
+                        LayerSync identifies the manual tasks that are eating your team's time and builds custom AI agents to handle them permanently. Reduce overhead, eliminate errors, and scale your business without scaling your headcount.
                     </p>
 
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mb-12 md:mb-16">

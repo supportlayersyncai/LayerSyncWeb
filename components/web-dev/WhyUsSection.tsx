@@ -35,7 +35,7 @@ const differentiators = [
     {
         icon: Compass,
         title: 'Future-Facing Positioning',
-        desc: 'We build websites that position your business ahead of its market, not behind the curve.',
+        desc: 'We build websites that position your business ahead of the curve — and we do it with an understanding of the Southern African market that no offshore agency can match.',
     },
 ];
 

@@ -17,7 +17,8 @@ import {
     Shield,
     ShieldCheck,
     TrendingUp,
-    GraduationCap
+    GraduationCap,
+    MapPin
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -36,23 +37,23 @@ export const Home: React.FC = () => {
 
     const solutions = [
         {
-            title: "Real Estate AI",
-            subtitle: "Virtual Staging • Lead Qualification • CRM Sync",
-            desc: "Transform empty listings into furnished dream homes. Qualify leads 24/7 on WhatsApp. Close faster.",
+            title: "Sync Estate",
+            subtitle: "SynCRM • Sync Media • Property Management",
+            desc: "A fully integrated technology ecosystem for real estate agencies — CRM, marketing automation, property management, and AI tools. Purpose-built for the way Zimbabwean agencies actually work.",
             href: "/solutions/real-estate",
             gradient: "from-purple-600 to-pink-600",
             glowColor: "purple",
             icon: <Building2 className="w-7 h-7" />,
             stats: [
-                { value: "98%", label: "Cost Reduction" },
-                { value: "40%", label: "Faster Sales" },
-                { value: "24/7", label: "Lead Capture" }
+                { value: "40%", label: "Faster Closings" },
+                { value: "24/7", label: "Lead Capture" },
+                { value: "1", label: "System" }
             ]
         },
         {
             title: "SMB Automation",
             subtitle: "Workflow Agents • ROI Recovery • Zero-Code",
-            desc: "Identify and eliminate manual bottlenecks. Our AI agents handle admin, invoicing, and scheduling autonomously.",
+            desc: "Replace repetitive manual work with AI agents that never clock out. Admin, invoicing, scheduling, and follow-ups — handled. Your team focuses on growth, not grinding.",
             href: "/solutions/smb",
             gradient: "from-blue-600 to-cyan-600",
             glowColor: "blue",
@@ -66,7 +67,7 @@ export const Home: React.FC = () => {
         {
             title: "Web Development",
             subtitle: "Immersive Portals • 3D Experiences • Conversion",
-            desc: "We engineer premium digital platforms that don't just look stunning — they convert visitors into customers.",
+            desc: "High-performance websites and portals, engineered for conversion and built to grow with your business. From startup landing pages to enterprise-grade digital platforms.",
             href: "/solutions/web-dev",
             gradient: "from-cyan-600 to-emerald-600",
             glowColor: "cyan",
@@ -94,7 +95,7 @@ export const Home: React.FC = () => {
         {
             title: "Enterprise AI",
             subtitle: "Agent Orchestration • Private LLMs • Compliance",
-            desc: "Deploy highly-secure, dedicated AI agents across your organization. Transform ops, finance, HR, and sales with intelligent workflows.",
+            desc: "Private, compliant AI infrastructure deployed across your entire organisation — operations, finance, HR, and sales. Built for enterprises that need security, scale, and measurable outcomes. SOC 2. 99.9% uptime. Zero compromise.",
             href: "/solutions/enterprise",
             gradient: "from-emerald-600 to-teal-600",
             glowColor: "emerald",
@@ -116,37 +117,44 @@ export const Home: React.FC = () => {
 
                     <TextBeat
                         title="Synchronized *Intelligence*"
-                        subtitle="We layer AI into your business operations — automating what's manual, scaling what's human, and building what's next."
+                        subtitle="We layer AI into your operations — automating the manual, scaling the human, and building what comes next. For real estate agencies, SMEs, and enterprises across Zimbabwe and the region."
                         scrollYProgress={localScrollYProgress}
-                        range={[0, 0.2]}
+                        range={[0, 0.15]}
                     />
 
                     <TextBeat
-                        title="95% Cost *Savings*"
-                        subtitle="Automate manual admin workflows for pennies on the dollar. Eliminate operational bottlenecks and access enterprise-grade AI capabilities without the enterprise overhead."
+                        title="The CRM That *Closes Deals.*"
+                        subtitle="SynCRM brings your leads, agents, listings, and pipeline into one system — purpose-built for real estate agencies in Zimbabwe. Capture more. Convert faster. Manage smarter."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.25, 0.45]}
+                        range={[0.18, 0.33]}
                     />
 
                     <TextBeat
-                        title="24/7 *Growth*"
-                        subtitle="Scale your output without scaling headcount. Our intelligent agents handle operations, customer engagement, and data sync — working flawlessly around the clock."
+                        title="Your Business, *Running Itself.*"
+                        subtitle="Reclaim the 20 hours a week your team spends on admin, invoicing, and follow-ups. Our AI agents handle the repetitive work so your people can focus on the work that actually grows your business."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.5, 0.7]}
+                        range={[0.36, 0.51]}
                     />
 
                     <TextBeat
-                        title="Systematic *Sync*"
-                        subtitle="Five verticals. One partner. We architect custom AI ecosystems that layer perfectly over your existing stack."
+                        title="Built to *Convert.* Engineered to Last."
+                        subtitle="High-performance websites and digital platforms — engineered for conversion, built with modern technology, and designed to make your business impossible to ignore."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.75, 0.85]}
+                        range={[0.54, 0.69]}
+                    />
+
+                    <TextBeat
+                        title="Organisation-Wide AI. *Privately Deployed.*"
+                        subtitle="Private LLMs, secure agent orchestration, and compliance-ready infrastructure — deployed across your operations, finance, HR, and sales functions. Built for organisations that cannot afford to fall behind."
+                        scrollYProgress={localScrollYProgress}
+                        range={[0.72, 0.87]}
                     />
 
                     <TextBeat
                         title="Sync *Academy*"
                         subtitle="Make AI a skill your whole organisation owns. Department-specific curriculum, hands-on sessions, and 90 days of embedded support."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.85, 0.95]}
+                        range={[0.88, 0.95]}
                     />
 
                     <motion.div style={{ opacity: indicatorOpacity }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
@@ -177,7 +185,7 @@ export const Home: React.FC = () => {
                                     Five Verticals. <br className="hidden md:block" />One *Partner*.
                                 </h2>
                                 <p className="sub-heading max-w-xl">
-                                    Every business is different. Choose the vertical that fits — or combine them. From building AI systems to training your team to use them, we cover the full stack of organisational AI.
+                                    Every business is different. Choose the vertical that fits — or combine them. Each solution is a purpose-built AI ecosystem designed to compound your competitive advantage.
                                 </p>
                             </motion.div>
                             <motion.div
@@ -282,12 +290,12 @@ export const Home: React.FC = () => {
                                 <p className="sub-heading max-w-xl ml-auto">We don't just build tools. We engineer complete AI ecosystems that compound your competitive advantage.</p>
                             </motion.div>
                         </div>
-                        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                             {[
                                 { icon: <Zap className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
                                 { icon: <Shield className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
-                                { icon: <TrendingUp className="w-6 h-6" />, title: "Measurable ROI", desc: "Every deployment includes a custom ROI dashboard. If we don't save you money, we work for free.", color: "text-blue-400", bg: "bg-blue-500/10" },
-                                { icon: <GraduationCap className="w-6 h-6" />, title: "Build and Train", desc: "Most agencies ship AI and leave. Most trainers teach AI but cannot ship it. We do both — so the systems we deploy and the people who use them grow together.", color: "text-indigo-400", bg: "bg-indigo-500/10" }
+                                { icon: <TrendingUp className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we do.", color: "text-blue-400", bg: "bg-blue-500/10" },
+                                { icon: <MapPin className="w-6 h-6" />, title: "Built for African Markets", desc: "We understand local compliance, ZiG pricing, WhatsApp-first communication, and the realities of doing business in Zimbabwe and across Southern Africa. No global competitor can say the same.", color: "text-orange-400", bg: "bg-orange-500/10" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -367,11 +375,11 @@ export const Home: React.FC = () => {
                         <div className={`ambient-glow absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-cyan-600/10 pointer-events-none`} />
                         <div className="relative z-10">
                             <h3 className="hero-heading mb-8 md:mb-16 text-shimmer leading-[1.1]">Ready to *Sync*?</h3>
-                            <p className="sub-heading mb-12 md:mb-20 max-w-3xl mx-auto">We are accepting a limited number of partners for our early program. Secure your free AI audit today.</p>
+                            <p className="sub-heading mb-12 md:mb-20 max-w-3xl mx-auto">Most businesses lose 30 to 40 percent of their team's productive time to tasks AI can handle today. A free AI audit takes 30 minutes and tells you exactly where the waste is.</p>
                             <button className={`btn-glow px-10 md:px-16 py-5 md:py-6 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm shadow-2xl inline-flex items-center gap-4 bg-black text-white dark:bg-white dark:text-black`}>
-                                Request AI Audit <ArrowRight className="w-5 h-5" />
+                                Request Your Free AI Audit <ArrowRight className="w-5 h-5" />
                             </button>
-                            <p className="mt-10 md:mt-12 text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">Limited Onboarding Slots Available</p>
+                            <p className="mt-10 md:mt-12 text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">No commitment. 30-minute session. Results delivered within 48 hours.</p>
                         </div>
                     </motion.div>
                 </section>

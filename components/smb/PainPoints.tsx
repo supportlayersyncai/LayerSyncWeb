@@ -23,7 +23,7 @@ export const PainPoints: React.FC = () => {
                     The <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Manual Work</span> Problem
                 </h2>
                 <p className={`sub-heading max-w-2xl mx-auto ${safeDarkMode ? 'text-white/60' : 'text-gray-600'}`}>
-                    Your team spends 19.5 hours per week on tasks that AI can handle flawlessly.
+                    Your team is spending nearly 20 hours a week on work that should not require a human.
                 </p>
             </motion.div>
 

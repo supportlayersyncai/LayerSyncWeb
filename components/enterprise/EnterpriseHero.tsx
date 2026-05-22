@@ -30,11 +30,11 @@ export const EnterpriseHero: React.FC = () => {
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
 
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
-                        AI-Native <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 dark:from-emerald-400 dark:via-teal-400 dark:to-emerald-400 animate-gradient-x">Enterprise</span>
+                        Organisation-Wide AI. <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 dark:from-emerald-400 dark:via-teal-400 dark:to-emerald-400 animate-gradient-x">Privately Deployed.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
-                        Deploy private, highly-secure AI agents across your organization. Transform operations, finance, HR, and sales with dedicated intelligent workflows.
+                        Deploy private, highly-secure AI across your entire organisation — operations, finance, HR, and sales. Built for the security, compliance, and scale requirements of African enterprises.
                     </p>
 
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mb-12 md:mb-16">

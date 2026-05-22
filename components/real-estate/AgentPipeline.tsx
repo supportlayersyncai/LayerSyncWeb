@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useOutletContext } from 'react-router-dom';
-import { Upload, Paintbrush, FileText, Share2, UserCheck, Database } from 'lucide-react';
+import { Upload, UserCheck, Layers, Share2, MessageSquare, BarChart3 } from 'lucide-react';
 
 const steps = [
-    { icon: <Upload className="w-6 h-6" />, title: "Listing Ingestion", desc: "Property photos, floor plans, and MLS data are automatically imported into our AI pipeline.", color: "from-purple-600 to-purple-400", glow: "purple" },
-    { icon: <Paintbrush className="w-6 h-6" />, title: "AI Virtual Staging", desc: "Empty rooms are furnished with photorealistic AI staging in seconds — any style, any room.", color: "from-pink-600 to-pink-400", glow: "pink" },
-    { icon: <FileText className="w-6 h-6" />, title: "Listing Copy Generation", desc: "Compelling property descriptions crafted by AI, optimized for engagement and SEO.", color: "from-violet-600 to-violet-400", glow: "violet" },
-    { icon: <Share2 className="w-6 h-6" />, title: "Multi-Channel Distribution", desc: "Listings published simultaneously across MLS, Zillow, social media, and your website.", color: "from-blue-600 to-blue-400", glow: "blue" },
-    { icon: <UserCheck className="w-6 h-6" />, title: "Lead Qualification", desc: "AI agents engage prospects 24/7 via WhatsApp, SMS, and web chat — qualifying budgets and booking viewings.", color: "from-cyan-600 to-cyan-400", glow: "cyan" },
-    { icon: <Database className="w-6 h-6" />, title: "CRM Sync", desc: "Qualified leads, interactions, and appointments sync instantly to Follow Up Boss, HubSpot, or your CRM.", color: "from-emerald-600 to-emerald-400", glow: "emerald" },
+    { icon: <Upload className="w-6 h-6" />, title: "Lead Capture", desc: "Every enquiry — from WhatsApp, your website, property portals, or walk-ins — is automatically captured into SynCRM with source tracking.", color: "from-purple-600 to-purple-400", glow: "purple" },
+    { icon: <UserCheck className="w-6 h-6" />, title: "Intelligent Lead Qualification", desc: "SynCRM’s AI Copilot qualifies each lead against budget, location preference, and property type — and tells your agents exactly who to call first.", color: "from-pink-600 to-pink-400", glow: "pink" },
+    { icon: <Layers className="w-6 h-6" />, title: "Property Matching", desc: "SynCRM automatically surfaces the right listings for each qualified lead based on their preferences — no manual searching required.", color: "from-violet-600 to-violet-400", glow: "violet" },
+    { icon: <Share2 className="w-6 h-6" />, title: "Sync Media — Automated Marketing", desc: "New listings automatically generate listing flyers, social posts, and campaigns. Distributed to Facebook, Instagram, WhatsApp Business, and your website.", color: "from-blue-600 to-blue-400", glow: "blue" },
+    { icon: <MessageSquare className="w-6 h-6" />, title: "24/7 WhatsApp Agent", desc: "Our AI engages enquiries on WhatsApp at any hour — answering questions, scheduling viewings, and syncing confirmed appointments back into SynCRM automatically.", color: "from-cyan-600 to-cyan-400", glow: "cyan" },
+    { icon: <BarChart3 className="w-6 h-6" />, title: "Pipeline & Performance Dashboards", desc: "Principals and managers get real-time visibility into lead volumes, agent activity, pipeline health, and conversion rates — from any device.", color: "from-emerald-600 to-emerald-400", glow: "emerald" },
 ];
 
 export const AgentPipeline: React.FC = () => {
@@ -29,10 +29,10 @@ export const AgentPipeline: React.FC = () => {
                     End-to-End Automation
                 </div>
                 <h2 className={`hero-heading mb-6 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    How Our AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Agents Work</span>
+                    How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Sync Estate Works</span>
                 </h2>
                 <p className={`sub-heading max-w-2xl mx-auto ${safeDarkMode ? 'text-white/60' : 'text-gray-600'}`}>
-                    From listing upload to closed deal — every step is automated, intelligent, and synchronized.
+                    From first enquiry to closed deal — every step is automated, intelligent, and synchronized.
                 </p>
             </motion.div>
 

@@ -16,8 +16,8 @@ export const HowItWorks: React.FC = () => {
         {
             num: "02",
             title: "Live Training",
-            desc: "Hands-on sessions per department, delivered on-site or virtually. Every exercise uses your real data, your real workflows, and your real tools. Participants leave each session with completed deliverables — prompt libraries, saved automations, or working agents — not just notes.",
-            timeline: "4–6 weeks depending on scope"
+            desc: "Hands-on sessions delivered on-site or virtually. We offer a 1-2 day AI Literacy Workshop for rapid onboarding and familiarization, or an 8-week intensive programme for deep departmental integration. Every exercise uses your real data and real tools.",
+            timeline: "1-2 Days or 8 Weeks"
         },
         {
             num: "03",

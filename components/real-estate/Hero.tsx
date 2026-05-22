@@ -12,10 +12,9 @@ export const RealEstateHero: React.FC = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
 
     const stats = [
-        { value: "98%", label: "Cost Reduction" },
-        { value: "40%", label: "Faster Sales" },
+        { value: "40%", label: "Faster Closings" },
         { value: "24/7", label: "Lead Capture" },
-        { value: "3.2s", label: "Staging Time" },
+        { value: "1", label: "System. Everything." },
     ];
 
     return (
@@ -31,17 +30,17 @@ export const RealEstateHero: React.FC = () => {
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
 
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
-                        Automate <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Luxury Real Estate</span>
+                        The Technology Layer That Powers <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Modern Agencies.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
-                        LayerSync empowers agencies to scale with AI-driven virtual staging, automated lead qualification, listing copy generation, and 24/7 client engagement.
+                        A fully integrated CRM, marketing, and operations ecosystem — purpose-built for real estate agencies in Zimbabwe. Manage your pipeline. Automate your marketing. Run your agency on one system.
                     </p>
 
                     {/* CTA Button */}
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="mb-12 md:mb-16">
                         <button className="btn-glow px-8 md:px-12 py-4 md:py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-2xl shadow-purple-900/30 inline-flex items-center gap-3 cursor-pointer hover:shadow-purple-900/50 transition-shadow">
-                            See It In Action <ArrowRight className="w-4 h-4" />
+                            Apply for Founding Partner Access <ArrowRight className="w-4 h-4" />
                         </button>
                     </motion.div>
 
