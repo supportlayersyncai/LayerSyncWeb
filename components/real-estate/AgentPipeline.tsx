@@ -29,7 +29,7 @@ export const AgentPipeline: React.FC = () => {
                     End-to-End Automation
                 </div>
                 <h2 className={`hero-heading mb-6 ${safeDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Sync Estate Works</span>
+                    How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">SynCRM Works</span>
                 </h2>
                 <p className={`sub-heading max-w-2xl mx-auto ${safeDarkMode ? 'text-white/60' : 'text-gray-600'}`}>
                     From first enquiry to closed deal — every step is automated, intelligent, and synchronized.

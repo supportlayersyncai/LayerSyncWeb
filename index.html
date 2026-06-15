@@ -48,6 +48,7 @@
             800: '#405E37', 900: '#374E30', 950: '#1B2916',
         };
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -59,6 +60,14 @@
                         emerald: brandGreen, green: brandGreen,
                         // Explicit brand tokens for new work
                         brand: { orange: '#D36135', green: '#7FB069', DEFAULT: '#D36135' },
+                        // Semantic dark-mode typography + wordmark tokens.
+                        // These are declared in tailwind.config.ts but the live
+                        // site uses the Tailwind CDN, which does NOT read that
+                        // file — so they must be defined here too, otherwise
+                        // classes like `dark:text-dark-text-primary` silently
+                        // do nothing and leave dark text on the dark theme.
+                        'dark-text': { primary: '#F8FAFC', secondary: '#CBD5E1', tertiary: '#94A3B8' },
+                        'dark-brand': { wordmark: '#A6C98A' },
                     },
                 },
             },

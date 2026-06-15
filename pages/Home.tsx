@@ -37,7 +37,7 @@ export const Home: React.FC = () => {
 
     const solutions = [
         {
-            title: "Sync Estate",
+            title: "SynCRM",
             subtitle: "SynCRM • Sync Media • Property Management",
             desc: "A fully integrated technology ecosystem for real estate agencies — CRM, marketing automation, property management, and AI tools. Purpose-built for the way Zimbabwean agencies actually work.",
             href: "/solutions/real-estate",
@@ -294,7 +294,7 @@ export const Home: React.FC = () => {
                             {[
                                 { icon: <Zap className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
                                 { icon: <Shield className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
-                                { icon: <TrendingUp className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we do.", color: "text-blue-400", bg: "bg-blue-500/10" },
+                                { icon: <TrendingUp className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we deliver.", color: "text-blue-400", bg: "bg-blue-500/10" },
                                 { icon: <MapPin className="w-6 h-6" />, title: "Built for African Markets", desc: "We understand local compliance, ZiG pricing, WhatsApp-first communication, and the realities of doing business in Zimbabwe and across Southern Africa. No global competitor can say the same.", color: "text-orange-400", bg: "bg-orange-500/10" }
                             ].map((item, i) => (
                                 <motion.div

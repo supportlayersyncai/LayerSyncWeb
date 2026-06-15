@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Solutions</h4>
             <ul className="space-y-4">
-              <li><Link to="/solutions/real-estate" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Sync Estate</Link></li>
+              <li><Link to="/solutions/real-estate" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">SynCRM</Link></li>
               <li><Link to="/solutions/smb" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">SMB Automation</Link></li>
               <li><Link to="/solutions/academy" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Sync Academy</Link></li>
               <li><Link to="/solutions/web-dev" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Web Development</Link></li>

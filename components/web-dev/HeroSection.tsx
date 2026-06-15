@@ -25,9 +25,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                     transition={{ duration: 0.8, delay: 0.1 }}
                     className={`hero-heading mb-8 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
                 >
-                    Your Website Should Be{' '}
-                    <span className="text-shimmer">as Good</span>{' '}
-                    as Your Business Actually Is.
+                    Your Website Should{' '}
+                    <span className="text-shimmer">Reflect</span>{' '}
+                    the Business You've Built.
                 </motion.h1>
 
                 {/* Subheadline */}
