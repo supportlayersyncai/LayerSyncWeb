@@ -40,7 +40,7 @@ export const SMB: React.FC = () => {
                         <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-blue-600/10 via-cyan-600/5 to-blue-600/10 pointer-events-none" />
                         <div className="relative z-10">
                             <h3 className={`hero-heading mb-8 text-shimmer`}>Stop Paying Humans to Do <span className="italic">Machine Work.</span></h3>
-                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>A free workflow audit takes 30 minutes. We will show you exactly which tasks AI can take over, how many hours per week you recover, and what the cost savings look like over 12 months. No commitment required.</p>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>A free 30-minute workflow audit shows you exactly which tasks your AI agents can take over, how many hours per week you recover, and what your 12-month cost savings look like. No commitment.</p>
                             <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white cursor-pointer">
                                 Request Free Workflow Audit <ArrowRight className="w-4 h-4" />
                             </button>
