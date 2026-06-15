@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useOutletContext } from 'react-router-dom';
-import { Briefcase, Settings, LineChart, Users, Target, Megaphone, Shield } from 'lucide-react';
+import { LeadershipIcon, OperationsIcon, FinanceIcon, PeopleIcon, SalesIcon, MarketingIcon, SecurityIcon } from '../icons/BrandIcons';
 
 export const DepartmentTracks: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -10,49 +10,49 @@ export const DepartmentTracks: React.FC = () => {
     const tracks = [
         {
             title: "Executive Track",
-            icon: <Briefcase className="w-6 h-6" />,
+            icon: <LeadershipIcon className="w-6 h-6" />,
             audience: "For the leadership team.",
             desc: "AI strategy, governance, vendor evaluation, ROI measurement, and how to ask the right questions of your technical teams.",
             outcome: "Leaders who can sponsor AI initiatives credibly."
         },
         {
             title: "Operations Track",
-            icon: <Settings className="w-6 h-6" />,
+            icon: <OperationsIcon className="w-6 h-6" />,
             audience: "For ops managers and process owners.",
             desc: "Process automation, workflow design with AI agents, exception handling, and how to measure throughput before and after.",
             outcome: "Ops teams that ship automations, not just plan them."
         },
         {
             title: "Finance Track",
-            icon: <LineChart className="w-6 h-6" />,
+            icon: <FinanceIcon className="w-6 h-6" />,
             audience: "For finance and accounting teams.",
             desc: "AI-assisted reporting, forecasting, expense categorisation, audit preparation, and dual-currency (ZiG/USD) workflow management.",
             outcome: "Faster closes, sharper variance analysis, cleaner audit trails."
         },
         {
             title: "HR & People Track",
-            icon: <Users className="w-6 h-6" />,
+            icon: <PeopleIcon className="w-6 h-6" />,
             audience: "For HR, talent, and L&D teams.",
             desc: "AI-assisted recruiting, CV screening with bias controls, internal training content generation, and performance review preparation.",
             outcome: "HR teams that move faster without losing the human judgement that matters."
         },
         {
             title: "Sales Track",
-            icon: <Target className="w-6 h-6" />,
+            icon: <SalesIcon className="w-6 h-6" />,
             audience: "For sales reps, BDRs, and sales managers.",
             desc: "AI-driven prospecting, personalised outreach at scale, proposal generation, CRM intelligence, and pipeline forecasting.",
             outcome: "More conversations, better conversations, faster closes."
         },
         {
             title: "Marketing Track",
-            icon: <Megaphone className="w-6 h-6" />,
+            icon: <MarketingIcon className="w-6 h-6" />,
             audience: "For marketers and content teams.",
             desc: "Content generation at scale, campaign analytics, brand-safe AI use, social listening, and SEO with AI assistance.",
             outcome: "Marketing output that compounds without bloating headcount."
         },
         {
             title: "IT & Security Track",
-            icon: <Shield className="w-6 h-6" />,
+            icon: <SecurityIcon className="w-6 h-6" />,
             audience: "For IT, infosec, and engineering teams.",
             desc: "Safe AI deployment patterns, prompt injection awareness, data governance, model evaluation, and integration architecture.",
             outcome: "IT teams that say yes to AI safely, instead of saying no by default."
