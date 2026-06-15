@@ -27,7 +27,7 @@ export const CyberGrid = () => {
             ctx.fillStyle = '#050a10'; // Match background
             ctx.fillRect(0, 0, width, height);
 
-            ctx.strokeStyle = '#00f0ff';
+            ctx.strokeStyle = '#7FB069';
             ctx.lineWidth = 1;
 
             const gridSize = 50;
@@ -41,7 +41,7 @@ export const CyberGrid = () => {
                 ctx.beginPath();
                 ctx.moveTo(x, 0);
                 ctx.lineTo(x, height);
-                ctx.strokeStyle = `rgba(0, 240, 255, ${0.05 + Math.sin(x / width * Math.PI) * 0.05})`;
+                ctx.strokeStyle = `rgba(127, 176, 105, ${0.05 + Math.sin(x / width * Math.PI) * 0.05})`;
                 ctx.stroke();
             }
 
@@ -54,7 +54,7 @@ export const CyberGrid = () => {
                 ctx.beginPath();
                 ctx.moveTo(0, py);
                 ctx.lineTo(width, py);
-                ctx.strokeStyle = `rgba(0, 240, 255, ${0.1 - (py / height) * 0.05})`;
+                ctx.strokeStyle = `rgba(127, 176, 105, ${0.1 - (py / height) * 0.05})`;
                 ctx.stroke();
             }
 
@@ -64,7 +64,7 @@ export const CyberGrid = () => {
                 const y = (Math.cos(time * 0.002 + i) * height / 2) + height / 2;
                 const size = Math.random() * 2;
 
-                ctx.fillStyle = i % 2 === 0 ? '#00f0ff' : '#f510ef';
+                ctx.fillStyle = i % 2 === 0 ? '#7FB069' : '#D36135';
                 ctx.globalAlpha = 0.5 + Math.sin(time * 0.01) * 0.5;
                 ctx.beginPath();
                 ctx.arc(x, y, size, 0, Math.PI * 2);

@@ -61,8 +61,8 @@ export const ScrollCanvas: React.FC<ScrollCanvasProps> = ({ isDarkMode, scrollYP
 
       const radius = Math.min(width * 0.12, 160);
       const gradient = ctx.createLinearGradient(-radius, -radius, radius, radius);
-      gradient.addColorStop(0, `rgba(107, 76, 255, ${0.1 + alignment * 0.2})`);
-      gradient.addColorStop(1, `rgba(34, 211, 238, ${0.1 + alignment * 0.2})`);
+      gradient.addColorStop(0, `rgba(211, 97, 53, ${0.1 + alignment * 0.2})`);
+      gradient.addColorStop(1, `rgba(127, 176, 105, ${0.1 + alignment * 0.2})`);
 
       ctx.beginPath();
       for (let j = 0; j < 6; j++) {
@@ -76,7 +76,7 @@ export const ScrollCanvas: React.FC<ScrollCanvasProps> = ({ isDarkMode, scrollYP
 
       ctx.fillStyle = gradient;
       ctx.fill();
-      ctx.strokeStyle = `rgba(56, 232, 255, ${0.1 + alignment * 0.4})`;
+      ctx.strokeStyle = `rgba(127, 176, 105, ${0.1 + alignment * 0.4})`;
       ctx.lineWidth = 1;
       ctx.stroke();
 
@@ -84,7 +84,7 @@ export const ScrollCanvas: React.FC<ScrollCanvasProps> = ({ isDarkMode, scrollYP
         const pulse = Math.sin(Date.now() / 1000 + i) * 0.5 + 0.5;
         ctx.beginPath();
         ctx.arc(0, 0, 4 * pulse, 0, Math.PI * 2);
-        ctx.fillStyle = '#38E8FF';
+        ctx.fillStyle = '#7FB069';
         ctx.fill();
       }
 

@@ -202,7 +202,7 @@ export const Home: React.FC = () => {
                                     decoding="async"
                                     width="520"
                                     height="520"
-                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(107,76,255,0.15)]"
+                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.15)]"
                                 />
                             </motion.div>
                         </div>
@@ -276,7 +276,7 @@ export const Home: React.FC = () => {
                                     decoding="async"
                                     width="520"
                                     height="520"
-                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
+                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.15)]"
                                     style={{ animationDelay: '2s' }}
                                 />
                             </motion.div>
@@ -349,7 +349,7 @@ export const Home: React.FC = () => {
                                     decoding="async"
                                     width="440"
                                     height="440"
-                                    className="w-[280px] md:w-[380px] lg:w-[440px] animate-float drop-shadow-[0_0_40px_rgba(75,107,255,0.15)]"
+                                    className="w-[280px] md:w-[380px] lg:w-[440px] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.15)]"
                                     style={{ animationDelay: '4s' }}
                                 />
                             </motion.div>

@@ -2,6 +2,18 @@ import type { Config } from "tailwindcss";
 
 // all in fixtures is set to tailwind v3 as interims solutions
 
+// LayerSync brand colour ramps (orange = primary, green = secondary).
+const brandOrange = {
+  50: "#FCF1EC", 100: "#F8DDD1", 200: "#F0B89F", 300: "#E5926E",
+  400: "#DC7A4F", 500: "#D36135", 600: "#BC4F28", 700: "#973D20",
+  800: "#79331C", 900: "#632C1B", 950: "#35140A",
+};
+const brandGreen = {
+  50: "#F2F7EE", 100: "#E2EED8", 200: "#C7DDB4", 300: "#A6C98A",
+  400: "#92BD74", 500: "#7FB069", 600: "#649551", 700: "#4E7641",
+  800: "#405E37", 900: "#374E30", 950: "#1B2916",
+};
+
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -13,6 +25,15 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+  			// ===== LayerSync brand palette =====
+  			// Warm/primary -> orange #D36135 ; cool/secondary -> green #7FB069.
+  			// Legacy palette names are remapped so existing utility classes
+  			// resolve to the new brand without any markup changes.
+  			brand: { orange: '#D36135', green: '#7FB069', DEFAULT: '#D36135' },
+  			blue: brandOrange, indigo: brandOrange, violet: brandOrange,
+  			purple: brandOrange, fuchsia: brandOrange, pink: brandOrange,
+  			sky: brandGreen, cyan: brandGreen, teal: brandGreen,
+  			emerald: brandGreen, green: brandGreen,
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

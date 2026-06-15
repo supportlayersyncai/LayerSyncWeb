@@ -37,26 +37,26 @@
 </symbol>
 </g>
 <linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(315,0,0,662.890625,-20,67.65625)">
-<stop offset="0" style="stop-color:rgb(60.784314%,30.196078%,100%);stop-opacity:1;"/>
-<stop offset="1" style="stop-color:rgb(0%,83.137255%,100%);stop-opacity:1;"/>
+<stop offset="0" style="stop-color:rgb(82.75%,38.04%,20.78%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(49.8%,69.02%,41.18%);stop-opacity:1;"/>
 </linearGradient>
 </defs>
 <g id="surface1">
 <path style="fill:none;stroke-width:40;stroke-linecap:butt;stroke-linejoin:miter;stroke:url(#linear0);stroke-miterlimit:4;" d="M 200 100 C 300 150 300 250 200 300 C 100 350 100 450 200 500 C 300 550 300 650 200 700 C 100 750 0 650 0 500 C 0 350 100 250 200 300 Z M 200 100 " transform="matrix(0.05,0,0,0.05,0,0)"/>
-<g style="fill:rgb(22.745098%,4.705882%,63.921571%);fill-opacity:1;">
+<g style="fill:rgb(82.75%,38.04%,20.78%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="22.5" y="17.501953"/>
   <use xlink:href="#glyph0-2" x="25.836914" y="17.501953"/>
   <use xlink:href="#glyph0-3" x="29.173828" y="17.501953"/>
   <use xlink:href="#glyph0-4" x="32.173828" y="17.501953"/>
   <use xlink:href="#glyph0-5" x="35.510742" y="17.501953"/>
 </g>
-<g style="fill:rgb(22.745098%,4.705882%,63.921571%);fill-opacity:1;">
+<g style="fill:rgb(82.75%,38.04%,20.78%);fill-opacity:1;">
   <use xlink:href="#glyph0-6" x="22.5" y="25.001953"/>
   <use xlink:href="#glyph0-3" x="26.501953" y="25.001953"/>
   <use xlink:href="#glyph0-7" x="29.501953" y="25.001953"/>
   <use xlink:href="#glyph0-8" x="32.838867" y="25.001953"/>
 </g>
-<g style="fill:rgb(0%,83.137256%,100%);fill-opacity:1;">
+<g style="fill:rgb(49.8%,69.02%,41.18%);fill-opacity:1;">
   <use xlink:href="#glyph0-9" x="42.5" y="25.001953"/>
   <use xlink:href="#glyph0-10" x="46.501953" y="25.001953"/>
 </g>

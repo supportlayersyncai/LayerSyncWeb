@@ -17,8 +17,32 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "LayerSync - Coming Soon",
-  description: "The future of layer synchronization is approaching.",
+  title: "LayerSync AI | Synchronize Intelligence",
+  description:
+    "LayerSync AI — next-generation AI automation agency. Synchronize Intelligence.",
+  manifest: "/site.webmanifest",
+  themeColor: "#050505",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  openGraph: {
+    title: "LayerSync AI | Synchronize Intelligence",
+    description: "Next-generation AI automation agency. Synchronize Intelligence.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LayerSync AI | Synchronize Intelligence",
+    description: "Next-generation AI automation agency. Synchronize Intelligence.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

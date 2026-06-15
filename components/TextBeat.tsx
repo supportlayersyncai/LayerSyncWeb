@@ -51,7 +51,7 @@ export const TextBeat: React.FC<TextBeatProps> = ({ title, subtitle, scrollYProg
 
       <h2
         className="hero-heading mb-6 sm:mb-10 text-shimmer select-none cursor-default break-words max-w-[100vw] px-4"
-        style={{ textShadow: '0 0 30px rgba(75, 107, 255, 0.15)' }}
+        style={{ textShadow: '0 0 30px rgba(211, 97, 53, 0.15)' }}
       >
         {renderTitle()}
       </h2>
