@@ -101,7 +101,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20">
           {/* Logo - Clean single logo design */}
           <div className="flex items-center">
-            <LayerSyncLogo className="h-8 sm:h-10 text-[#3A0CA3] dark:text-dark-brand-wordmark" />
+            <LayerSyncLogo className="h-8 sm:h-10 text-[#D36135] dark:text-dark-brand-wordmark" />
           </div>
 
           {/* Desktop Navigation */}

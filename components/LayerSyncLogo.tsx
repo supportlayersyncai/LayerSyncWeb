@@ -50,26 +50,26 @@ export const LayerSyncLogo: React.FC<LayerSyncLogoProps> = ({ className = "h-8 s
           </symbol>
         </g>
         <linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(315,0,0,662.890625,-20,67.65625)">
-          <stop offset="0" style={{ stopColor: "rgb(60.784314%,30.196078%,100%)", stopOpacity: 1 }} />
-          <stop offset="1" style={{ stopColor: "rgb(0%,83.137255%,100%)", stopOpacity: 1 }} />
+          <stop offset="0" style={{ stopColor: "rgb(82.75%,38.04%,20.78%)", stopOpacity: 1 }} />
+          <stop offset="1" style={{ stopColor: "rgb(49.8%,69.02%,41.18%)", stopOpacity: 1 }} />
         </linearGradient>
       </defs>
       <g>
         <path style={{ fill: "none", strokeWidth: 40, strokeLinecap: "butt", strokeLinejoin: "miter", stroke: "url(#linear0)", strokeMiterlimit: 4 }} d="M 200 100 C 300 150 300 250 200 300 C 100 350 100 450 200 500 C 300 550 300 650 200 700 C 100 750 0 650 0 500 C 0 350 100 250 200 300 Z M 200 100 " transform="matrix(0.05,0,0,0.05,0,0)" />
-        <g className="fill-current text-[#471F85] dark:text-dark-brand-wordmark">
+        <g className="fill-current text-[#D36135] dark:text-dark-brand-wordmark">
           <use href="#ls-glyph-1" x="22.5" y="17.501953" />
           <use href="#ls-glyph-2" x="25.836914" y="17.501953" />
           <use href="#ls-glyph-3" x="29.173828" y="17.501953" />
           <use href="#ls-glyph-4" x="32.173828" y="17.501953" />
           <use href="#ls-glyph-5" x="35.510742" y="17.501953" />
         </g>
-        <g className="fill-current text-[#471F85] dark:text-dark-brand-wordmark">
+        <g className="fill-current text-[#D36135] dark:text-dark-brand-wordmark">
           <use href="#ls-glyph-6" x="22.5" y="25.001953" />
           <use href="#ls-glyph-3" x="26.501953" y="25.001953" />
           <use href="#ls-glyph-7" x="29.501953" y="25.001953" />
           <use href="#ls-glyph-8" x="32.838867" y="25.001953" />
         </g>
-        <g style={{ fill: "rgb(0%,83.137256%,100%)", fillOpacity: 1 }}>
+        <g style={{ fill: "rgb(49.8%,69.02%,41.18%)", fillOpacity: 1 }}>
           <use href="#ls-glyph-9" x="42.5" y="25.001953" />
           <use href="#ls-glyph-10" x="46.501953" y="25.001953" />
         </g>

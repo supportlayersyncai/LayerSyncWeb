@@ -5,16 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LayerSync AI | Synchronize Intelligence</title>
+
+    <!-- ===== Brand: favicon & icon package ===== -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#050505">
+
+    <!-- ===== SEO & social sharing ===== -->
+    <meta name="description" content="LayerSync AI — next-generation AI automation agency. Synchronize Intelligence.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LayerSync AI | Synchronize Intelligence">
+    <meta property="og:description" content="Next-generation AI automation agency. Synchronize Intelligence.">
+    <meta property="og:image" content="/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LayerSync AI | Synchronize Intelligence">
+    <meta name="twitter:description" content="Next-generation AI automation agency. Synchronize Intelligence.">
+    <meta name="twitter:image" content="/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /* ===== Brand palette remap (CDN Tailwind) =====
+           Keeps every existing utility class name in place but resolves the
+           legacy purple/blue/cyan hues to the new LayerSync brand:
+             warm/primary  -> orange  #D36135
+             cool/secondary -> green   #7FB069
+           This recolours the whole site to the new identity without touching
+           any markup or the layout. */
+        const brandOrange = {
+            50: '#FCF1EC', 100: '#F8DDD1', 200: '#F0B89F', 300: '#E5926E',
+            400: '#DC7A4F', 500: '#D36135', 600: '#BC4F28', 700: '#973D20',
+            800: '#79331C', 900: '#632C1B', 950: '#35140A',
+        };
+        const brandGreen = {
+            50: '#F2F7EE', 100: '#E2EED8', 200: '#C7DDB4', 300: '#A6C98A',
+            400: '#92BD74', 500: '#7FB069', 600: '#649551', 700: '#4E7641',
+            800: '#405E37', 900: '#374E30', 950: '#1B2916',
+        };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Warm end of the old gradients -> brand orange
+                        blue: brandOrange, indigo: brandOrange, violet: brandOrange,
+                        purple: brandOrange, fuchsia: brandOrange, pink: brandOrange,
+                        // Cool end of the old gradients -> brand green
+                        sky: brandGreen, cyan: brandGreen, teal: brandGreen,
+                        emerald: brandGreen, green: brandGreen,
+                        // Explicit brand tokens for new work
+                        brand: { orange: '#D36135', green: '#7FB069', DEFAULT: '#D36135' },
+                    },
+                },
+            },
+        };
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <style>
         :root {
             --bg-dark: #050505;
             --bg-light: #f5f5f7;
-            --brand-blue: #4B6BFF;
-            --brand-purple: #6B4CFF;
-            --brand-cyan: #22D3EE;
+            --brand-orange: #D36135;
+            --brand-green: #7FB069;
+            /* Back-compat aliases mapped onto the new brand palette */
+            --brand-blue: #D36135;
+            --brand-purple: #D36135;
+            --brand-cyan: #7FB069;
         }
 
         * {
@@ -122,7 +183,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: rgba(107, 76, 255, 0.3);
+            background: rgba(211, 97, 53, 0.35);
             border-radius: 10px;
         }
 
@@ -176,8 +237,8 @@
         .btn-glow:hover {
             transform: translateY(-2px);
             box-shadow:
-                0 0 20px rgba(75, 107, 255, 0.3),
-                0 0 60px rgba(107, 76, 255, 0.15),
+                0 0 20px rgba(211, 97, 53, 0.3),
+                0 0 60px rgba(127, 176, 105, 0.18),
                 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
@@ -243,7 +304,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(75, 107, 255, 0.06) 0%, transparent 50%);
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(211, 97, 53, 0.06) 0%, transparent 50%);
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.4s;
