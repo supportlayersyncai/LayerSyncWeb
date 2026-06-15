@@ -13,13 +13,10 @@ import {
     Cpu,
     Globe,
     Sparkles,
-    Zap,
-    Shield,
     ShieldCheck,
-    TrendingUp,
-    GraduationCap,
-    MapPin
+    GraduationCap
 } from 'lucide-react';
+import { DeployIcon, SecurityIcon, RoiIcon, MarketsIcon } from '../components/icons/BrandIcons';
 
 export const Home: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -292,10 +289,10 @@ export const Home: React.FC = () => {
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                             {[
-                                { icon: <Zap className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
-                                { icon: <Shield className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
-                                { icon: <TrendingUp className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we deliver.", color: "text-blue-400", bg: "bg-blue-500/10" },
-                                { icon: <MapPin className="w-6 h-6" />, title: "Built for African Markets", desc: "We understand local compliance, ZiG pricing, WhatsApp-first communication, and the realities of doing business in Zimbabwe and across Southern Africa. No global competitor can say the same.", color: "text-orange-400", bg: "bg-orange-500/10" }
+                                { icon: <DeployIcon className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
+                                { icon: <SecurityIcon className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
+                                { icon: <RoiIcon className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we deliver.", color: "text-blue-400", bg: "bg-blue-500/10" },
+                                { icon: <MarketsIcon className="w-6 h-6" />, title: "Built for African Markets", desc: "We understand local compliance, ZiG pricing, WhatsApp-first communication, and the realities of doing business in Zimbabwe and across Southern Africa. No global competitor can say the same.", color: "text-orange-400", bg: "bg-orange-500/10" }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}

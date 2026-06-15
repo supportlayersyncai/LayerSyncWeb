@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Gem, BarChart3, Monitor, Target, Zap, Compass } from 'lucide-react';
+import { CraftIcon, DataIcon, PerformanceIcon, StrategyIcon, SpeedIcon, CompassIcon } from '../icons/BrandIcons';
 
 interface WhyUsSectionProps {
     isDarkMode: boolean;
@@ -8,32 +8,32 @@ interface WhyUsSectionProps {
 
 const differentiators = [
     {
-        icon: Gem,
+        icon: CraftIcon,
         title: 'Premium Design Taste',
         desc: 'Every pixel is placed with intention. We craft interfaces that feel refined, modern, and unmistakably premium.',
     },
     {
-        icon: BarChart3,
+        icon: DataIcon,
         title: 'Strategic Business Understanding',
         desc: 'We design for outcomes, not just aesthetics. Every layout decision is rooted in your business goals.',
     },
     {
-        icon: Monitor,
+        icon: PerformanceIcon,
         title: 'Modern UX Thinking',
         desc: 'Intuitive navigation, deliberate flow, and frictionless experiences that guide visitors toward action.',
     },
     {
-        icon: Target,
+        icon: StrategyIcon,
         title: 'Conversion-Aware Structure',
         desc: 'Pages built around user psychology and clear calls to action. Design that works as hard as you do.',
     },
     {
-        icon: Zap,
+        icon: SpeedIcon,
         title: 'Polished Execution',
         desc: 'Fast load times, smooth interactions, and responsive layouts across every device and screen size.',
     },
     {
-        icon: Compass,
+        icon: CompassIcon,
         title: 'Future-Facing Positioning',
         desc: 'We build websites that position your business ahead of the curve — and we do it with an understanding of the Southern African market that no offshore agency can match.',
     },
