@@ -39,8 +39,8 @@ export const Enterprise: React.FC = () => {
                     <div className={`glass-card rounded-[40px] md:rounded-[64px] p-10 md:p-20 border text-center relative overflow-hidden ${safeDarkMode ? 'border-white/5' : 'border-black/5'}`}>
                         <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-emerald-600/10 via-teal-600/5 to-emerald-600/10 pointer-events-none" />
                         <div className="relative z-10">
-                            <h3 className={`hero-heading mb-8 text-shimmer`}>Build Your <span className="italic">AI Foundation</span></h3>
-                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>Schedule an architecture review with our enterprise team to scope your deployment and calculate projected ROI.</p>
+                            <h3 className={`hero-heading mb-8 text-shimmer`}>Design Your <span className="italic">Private AI</span> Operating System</h3>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>Book a 90-minute architecture review with our enterprise team. We'll scope your deployment, model your projected ROI, and map a compliance-ready rollout — at zero obligation.</p>
                             <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white cursor-pointer">
                                 Schedule Enterprise Assessment <ArrowRight className="w-4 h-4" />
                             </button>

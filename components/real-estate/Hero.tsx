@@ -28,17 +28,17 @@ export const RealEstateHero: React.FC = () => {
 
             <div className="relative z-10 text-center px-4 md:px-6 max-w-5xl mx-auto flex flex-col items-center">
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 flex flex-col items-center">
-                    <div className="w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4">
-                        <img src="/syncrm-logo.svg" alt="SynCRM Logo" className="w-full h-full object-contain" />
-                    </div>
-                    <span className="text-xl md:text-2xl font-bold tracking-wider text-[#254A32] dark:text-emerald-400">SynCRM</span>
+                    <span className={`inline-flex items-center gap-2.5 py-2 px-5 rounded-full border text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold ${safeDarkMode ? 'bg-white/5 border-white/10 text-white/80 backdrop-blur-md' : 'bg-white/70 border-black/5 text-gray-700 backdrop-blur-md shadow-sm'}`}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#D36135] to-[#7FB069]" />
+                        SynCRM · Real Estate OS
+                    </span>
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
 
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary mt-4">
-                        The Technology Layer That Powers <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 dark:from-purple-400 dark:via-pink-400 dark:to-purple-400 animate-gradient-x">Modern Agencies.</span>
+                        From First Lead to <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D36135] to-[#7FB069] animate-gradient-x">Closed Deal.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
                         A fully integrated CRM, marketing, and operations ecosystem — purpose-built for real estate agencies in Zimbabwe. Manage your pipeline. Automate your marketing. Run your agency on one system.
