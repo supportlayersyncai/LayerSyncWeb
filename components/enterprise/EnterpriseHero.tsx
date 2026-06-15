@@ -31,7 +31,7 @@ export const EnterpriseHero: React.FC = () => {
 
                     <h1 className="hero-heading mb-6 md:mb-8 text-gray-900 dark:text-dark-text-primary">
                         Organisation-Wide AI. <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 dark:from-emerald-400 dark:via-teal-400 dark:to-emerald-400 animate-gradient-x">Privately Deployed.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D36135] via-[#7FB069] to-[#D36135] animate-gradient-x">Privately Deployed.</span>
                     </h1>
                     <p className="sub-heading text-gray-600 dark:text-dark-text-secondary mb-8 md:mb-10 max-w-2xl mx-auto">
                         Deploy private, highly-secure AI across your entire organisation — operations, finance, HR, and sales. Built for the security, compliance, and scale requirements of African enterprises.

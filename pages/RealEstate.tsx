@@ -42,8 +42,8 @@ export const RealEstate: React.FC = () => {
                     <div className={`glass-card rounded-[40px] md:rounded-[64px] p-10 md:p-20 border text-center relative overflow-hidden ${safeDarkMode ? 'border-white/5' : 'border-black/5'}`}>
                         <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/5 to-purple-600/10 pointer-events-none" />
                         <div className="relative z-10">
-                            <h3 className={`hero-heading mb-8 text-shimmer`}>Secure Your <span className="italic">Founding Partner</span> Position.</h3>
-                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>SynCRM is in active development with a market launch targeted for Q2 2026. We are onboarding a select group of agencies as founding partners now — with exclusive early-adopter pricing and dedicated onboarding support.</p>
+                            <h3 className={`hero-heading mb-8 text-shimmer`}>Be One of the <span className="italic">First</span> Agencies Running SynCRM.</h3>
+                            <p className={`sub-heading mb-12 max-w-2xl mx-auto`}>SynCRM launches in Q2 2026, and we're onboarding a select group of founding agencies now. Lock in exclusive early-adopter pricing, dedicated onboarding, and a direct line into the product roadmap.</p>
                             <button className="btn-glow px-10 md:px-14 py-5 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] text-xs shadow-2xl inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white cursor-pointer">
                                 Apply for Founding Partner Access <ArrowRight className="w-4 h-4" />
                             </button>
