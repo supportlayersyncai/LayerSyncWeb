@@ -11,44 +11,38 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
     <footer className={`relative py-16 border-t border-black/5 dark:border-white/5 z-20 ${isDarkMode ? 'bg-[#050505]' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-          {/* Column 1 */}
+          {/* Product */}
           <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Solutions</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Product</h4>
             <ul className="space-y-4">
-              <li><Link to="/solutions/real-estate" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">SynCRM</Link></li>
-              <li><Link to="/solutions/smb" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">SMB Automation</Link></li>
-              <li><Link to="/solutions/academy" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Sync Academy</Link></li>
-              <li><Link to="/solutions/web-dev" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Web Development</Link></li>
-              <li><Link to="/solutions/enterprise" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Enterprise AI</Link></li>
+              <li><Link to="/syncrm" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">SynCRM</Link></li>
+              <li><Link to="/solutions/real-estate" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Real Estate</Link></li>
             </ul>
           </div>
-          {/* Column 2 */}
+          {/* What we build */}
+          <div>
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">What We Build</h4>
+            <ul className="space-y-4">
+              <li><Link to="/what-we-build" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Custom Systems</Link></li>
+              <li><Link to="/solutions/web-dev" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Web Development</Link></li>
+              <li><Link to="/solutions/academy" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Sync Academy</Link></li>
+            </ul>
+          </div>
+          {/* Company */}
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Company</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">About</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Team</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Careers</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Press</a></li>
+              <li><Link to="/about" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/work" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Work</Link></li>
             </ul>
           </div>
-          {/* Column 3 */}
-          <div>
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Resources</h4>
-            <ul className="space-y-4">
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">AI Audits</a></li>
-            </ul>
-          </div>
-          {/* Column 4 */}
+          {/* Contact */}
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Contact</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">WhatsApp</a></li>
-              <li><a href="#" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Email</a></li>
-              <li><a href="/#apply" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Book a Call</a></li>
-              <li><span className="text-sm text-gray-600 dark:text-gray-400">Office: Harare</span></li>
+              <li><Link to="/contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Book a diagnostic</Link></li>
+              <li><a href="mailto:hello@layersync.ai" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">hello@layersync.ai</a></li>
+              <li><span className="text-sm text-gray-600 dark:text-gray-400">Harare, Zimbabwe</span></li>
             </ul>
           </div>
         </div>

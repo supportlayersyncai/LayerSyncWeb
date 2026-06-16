@@ -42,28 +42,34 @@
 | Testimonials (Oasis, Pam Golding, Venture) | **CUT → placeholder** | Unverified proof → `[CASE STUDY — Kev to supply]`. |
 | Final CTA "Founding Partner Access" | **REWORK** | → "Book a brokerage diagnostic." |
 
-## 4. SMB (`/solutions/smb`) — 🚩 FOLD-INTO `/what-we-build`
+## 4. SMB (`/solutions/smb`) — FOLD-INTO `/what-we-build`
+
+> **Decision:** Fold into What We Build. Route kept as a redirect to `/what-we-build`.
 
 | Section | Disposition | Rationale |
 |---|---|---|
-| Whole page | **🚩 FOLD-INTO What We Build** | SMB automation = the cash-engine capability, not a separate brand. **May book revenue — flagged, not deleted.** Keep route as redirect until confirmed. |
+| Whole page | **FOLD-INTO What We Build** | SMB automation = the cash-engine capability, not a separate brand. Route → redirect. |
 | Pain Points / AI Workforce (7 agents) | **FOLD-INTO** | Condense into one capability statement; do not recreate as a service menu. |
 | ROI Calculator / Testimonials / Stats | **CUT → placeholder** | Fabricated figures; off-positioning. |
 
-## 5. Web Dev (`/solutions/web-dev`) — 🚩 FOLD-INTO `/what-we-build`
+## 5. Web Dev (`/solutions/web-dev`) — ✅ KEEP (books real revenue)
+
+> **Decision:** Kev confirmed Web Dev books real revenue → it **keeps its own page/route** (not folded). Reworked to the new voice, kept in nav under "What We Build" or linked directly.
 
 | Section | Disposition | Rationale |
 |---|---|---|
-| Whole page | **🚩 FOLD-INTO What We Build** | Web design/build is a cash-engine capability. **May book revenue — flagged.** |
-| Problem / Transformation / Why Us / Services / Process | **CUT / condense** | Strong material but it rebuilds an agency service page; distil to one capability paragraph + link to Work. |
-| Portfolio (Glow/Solar/Savanna) | **FOLD-INTO `/work`** | Becomes proof cards (confirm real or placeholder). |
-| Tech Stack / FAQ | **CUT** | Not needed under new positioning. |
+| Whole page | **KEEP / REWORK** | Active revenue line — stays as a standalone offer page, voice-scrubbed. |
+| Problem / Transformation / Why Us / Services / Process | **REWORK / condense** | Keep the credible structure; cut fabricated metrics, align to voice. |
+| Portfolio (Glow/Solar/Savanna) | **REWORK → confirm/placeholder** | Keep on page and/or surface on `/work`; confirm real or mark placeholder. |
+| Tech Stack / FAQ | **REWORK / trim** | Keep but trim to essentials. |
 
-## 6. Enterprise (`/solutions/enterprise`) — 🚩 FOLD-INTO `/what-we-build`
+## 6. Enterprise (`/solutions/enterprise`) — FOLD-INTO `/what-we-build`
+
+> **Decision:** Fold into What We Build. Route kept as a redirect to `/what-we-build`.
 
 | Section | Disposition | Rationale |
 |---|---|---|
-| Whole page | **🚩 FOLD-INTO What We Build** | Enterprise custom systems = cash engine at the top end. **May book revenue — flagged.** |
+| Whole page | **FOLD-INTO What We Build** | Enterprise custom systems = cash engine at the top end. Route → redirect. |
 | Dept transformation / Architecture / Capabilities | **CUT / condense** | Fold the credible "custom systems, security, integration" points into What We Build. |
 | Security & Compliance | **KEEP (condensed)** | Genuine trust content; reusable on What We Build / About. |
 | ROI calculator / Roadmap | **CUT** | Calculator metrics fabricated; roadmap is service-menu detail. |
@@ -98,13 +104,31 @@
 
 ## 10. 🚩 Open decisions needed before Phase C
 
-1. **Service pages = revenue?** SMB / Web Dev / Enterprise are slated to FOLD-INTO *What We Build*. Confirm none is actively booking revenue that needs its own page, or tell me which to preserve. (Routes kept as redirects until you confirm.)
-2. **Academy:** keep the route live but unlinked, keep it linked in footer only, or remove from nav entirely? (Default: keep route, drop from primary nav, footer link optional.)
-3. **Pricing "Engines":** confirm removal from the site (recommended) — it contradicts "we don't sell packages."
-4. **Video editing / "AI Video Marketing":** confirm removal from copy (pricing tier + ROI "Video Production" row). Recommend cutting to protect the systems-company positioning.
-5. **Contact form backend:** where should submissions go? (email mailto, Formspree, or the connected Supabase project?) Needed to make `/contact` actually work.
-6. **Real Estate vs SynCRM split:** confirm the intended division of content — proposed: `/syncrm` owns the product narrative + how-it-works; `/solutions/real-estate` becomes a lighter real-estate-services page that links to SynCRM.
+1. **Web Dev = revenue → KEEPS its own page.** SMB + Enterprise **FOLD** into *What We Build* (routes become redirects).
+2. **Academy:** keep route live, **drop from primary nav** (footer link optional).
+3. **Pricing "Engines": REMOVE** from the site (contradicts "we don't sell packages").
+4. **Video editing / "AI Video Marketing": REMOVE** from copy (pricing tier + ROI "Video Production").
+5. **Contact form backend:** new project in the **LayerSync** Supabase org (not KurimaSense). Approval path being sorted separately — `/contact` is built now with a single clearly-marked submit integration point to wire in later.
+6. **Real Estate ↔ SynCRM split: CONFIRMED** — `/syncrm` owns the product narrative + how-it-works; `/solutions/real-estate` is a lighter standalone page linking to SynCRM.
+
+## 11. Final route map (Phase C)
+
+| Route | Action |
+|---|---|
+| `/` | REWORK (Home) |
+| `/syncrm` | NEW (flagship) |
+| `/what-we-build` | NEW (absorbs SMB + Enterprise) |
+| `/work` | NEW |
+| `/about` | NEW |
+| `/contact` | NEW (form, Supabase wired later) |
+| `/solutions/real-estate` | REWORK (standalone, links to SynCRM) |
+| `/solutions/web-dev` | KEEP / REWORK (revenue) |
+| `/solutions/academy` | KEEP route, drop from primary nav |
+| `/solutions/smb` | REDIRECT → `/what-we-build` |
+| `/solutions/enterprise` | REDIRECT → `/what-we-build` |
+
+**Primary nav:** Home · SynCRM · What We Build · Work · About · **Book a diagnostic**
 
 ---
 
-*End of Phase B. Per the spec I'm stopping here for your approval before any execution. On approval I'll create branch `feat/brand-realign`, propose `docs/DESIGN-TOKENS.md` first, and implement page-by-page.*
+*End of Phase B. Decisions resolved; proceeding to Phase C on branch `claude/website-rebrand-redesign-0zrc95` (per standing branch instructions). Design tokens proposed first, then page-by-page.*

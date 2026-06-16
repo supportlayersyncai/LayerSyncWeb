@@ -1,29 +1,25 @@
-import React, { useRef, Suspense, lazy } from 'react';
+import React, { useRef } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import { useOutletContext, Link } from 'react-router-dom';
 import { ScrollCanvas } from '../components/ScrollCanvas';
 import { TextBeat } from '../components/TextBeat';
-
-// Lazy Load Heavy Components
-const Pricing = lazy(() => import('../components/home/Pricing').then(module => ({ default: module.Pricing })));
-const FAQ = lazy(() => import('../components/home/FAQ').then(module => ({ default: module.FAQ })));
 import {
     ArrowRight,
     Building2,
-    Cpu,
-    Globe,
-    Sparkles,
+    Compass,
+    Hammer,
+    KeyRound,
+    Clock,
     ShieldCheck,
-    GraduationCap
+    Eye,
+    MapPin,
 } from 'lucide-react';
-import { DeployIcon, SecurityIcon, RoiIcon, MarketsIcon } from '../components/icons/BrandIcons';
+import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
 
 export const Home: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
     const scrollytellingRef = useRef<HTMLDivElement>(null);
-
     const safeDarkMode = isDarkMode ?? true;
-    // const borderSubtle = safeDarkMode ? "border-white/5" : "border-black/5"; // Removed manual check
 
     const { scrollYProgress: localScrollYProgress } = useScroll({
         target: scrollytellingRef,
@@ -32,126 +28,45 @@ export const Home: React.FC = () => {
 
     const indicatorOpacity = useTransform(localScrollYProgress, [0, 0.1, 0.9, 1], [1, 0, 0, 0]);
 
-    const solutions = [
-        {
-            title: "SynCRM",
-            subtitle: "SynCRM • Sync Media • Property Management",
-            desc: "A fully integrated technology ecosystem for real estate agencies — CRM, marketing automation, property management, and AI tools. Purpose-built for the way Zimbabwean agencies actually work.",
-            href: "/solutions/real-estate",
-            gradient: "from-purple-600 to-pink-600",
-            glowColor: "purple",
-            icon: <Building2 className="w-7 h-7" />,
-            stats: [
-                { value: "40%", label: "Faster Closings" },
-                { value: "24/7", label: "Lead Capture" },
-                { value: "1", label: "System" }
-            ]
-        },
-        {
-            title: "SMB Automation",
-            subtitle: "Workflow Agents • ROI Recovery • Zero-Code",
-            desc: "Replace repetitive manual work with AI agents that never clock out. Admin, invoicing, scheduling, and follow-ups — handled. Your team focuses on growth, not grinding.",
-            href: "/solutions/smb",
-            gradient: "from-blue-600 to-cyan-600",
-            glowColor: "blue",
-            icon: <Cpu className="w-7 h-7" />,
-            stats: [
-                { value: "$65K+", label: "Annual Savings" },
-                { value: "48hr", label: "Deployment" },
-                { value: "5000+", label: "App Integrations" }
-            ]
-        },
-        {
-            title: "Web Development",
-            subtitle: "Immersive Portals • 3D Experiences • Conversion",
-            desc: "High-performance websites and portals, engineered for conversion and built to grow with your business. From startup landing pages to enterprise-grade digital platforms.",
-            href: "/solutions/web-dev",
-            gradient: "from-cyan-600 to-emerald-600",
-            glowColor: "cyan",
-            icon: <Globe className="w-7 h-7" />,
-            stats: [
-                { value: "3x", label: "Conversion Rate" },
-                { value: "100%", label: "Responsive" },
-                { value: "A+", label: "Performance" }
-            ]
-        },
-        {
-            title: "Sync Academy",
-            subtitle: "Executive Strategy • Department Tracks • Embedded Support",
-            desc: "AI training that turns your whole organisation into operators. Seven department tracks, hands-on workflow-based sessions, and 90 days of embedded reinforcement. Built by the team that ships AI systems for clients.",
-            href: "/solutions/academy",
-            gradient: "from-indigo-600 to-violet-600",
-            glowColor: "indigo",
-            icon: <GraduationCap className="w-7 h-7" />,
-            stats: [
-                { value: "7", label: "Tracks" },
-                { value: "8", label: "Weeks" },
-                { value: "90-Day", label: "Support" }
-            ]
-        },
-        {
-            title: "Enterprise AI",
-            subtitle: "Agent Orchestration • Private LLMs • Compliance",
-            desc: "Private, compliant AI infrastructure deployed across your entire organisation — operations, finance, HR, and sales. Built for enterprises that need security, scale, and measurable outcomes. SOC 2. 99.9% uptime. Zero compromise.",
-            href: "/solutions/enterprise",
-            gradient: "from-emerald-600 to-teal-600",
-            glowColor: "emerald",
-            icon: <ShieldCheck className="w-7 h-7" />,
-            stats: [
-                { value: "10x", label: "Efficiency Gain" },
-                { value: "99.9%", label: "Uptime" },
-                { value: "SOC 2", label: "Compliant" }
-            ]
-        }
+    const howWeWork = [
+        { icon: <Compass className="w-6 h-6" />, tag: 'Diagnose', desc: 'We start by understanding how your operation actually runs — and where it leaks time, money, or deals.' },
+        { icon: <Hammer className="w-6 h-6" />, tag: 'Build', desc: 'We build a system that fits the way you work — not a template you have to bend your business around.' },
+        { icon: <KeyRound className="w-6 h-6" />, tag: 'Own', desc: 'You own it. It runs on your infrastructure, your data stays yours, and your team can operate it.' },
+    ];
+
+    const why = [
+        { icon: <Clock className="w-6 h-6" />, title: 'Operators, not an agency', desc: "We've run the businesses we build for. We know what spreadsheet-and-WhatsApp chaos actually costs.", color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
+        { icon: <Eye className="w-6 h-6" />, title: 'We diagnose before we build', desc: "No packages. We understand the problem first, then build only what fixes it — or tell you a system won't.", color: 'text-brand-green', bg: 'bg-brand-green/10' },
+        { icon: <KeyRound className="w-6 h-6" />, title: 'You own what we build', desc: 'Systems run in your environment, your data stays private, and you keep the keys. We support, we don\'t lock in.', color: 'text-brand-orange', bg: 'bg-brand-orange/10' },
+        { icon: <MapPin className="w-6 h-6" />, title: 'Built for how business works here', desc: 'WhatsApp-first, local realities, and the way Zimbabwean and regional businesses actually operate.', color: 'text-brand-green', bg: 'bg-brand-green/10' },
     ];
 
     return (
         <>
-            {/* Hero Scrollytelling */}
-            <section ref={scrollytellingRef} className="relative h-[400vh] w-full z-10">
+            {/* ===== HERO SCROLLYTELLING ===== */}
+            <section ref={scrollytellingRef} className="relative h-[280vh] w-full z-10">
                 <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
                     <ScrollCanvas isDarkMode={safeDarkMode} scrollYProgress={localScrollYProgress} />
 
                     <TextBeat
-                        title="Synchronized *Intelligence*"
-                        subtitle="We layer AI into your operations — automating the manual, scaling the human, and building what comes next. For real estate agencies, SMEs, and enterprises across Zimbabwe and the region."
+                        title="We build the systems businesses *run on.*"
+                        subtitle="LayerSync is a team of operators and engineers who build custom software for businesses that have outgrown spreadsheets and WhatsApp. We diagnose the problem, build the system, and hand it over."
                         scrollYProgress={localScrollYProgress}
-                        range={[0, 0.15]}
+                        range={[0, 0.22]}
                     />
 
                     <TextBeat
-                        title="The CRM That *Closes Deals.*"
-                        subtitle="SynCRM brings your leads, agents, listings, and pipeline into one system — purpose-built for real estate agencies in Zimbabwe. Capture more. Convert faster. Manage smarter."
+                        title="Our flagship is *SynCRM.*"
+                        subtitle="The operating system for real estate agencies — every lead, agent, and deal in one place, so you can finally see your whole pipeline instead of guessing."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.18, 0.33]}
+                        range={[0.26, 0.55]}
                     />
 
                     <TextBeat
-                        title="Your Business, *Running Itself.*"
-                        subtitle="Reclaim the 20 hours a week your team spends on admin, invoicing, and follow-ups. Our AI agents handle the repetitive work so your people can focus on the work that actually grows your business."
+                        title="Everything starts with a *diagnostic.*"
+                        subtitle="A short, honest conversation about where your operation is losing time or money — and whether a system can fix it. If it can't, we'll tell you that too."
                         scrollYProgress={localScrollYProgress}
-                        range={[0.36, 0.51]}
-                    />
-
-                    <TextBeat
-                        title="Built to *Convert.* Engineered to Last."
-                        subtitle="High-performance websites and digital platforms — engineered for conversion, built with modern technology, and designed to make your business impossible to ignore."
-                        scrollYProgress={localScrollYProgress}
-                        range={[0.54, 0.69]}
-                    />
-
-                    <TextBeat
-                        title="Organisation-Wide AI. *Privately Deployed.*"
-                        subtitle="Private LLMs, secure agent orchestration, and compliance-ready infrastructure — deployed across your operations, finance, HR, and sales functions. Built for organisations that cannot afford to fall behind."
-                        scrollYProgress={localScrollYProgress}
-                        range={[0.72, 0.87]}
-                    />
-
-                    <TextBeat
-                        title="Sync *Academy*"
-                        subtitle="Make AI a skill your whole organisation owns. Department-specific curriculum, hands-on sessions, and 90 days of embedded support."
-                        scrollYProgress={localScrollYProgress}
-                        range={[0.88, 0.95]}
+                        range={[0.6, 0.9]}
                     />
 
                     <motion.div style={{ opacity: indicatorOpacity }} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-5">
@@ -161,103 +76,108 @@ export const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* Content */}
+            {/* ===== CONTENT ===== */}
             <div className={`relative z-20 transition-colors duration-700 ${safeDarkMode ? 'bg-[#050505]' : 'bg-[#f5f5f7]'}`}>
 
-                {/* ===== SOLUTIONS HUB ===== */}
-                <section id="services" className="relative py-20 md:py-40 px-4 md:px-6 overflow-hidden">
+                {/* ===== HOW WE WORK ===== */}
+                <section className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        {/* Header: Text LEFT, Gorilla RIGHT */}
-                        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-20 md:mb-32">
-                            <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-left"
-                            >
-                                <div className="inline-flex items-center gap-2 mb-8 py-2 px-6 rounded-full border border-black/5 dark:border-white/10 bg-black/5 dark:bg-white/5 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 dark:text-dark-text-tertiary">
-                                    <Sparkles className="w-3 h-3" /> Our Solutions
-                                </div>
-                                <h2 className="hero-heading mb-6 text-shimmer">
-                                    Five Verticals. <br className="hidden md:block" />One *Partner*.
-                                </h2>
-                                <p className="sub-heading max-w-xl">
-                                    Every business is different. Choose the vertical that fits — or combine them. Each solution is a purpose-built AI ecosystem designed to compound your competitive advantage.
-                                </p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, x: 60, scale: 0.9 }}
-                                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, ease: 'easeOut' }}
-                                className="flex justify-center md:justify-end"
-                            >
-                                <img
-                                    src="/harambe-ai.png"
-                                    alt="AI Gorilla"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="520"
-                                    height="520"
-                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.15)]"
-                                />
-                            </motion.div>
-                        </div>
-
-                        {/* Solution Cards */}
-                        <div className="grid gap-8 md:gap-10">
-                            {solutions.map((s, i) => (
-                                <Link key={i} to={s.href} className="block group cursor-pointer">
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.15, duration: 0.6 }}
-                                        className={`glass-card card-hover-glow rounded-[32px] md:rounded-[48px] p-8 md:p-14 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 transition-all duration-500 relative overflow-hidden`}
-                                    >
-                                        {/* Background Gradient Glow */}
-                                        <div className={`absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br ${s.gradient} rounded-full blur-[100px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none`} />
-
-                                        <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-14">
-                                            {/* Icon */}
-                                            <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[24px] bg-gradient-to-br ${s.gradient} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-500 animate-float`}
-                                                style={{ animationDelay: `${i * 0.5}s` }}>
-                                                {s.icon}
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="flex-1">
-                                                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500 dark:text-dark-text-tertiary font-bold mb-3">{s.subtitle}</div>
-                                                <h3 className="text-2xl md:text-4xl font-light mb-4 text-gray-900 dark:text-dark-text-primary group-hover:text-shimmer transition-all">{s.title}</h3>
-                                                <p className="text-gray-600 dark:text-dark-text-secondary text-sm md:text-base leading-relaxed max-w-xl">{s.desc}</p>
-                                            </div>
-
-                                            {/* Stats */}
-                                            <div className="flex lg:flex-col gap-6 lg:gap-4 flex-shrink-0">
-                                                {s.stats.map((stat, j) => (
-                                                    <div key={j} className="text-center lg:text-right">
-                                                        <div className={`text-xl md:text-2xl font-light bg-gradient-to-r ${s.gradient} bg-clip-text text-transparent`}>{stat.value}</div>
-                                                        <div className="text-[9px] md:text-[10px] uppercase tracking-widest text-gray-500 dark:text-dark-text-tertiary font-bold">{stat.label}</div>
-                                                    </div>
-                                                ))}
-                                            </div>
-
-                                            {/* Arrow */}
-                                            <div className="hidden lg:flex w-12 h-12 rounded-full border border-black/10 dark:border-white/10 items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300 flex-shrink-0">
-                                                <ArrowRight className="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity" />
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                </Link>
+                        <SectionHeader
+                            eyebrow={<>How we work</>}
+                            title={<>Diagnose. Build. <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">Own.</span></>}
+                            sub="Three steps, every time. No packages, no menu of services — just understanding the problem and building the thing that solves it."
+                        />
+                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-16">
+                            {howWeWork.map((s, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 24 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.12 }}
+                                    className="glass-card card-hover-glow rounded-[32px] p-8 md:p-10 border border-black/5 dark:border-white/5"
+                                >
+                                    <div className="w-14 h-14 rounded-2xl bg-brand-orange/10 text-brand-orange flex items-center justify-center mb-8">{s.icon}</div>
+                                    <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 dark:text-dark-text-tertiary mb-3">Step {i + 1}</div>
+                                    <h3 className="text-xl md:text-2xl font-light mb-4 text-gray-900 dark:text-dark-text-primary">{s.tag}</h3>
+                                    <p className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">{s.desc}</p>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
                 </section>
 
+                {/* ===== SYNCRM FLAGSHIP TEASER ===== */}
+                <section className="relative py-10 md:py-20 px-4 md:px-6">
+                    <div className="max-w-7xl mx-auto">
+                        <Link to="/syncrm" className="block group">
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="glass-card card-hover-glow rounded-[40px] md:rounded-[56px] p-8 md:p-16 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 transition-all duration-500 relative overflow-hidden"
+                            >
+                                <div className="absolute -top-20 -right-20 w-72 h-72 bg-brand-orange rounded-full blur-[120px] opacity-10 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none" />
+                                <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-14">
+                                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-[24px] bg-brand-orange/15 text-brand-orange flex items-center justify-center flex-shrink-0">
+                                        <Building2 className="w-8 h-8" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-[10px] uppercase tracking-[0.3em] text-brand-orange font-bold mb-3">Flagship product</div>
+                                        <h3 className="text-3xl md:text-5xl font-light mb-4 text-gray-900 dark:text-dark-text-primary group-hover:text-shimmer transition-all">SynCRM</h3>
+                                        <p className="text-gray-600 dark:text-dark-text-secondary text-sm md:text-lg leading-relaxed max-w-2xl">
+                                            The operating system for real estate agencies. Stop running blind — every lead, agent, and deal in one place, so you can see your whole pipeline.
+                                        </p>
+                                    </div>
+                                    <div className="hidden lg:flex w-14 h-14 rounded-full border border-black/10 dark:border-white/10 items-center justify-center group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300 flex-shrink-0">
+                                        <ArrowRight className="w-5 h-5" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </Link>
+                    </div>
+                </section>
+
+                {/* ===== WHAT WE BUILD TEASER ===== */}
+                <section className="relative py-10 md:py-20 px-4 md:px-6">
+                    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
+                        <Link to="/what-we-build" className="block group">
+                            <motion.div
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="glass-card card-hover-glow rounded-[40px] p-8 md:p-12 border border-black/5 dark:border-white/5 h-full"
+                            >
+                                <Hammer className="w-8 h-8 text-brand-green mb-6" />
+                                <h3 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-dark-text-primary group-hover:text-shimmer transition-all">What we build</h3>
+                                <p className="text-gray-600 dark:text-dark-text-secondary text-sm md:text-base leading-relaxed mb-6">
+                                    Custom operations systems, AI agents, dashboards, and software for businesses that have outgrown manual work and off-the-shelf tools.
+                                </p>
+                                <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-green inline-flex items-center gap-2">Explore <ArrowRight className="w-4 h-4" /></span>
+                            </motion.div>
+                        </Link>
+                        <Link to="/work" className="block group">
+                            <motion.div
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="glass-card card-hover-glow rounded-[40px] p-8 md:p-12 border border-black/5 dark:border-white/5 h-full"
+                            >
+                                <Eye className="w-8 h-8 text-brand-orange mb-6" />
+                                <h3 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-dark-text-primary group-hover:text-shimmer transition-all">Our work</h3>
+                                <p className="text-gray-600 dark:text-dark-text-secondary text-sm md:text-base leading-relaxed mb-6">
+                                    The systems we've put into the world — real builds for real businesses, written up with the numbers we can stand behind.
+                                </p>
+                                <span className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-orange inline-flex items-center gap-2">See the work <ArrowRight className="w-4 h-4" /></span>
+                            </motion.div>
+                        </Link>
+                    </div>
+                </section>
+
                 {/* ===== WHY LAYERSYNC ===== */}
-                <section id="why-layersync" className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
+                <section className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        {/* Header: Lion LEFT, Text RIGHT */}
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-20">
                             <motion.div
                                 initial={{ opacity: 0, x: -60, scale: 0.9 }}
@@ -268,12 +188,12 @@ export const Home: React.FC = () => {
                             >
                                 <img
                                     src="/lion-ai.png"
-                                    alt="AI Lion"
+                                    alt=""
                                     loading="lazy"
                                     decoding="async"
                                     width="520"
                                     height="520"
-                                    className="w-[320px] md:w-[440px] lg:w-[520px] animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.15)]"
+                                    className="w-[300px] md:w-[440px] lg:w-[500px] animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.15)]"
                                     style={{ animationDelay: '2s' }}
                                 />
                             </motion.div>
@@ -284,26 +204,21 @@ export const Home: React.FC = () => {
                                 className="text-right order-1 md:order-2"
                             >
                                 <h2 className="hero-heading mb-6">Why *LayerSync*?</h2>
-                                <p className="sub-heading max-w-xl ml-auto">We don't just build tools. We engineer complete AI ecosystems that compound your competitive advantage.</p>
+                                <p className="sub-heading max-w-xl ml-auto">We're a small team that builds software the way we'd want it built for our own business — honestly, and to last.</p>
                             </motion.div>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                            {[
-                                { icon: <DeployIcon className="w-6 h-6" />, title: "Deploy in 48 Hours", desc: "From audit to live AI agents in under two days. No months-long implementations.", color: "text-yellow-400", bg: "bg-yellow-500/10" },
-                                { icon: <SecurityIcon className="w-6 h-6" />, title: "Enterprise Security", desc: "SOC 2 compliant infrastructure. Your data never leaves your environment.", color: "text-green-400", bg: "bg-green-500/10" },
-                                { icon: <RoiIcon className="w-6 h-6" />, title: "Guaranteed ROI", desc: "Every deployment includes a live ROI dashboard. If we do not deliver measurable savings within 90 days, we work for free until we deliver.", color: "text-blue-400", bg: "bg-blue-500/10" },
-                                { icon: <MarketsIcon className="w-6 h-6" />, title: "Built for African Markets", desc: "We understand local compliance, ZiG pricing, WhatsApp-first communication, and the realities of doing business in Zimbabwe and across Southern Africa. No global competitor can say the same.", color: "text-orange-400", bg: "bg-orange-500/10" }
-                            ].map((item, i) => (
+                            {why.map((item, i) => (
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.15 }}
-                                    className={`glass-card card-hover-glow rounded-[32px] p-8 md:p-10 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 transition-all duration-300`}
+                                    className="glass-card card-hover-glow rounded-[32px] p-8 md:p-10 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/10 transition-all duration-300"
                                 >
                                     <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-8`}>{item.icon}</div>
-                                    <h4 className="text-xl md:text-2xl font-light mb-4 text-gray-900 dark:text-dark-text-primary">{item.title}</h4>
+                                    <h4 className="text-lg md:text-xl font-light mb-4 text-gray-900 dark:text-dark-text-primary">{item.title}</h4>
                                     <p className="text-gray-500 dark:text-dark-text-secondary leading-relaxed text-sm">{item.desc}</p>
                                 </motion.div>
                             ))}
@@ -311,72 +226,23 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                <Suspense fallback={
-                    <div className="py-20 flex items-center justify-center">
-                        <div className="w-8 h-8 border-2 border-gray-200 border-t-blue-500 rounded-full animate-spin opacity-50" />
-                    </div>
-                }>
-                    <Pricing isDarkMode={safeDarkMode} />
-                </Suspense>
-
-                {/* ===== FAQ with Buffalo — Text LEFT, Buffalo RIGHT ===== */}
-                <section id="faq" className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-10">
-                            <motion.div
-                                initial={{ opacity: 0, x: -40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-left"
-                            >
-                                <h2 className="hero-heading mb-6 text-shimmer">Common *Questions*</h2>
-                                <p className="sub-heading max-w-xl">Everything you need to know about working with LayerSync.</p>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, x: 60, scale: 0.9 }}
-                                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, ease: 'easeOut' }}
-                                className="flex justify-center md:justify-end"
-                            >
-                                <img
-                                    src="/buffalo-ai.png"
-                                    alt="AI Buffalo"
-                                    loading="lazy"
-                                    decoding="async"
-                                    width="440"
-                                    height="440"
-                                    className="w-[280px] md:w-[380px] lg:w-[440px] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.15)]"
-                                    style={{ animationDelay: '4s' }}
-                                />
-                            </motion.div>
-                        </div>
-                        <Suspense fallback={
-                            <div className="py-10 flex items-center justify-center">
-                                <div className="w-6 h-6 border-2 border-gray-200 border-t-purple-500 rounded-full animate-spin opacity-50" />
-                            </div>
-                        }>
-                            <FAQ isDarkMode={safeDarkMode} />
-                        </Suspense>
-                    </div>
-                </section>
-
                 {/* ===== FINAL CTA ===== */}
-                <section id="apply" className="relative py-20 md:py-40 px-4 md:px-6 max-w-7xl mx-auto z-20">
+                <section className="relative py-20 md:py-40 px-4 md:px-6 max-w-7xl mx-auto z-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className={`p-10 md:p-24 lg:p-32 rounded-[40px] md:rounded-[64px] border border-black/5 dark:border-white/5 glass-card text-center relative overflow-hidden`}
+                        className="p-10 md:p-24 lg:p-32 rounded-[40px] md:rounded-[64px] border border-black/5 dark:border-white/5 glass-card text-center relative overflow-hidden"
                     >
-                        <div className={`ambient-glow absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-cyan-600/10 pointer-events-none`} />
+                        <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-green/10 pointer-events-none" />
                         <div className="relative z-10">
-                            <h3 className="hero-heading mb-8 md:mb-16 text-shimmer leading-[1.1]">Ready to *Sync*?</h3>
-                            <p className="sub-heading mb-12 md:mb-20 max-w-3xl mx-auto">Most businesses lose 30 to 40 percent of their team's productive time to tasks AI can handle today. A free AI audit takes 30 minutes and tells you exactly where the waste is.</p>
-                            <button className={`btn-glow px-10 md:px-16 py-5 md:py-6 rounded-full md:rounded-[24px] font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-xs md:text-sm shadow-2xl inline-flex items-center gap-4 bg-black text-white dark:bg-white dark:text-black`}>
-                                Request Your Free AI Audit <ArrowRight className="w-5 h-5" />
-                            </button>
-                            <p className="mt-10 md:mt-12 text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">No commitment. 30-minute session. Results delivered within 48 hours.</p>
+                            <h3 className="hero-heading mb-8 md:mb-12 text-shimmer leading-[1.1]">Start with a diagnostic.</h3>
+                            <p className="sub-heading mb-12 max-w-2xl mx-auto">Tell us where your operation is losing time or deals. We'll tell you — honestly — whether a system can fix it, and what we'd build.</p>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <CTAButton />
+                                <GhostLink to="/syncrm" label="In real estate? See SynCRM" />
+                            </div>
+                            <p className="mt-10 text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">No commitment · We reply within one business day</p>
                         </div>
                     </motion.div>
                 </section>

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from './components/MainLayout';
 import { Home } from './pages/Home';
+import { SynCRM } from './pages/SynCRM';
+import { WhatWeBuild } from './pages/WhatWeBuild';
+import { Work } from './pages/Work';
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
 import { RealEstate } from './pages/RealEstate';
-import { SMB } from './pages/SMB';
 import { WebDev } from './pages/WebDev';
-import { Enterprise } from './pages/Enterprise';
 import { Academy } from './pages/Academy';
 
 const App: React.FC = () => {
@@ -13,11 +16,29 @@ const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
+
+        {/* New IA */}
+        <Route path="syncrm" element={<SynCRM />} />
+        <Route path="what-we-build" element={<WhatWeBuild />} />
+        <Route path="work" element={<Work />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+
+        {/* Standalone real-estate services page (links to SynCRM) */}
         <Route path="solutions/real-estate" element={<RealEstate />} />
-        <Route path="solutions/smb" element={<SMB />} />
+
+        {/* Web Dev keeps its own page (active revenue line) */}
         <Route path="solutions/web-dev" element={<WebDev />} />
+
+        {/* Academy: route stays live, dropped from primary nav */}
         <Route path="solutions/academy" element={<Academy />} />
-        <Route path="solutions/enterprise" element={<Enterprise />} />
+
+        {/* SMB + Enterprise folded into What We Build — redirect old routes */}
+        <Route path="solutions/smb" element={<Navigate to="/what-we-build" replace />} />
+        <Route path="solutions/enterprise" element={<Navigate to="/what-we-build" replace />} />
+
+        {/* Catch-all → home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
   );
