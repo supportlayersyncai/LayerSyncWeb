@@ -66,7 +66,7 @@ export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitRe
     } catch (err) {
       return {
         ok: false,
-        message: 'Something went wrong sending that. Please email hello@layersync.ai instead.',
+        message: 'Something went wrong sending that. Please email support@layersyncai.com instead.',
       };
     }
   }
@@ -81,6 +81,6 @@ export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitRe
   return {
     ok: true,
     message:
-      "Thanks. Our intake backend is being finalised — to reach us right now, email hello@layersync.ai and we'll set up your diagnostic.",
+      "Thanks. Our intake backend is being finalised — to reach us right now, email support@layersyncai.com and we'll set up your diagnostic.",
   };
 }

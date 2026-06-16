@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const LaptopCarousel: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    // Design concepts — not claimed as delivered client work. Verified case
+    // studies live on /work once we have them (we don't fabricate proof).
     const projects = [
-        { title: "Glow Energy", image: "/portfolio-1.png", desc: "Energy Management Dashboard", fit: "object-left-top" },
-        { title: "Solar Estimator", image: "/portfolio-2.png", desc: "Solar ROI Calculator", fit: "object-left-top" },
-        { title: "Savanna Energy", image: "/portfolio-3.png", desc: "Renewable Energy Portal", fit: "object-center" },
+        { title: "Energy dashboard", image: "/portfolio-1.png", desc: "Design concept", fit: "object-left-top" },
+        { title: "ROI calculator", image: "/portfolio-2.png", desc: "Design concept", fit: "object-left-top" },
+        { title: "Customer portal", image: "/portfolio-3.png", desc: "Design concept", fit: "object-center" },
     ];
 
     const next = () => setCurrentIndex((prev) => (prev + 1) % projects.length);
@@ -18,7 +20,7 @@ export const LaptopCarousel: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }
         <section className="relative py-12 md:py-20 px-4 md:px-6 max-w-7xl mx-auto z-20">
             <div className="text-center mb-10 md:mb-16">
                 <h2 className={`hero-heading mb-4 md:mb-6 text-3xl md:text-5xl ${isDarkMode ? 'text-dark-text-primary' : 'text-gray-900'}`}>Digital <span className={`${isDarkMode ? 'text-cyan-500' : 'text-cyan-600'}`}>*Experiences*</span></h2>
-                <p className={`sub-heading max-w-2xl mx-auto text-sm md:text-lg ${isDarkMode ? 'text-dark-text-secondary' : 'text-gray-600'}`}>We don't just build websites. We engineer immersive digital platforms that convert.</p>
+                <p className={`sub-heading max-w-2xl mx-auto text-sm md:text-lg ${isDarkMode ? 'text-dark-text-secondary' : 'text-gray-600'}`}>A few design concepts that show how we think about clarity and conversion. Verified client work lives on our <a href="/work" className="underline hover:text-brand-orange">Work</a> page.</p>
             </div>
 
             <div className="relative flex items-center justify-center">
@@ -49,7 +51,7 @@ export const LaptopCarousel: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }
                                 <h3 className="text-lg md:text-2xl font-bold text-white mb-1">{projects[currentIndex].title}</h3>
                                 <p className="text-gray-300 text-xs md:text-sm">{projects[currentIndex].desc}</p>
                             </div>
-                            <button className="p-2 md:p-3 rounded-full bg-cyan-500 text-black hover:scale-110 transition-transform"><ExternalLink className="w-4 h-4 md:w-5 md:h-5" /></button>
+                            <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-white/50 px-3 py-1.5 rounded-full border border-white/15">Concept</span>
                         </div>
                     </div>
 

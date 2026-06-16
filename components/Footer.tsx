@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Contact</h4>
             <ul className="space-y-4">
               <li><Link to="/contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Book a diagnostic</Link></li>
-              <li><a href="mailto:hello@layersync.ai" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">hello@layersync.ai</a></li>
+              <li><a href="mailto:support@layersyncai.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">support@layersyncai.com</a></li>
               <li><span className="text-sm text-gray-600 dark:text-gray-400">Harare, Zimbabwe</span></li>
             </ul>
           </div>

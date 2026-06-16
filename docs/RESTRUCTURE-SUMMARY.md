@@ -41,16 +41,30 @@ Branch: `claude/website-rebrand-redesign-0zrc95`. This summarizes the rebrand/re
 - [x] Contact form functional (graceful fallback until Supabase wired).
 - [x] No fabricated proof on new/reworked pages — placeholders instead.
 - [x] Production build green (`npm run build`).
-- [ ] **og-image.png regenerated** — still bakes in "SYNCHRONIZE INTELLIGENCE" (binary asset; see below).
-- [ ] **Deep voice scrub of kept legacy internals** (WebDev/Academy section components, and the now-unused SMB/Enterprise/Pricing/Hero/RETestimonials components) — primary CTAs fixed; inner copy + any fabricated metrics/portfolio/testimonials inside those sections not yet rewritten.
+- [x] **Deep proof scrub of live components** — see §"Deep dive".
+- [ ] **og-image.png regenerated** — generation script ready (`npm run generate:assets`); needs the OpenAI key (see §"Asset generation").
+
+## Deep dive — proof scrub of live components
+Fabricated proof was removed from every component that ships on a live route, and replaced with honest copy or flagged placeholders (we have **no real proof** to show yet):
+- `real-estate/BeforeAfter` — dropped fabricated "98% cost reduction / 40% faster" stats → honest qualitative benefits.
+- `web-dev/LaptopCarousel` — removed fake client projects ("Glow Energy / Solar Estimator / Savanna Energy"); relabelled as **design concepts** with real work pointed to `/work`; removed dead external-link button.
+- `academy/WhoIsItFor` — removed the "House of Stone Properties" case study and "Trusted by…" badge → `ProofPlaceholder`; CTA now routes to `/contact`.
+- WebDev & Academy primary CTAs routed to `/contact` (no more dead `#` anchors on live routes; `#process` verified valid).
+
+**Deleted (25 files)** — orphaned by this refactor and holding the cut/fabricated content: `pages/SMB.tsx`, `pages/Enterprise.tsx`, `components/smb/*`, `components/enterprise/*`, `components/home/{Pricing,FAQ,ROITable}.tsx`, `components/real-estate/{Hero,AgentPipeline,ChatbotViz,RETestimonials}.tsx`. Nothing on a live route imported them; build stays green.
+
+## Asset generation (OpenAI)
+- Script: `scripts/generate-assets.mjs` → `npm run generate:assets`. Currently generates `public/og-image.png` (gpt-image-1).
+- **Where the key goes:** put `OPENAI_API_KEY=sk-...` in a **gitignored `.env`** (see `.env.example`) or export it in the environment. **No `VITE_` prefix** — it's read server-side only and must never reach the client bundle.
+- Scope is deliberately limited to brand/background art (og-image). It does **not** generate "proof" (fake screenshots/logos/headshots) — those must be real.
+- Quality: gpt-image-1 is good enough for an og-image / abstract brand art; it is not reliable for the existing animal mascots or product UI.
 
 ## Flagged / remaining (need Kev)
 1. **Supabase** — create the new project under the **LayerSync** org (not KurimaSense), then set `VITE_SUPABASE_URL` + `VITE_SUPABASE_ANON_KEY` and create the `diagnostic_requests` table (schema in `lib/submitDiagnostic.ts`). No code change needed beyond env + table.
-2. **og-image.png** — regenerate to drop the old wordmark/tagline.
-3. **Real proof** — supply case studies, product UI screenshots, testimonials, client logos, and the four partners' names/bios to replace placeholders on `/work`, `/about`, `/syncrm`, `/solutions/real-estate`.
-4. **Legacy verticals' internal copy** — WebDev still contains agency-style sections (Why Us, Services, Tech Stack, portfolio Glow/Solar/Savanna) and Academy contains the House of Stone case study + stats; confirm/keep/rewrite. The unused SMB/Enterprise/Pricing/RETestimonials/Hero component files can be deleted once you're sure nothing references them.
-5. **hello@layersync.ai** — confirm this is the right inbound address (used in footer + form fallback).
+2. **OpenAI key** — provide it (per §"Asset generation") so og-image.png can be regenerated, replacing the old "SYNCHRONIZE INTELLIGENCE" art.
+3. **Real proof** — there is none yet; case studies, product UI, testimonials, client logos, and the four partners' names/bios will replace placeholders on `/work`, `/about`, `/syncrm`, `/solutions/real-estate`, `/solutions/academy`, `/solutions/web-dev`.
+4. **Legacy Next `app/**` scaffold** — still dead (not deployed) and left untouched, along with the legacy `*-section.tsx`, `header.tsx`, `chat-widget.tsx`, `LayerSyncLogo.tsx` files it references (these still contain old fabricated marketing but do not ship). Say the word and I'll remove the whole dead scaffold.
 
 ## Notes
+- Email is **support@layersyncai.com** (footer + form fallback).
 - The live app is a Vite SPA using the Tailwind **CDN** with a brand palette remap (orange `#D36135` / green `#7FB069`). New work uses the explicit `brand-orange`/`brand-green` tokens.
-- The legacy Next.js `app/**` tree remains dead (not deployed) and was left untouched.

@@ -26,7 +26,7 @@ export const RealEstateFeatures: React.FC = () => {
                         Transform empty listings into fully furnished dream homes in seconds. Our AI understands architectural context, lighting, and style preferences to deliver photo-realistic results at a fraction of the cost.
                     </p>
                     <ul className="space-y-4 mb-10">
-                        {["98% Cost Reduction vs Physical Staging", "40% Faster Time-to-Sale", "Unlimited Style Iterations"].map((item, i) => (
+                        {["A fraction of the cost of physical staging", "Helps listings sell faster", "Unlimited style iterations"].map((item, i) => (
                             <motion.li
                                 key={i}
                                 initial={{ opacity: 0, x: -20 }}
