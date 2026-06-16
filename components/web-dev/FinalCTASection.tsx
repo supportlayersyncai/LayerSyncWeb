@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FinalCTASectionProps {
     isDarkMode: boolean;
@@ -40,19 +41,19 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ isDarkMode }) 
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a
-                            href="#get-started"
+                        <Link
+                            to="/contact"
                             className="btn-glow px-10 py-5 rounded-full bg-white text-black font-semibold text-sm tracking-wide flex items-center gap-3 hover:bg-gray-100 transition-all dark:bg-white dark:text-black"
                         >
-                            Book a Free Consultation
+                            Book a diagnostic
                             <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a
-                            href="#audit"
+                        </Link>
+                        <Link
+                            to="/work"
                             className={`px-10 py-5 rounded-full font-medium text-sm tracking-wide border transition-all ${isDarkMode ? 'border-white/10 text-white/70 hover:border-white/25 hover:text-white' : 'border-black/10 text-black/60 hover:border-black/25 hover:text-black'}`}
                         >
-                            Request a Website Audit
-                        </a>
+                            See our work
+                        </Link>
                     </div>
 
                     <motion.p

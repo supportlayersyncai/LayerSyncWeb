@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroSectionProps {
     isDarkMode: boolean;
@@ -48,13 +49,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isDarkMode }) => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <a
-                        href="#contact"
+                    <Link
+                        to="/contact"
                         className="btn-glow px-8 py-4 rounded-full bg-white text-black font-semibold text-sm tracking-wide flex items-center gap-3 hover:bg-gray-100 transition-all dark:bg-white dark:text-black"
                     >
-                        Request a Website Audit
+                        Book a diagnostic
                         <ArrowRight className="w-4 h-4" />
-                    </a>
+                    </Link>
                     <a
                         href="#process"
                         className={`px-8 py-4 rounded-full font-medium text-sm tracking-wide border transition-all ${isDarkMode ? 'border-white/10 text-white/70 hover:border-white/25 hover:text-white' : 'border-black/10 text-black/60 hover:border-black/25 hover:text-black'}`}
