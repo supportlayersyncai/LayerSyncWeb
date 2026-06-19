@@ -49,6 +49,7 @@ export const Home: React.FC = () => {
                     <ScrollCanvas isDarkMode={safeDarkMode} scrollYProgress={localScrollYProgress} />
 
                     <TextBeat
+                        firstBeat
                         title="We build the systems businesses *run on.*"
                         subtitle="LayerSync is a team of operators and engineers who build custom software for businesses that have outgrown spreadsheets and WhatsApp. We diagnose the problem, build the system, and hand it over."
                         scrollYProgress={localScrollYProgress}

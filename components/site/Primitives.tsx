@@ -17,9 +17,9 @@ export const CTAButton: React.FC<{
 }> = ({ to = '/contact', label = 'Book a diagnostic', className = '' }) => (
   <Link
     to={to}
-    className={`btn-glow px-10 md:px-14 py-4 md:py-5 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center gap-3 bg-black text-white dark:bg-white dark:text-black ${className}`}
+    className={`btn-glow group px-10 md:px-14 py-4 md:py-5 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center gap-3 bg-black text-white dark:bg-white dark:text-black ${className}`}
   >
-    {label} <ArrowRight className="w-4 h-4" />
+    {label} <ArrowRight className="w-4 h-4 cta-arrow" />
   </Link>
 );
 
@@ -31,9 +31,9 @@ export const GhostLink: React.FC<{ to: string; label: string; className?: string
 }) => (
   <Link
     to={to}
-    className={`px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center gap-3 border border-black/10 dark:border-white/15 text-gray-700 dark:text-dark-text-secondary hover:border-black/30 dark:hover:border-white/40 transition-colors ${className}`}
+    className={`group px-8 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center gap-3 border border-black/10 dark:border-white/15 text-gray-700 dark:text-dark-text-secondary hover:border-black/30 dark:hover:border-white/40 hover:-translate-y-0.5 transition-all duration-300 ${className}`}
   >
-    {label} <ArrowRight className="w-4 h-4" />
+    {label} <ArrowRight className="w-4 h-4 cta-arrow" />
   </Link>
 );
 

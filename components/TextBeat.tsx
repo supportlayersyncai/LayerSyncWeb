@@ -7,27 +7,31 @@ interface TextBeatProps {
   subtitle: string;
   scrollYProgress: MotionValue<number>;
   range: [number, number];
+  /** First beat: fully visible at scroll position 0 (no fade-in needed). */
+  firstBeat?: boolean;
 }
 
-export const TextBeat: React.FC<TextBeatProps> = ({ title, subtitle, scrollYProgress, range }) => {
+export const TextBeat: React.FC<TextBeatProps> = ({ title, subtitle, scrollYProgress, range, firstBeat = false }) => {
   const [start, end] = range;
 
+  // The first beat must be on screen the instant the page loads, so it starts
+  // at full opacity and only fades out as you scroll past it.
   const opacity = useTransform(
     scrollYProgress,
-    [start, start + 0.05, end - 0.05, end],
-    [0, 1, 1, 0]
+    firstBeat ? [start, end - 0.05, end] : [start, start + 0.05, end - 0.05, end],
+    firstBeat ? [1, 1, 0] : [0, 1, 1, 0]
   );
 
   const y = useTransform(
     scrollYProgress,
-    [start, start + 0.05, end - 0.05, end],
-    [40, 0, 0, -40]
+    firstBeat ? [start, end - 0.05, end] : [start, start + 0.05, end - 0.05, end],
+    firstBeat ? [0, 0, -40] : [40, 0, 0, -40]
   );
 
   const pointerEvents = useTransform(
     scrollYProgress,
     [start, start + 0.05, end - 0.05, end],
-    ["none", "auto", "auto", "none"]
+    ["auto", "auto", "auto", "none"]
   );
 
   const renderTitle = () => {
