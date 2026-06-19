@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { CTAButton, GhostLink, Eyebrow, SectionHeader, ProofPlaceholder } from '../components/site/Primitives';
 import { Aurora, ConicHalo, Reveal } from '../components/site/Backgrounds';
+import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 /** Animated pipeline board — the signature visual for SynCRM's hero. */
 const PipelineBoard: React.FC = () => {
@@ -222,9 +223,32 @@ export const SynCRM: React.FC = () => {
             sub="Real results from real brokerages — added here as they're confirmed."
           />
           <div className="grid md:grid-cols-3 gap-6 mt-14">
-            <ProofPlaceholder note="[CASE STUDY — Kev to supply] Brokerage name, the problem before SynCRM, and a verified outcome." />
-            <ProofPlaceholder note="[PRODUCT UI — Kev to supply] Screenshot of the live pipeline board / WhatsApp capture." />
-            <ProofPlaceholder note="[TESTIMONIAL — Kev to supply] A named principal or agent, quoted with permission." />
+            {/* Case study — Oasis Realty (placeholder copy until verified) */}
+            <Reveal>
+              <div className="glass-card card-hover-glow rounded-[28px] p-7 md:p-8 border border-black/5 dark:border-white/5 h-full flex flex-col">
+                <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-orange mb-3">Case study</div>
+                <h3 className="text-xl font-light mb-3 text-gray-900 dark:text-dark-text-primary">Oasis Realty</h3>
+                <p className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed flex-grow">
+                  Leads were scattered across personal WhatsApp accounts and a shared spreadsheet. After moving to SynCRM, every enquiry is captured and routed automatically — and the team works the whole pipeline from one board.
+                </p>
+                <div className="flex gap-6 mt-6 pt-6 border-t border-black/5 dark:border-white/5">
+                  <div>
+                    <div className="text-2xl font-light text-brand-orange">1</div>
+                    <div className="text-[9px] uppercase tracking-widest font-bold text-gray-500 dark:text-dark-text-tertiary">Source of truth</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-light text-brand-green">0</div>
+                    <div className="text-[9px] uppercase tracking-widest font-bold text-gray-500 dark:text-dark-text-tertiary">Leads in personal chats</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <ProofPlaceholder note="[PRODUCT UI — Kev to supply] Screenshot of the live pipeline board / WhatsApp capture." className="h-full flex flex-col justify-center" />
+            </Reveal>
+            <Reveal delay={0.16}>
+              <TestimonialCard t={mockTestimonials.oasis} />
+            </Reveal>
           </div>
         </div>
       </section>

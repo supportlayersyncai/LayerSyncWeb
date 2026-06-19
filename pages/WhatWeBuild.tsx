@@ -4,6 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 import { Cpu, Workflow, Database, ShieldCheck, Plug, Compass, Hammer, KeyRound, MessageSquare, BarChart3, FileText } from 'lucide-react';
 import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
 import { BlueprintGrid, Reveal } from '../components/site/Backgrounds';
+import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 /** Assembling-modules visual — the "we build systems from parts" motif. */
 const ModuleAssembly: React.FC = () => {
@@ -141,6 +142,21 @@ export const WhatWeBuild: React.FC = () => {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-16 md:py-24 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeader
+            align="center"
+            title={<>From the businesses we've <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">built for.</span></>}
+            className="mb-14"
+          />
+          <div className="grid md:grid-cols-2 gap-6">
+            <Reveal><TestimonialCard t={mockTestimonials.smb} /></Reveal>
+            <Reveal delay={0.1}><TestimonialCard t={mockTestimonials.principal} /></Reveal>
           </div>
         </div>
       </section>

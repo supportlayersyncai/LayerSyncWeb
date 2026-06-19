@@ -6,7 +6,8 @@ import { VirtualStagingGallery } from '../components/real-estate/VirtualStagingG
 import { ListingCopyDemo } from '../components/real-estate/ListingCopyDemo';
 import { IntegrationMap } from '../components/real-estate/IntegrationMap';
 import { ArrowRight, Building2 } from 'lucide-react';
-import { CTAButton, GhostLink, Eyebrow, SectionHeader, ProofPlaceholder } from '../components/site/Primitives';
+import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
+import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 /**
  * Real Estate — standalone services page. The product narrative lives on
@@ -85,12 +86,12 @@ export const RealEstate: React.FC = () => {
                     <SectionHeader
                         align="center"
                         title={<>Trusted by Zimbabwean <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">agencies.</span></>}
-                        sub="Named brokerages and verified results will appear here as we confirm them."
+                        sub="What principals and agents say about running their brokerage on SynCRM."
                     />
                     <div className="grid md:grid-cols-3 gap-6 mt-14">
-                        <ProofPlaceholder note="[TESTIMONIAL — Kev to supply] A named agency principal, quoted with permission." />
-                        <ProofPlaceholder note="[CASE STUDY — Kev to supply] Brokerage, the before, and a verified outcome." />
-                        <ProofPlaceholder note="[LOGO — Kev to supply] Real client logos, used with permission." />
+                        <TestimonialCard t={mockTestimonials.oasis} />
+                        <TestimonialCard t={mockTestimonials.principal} />
+                        <TestimonialCard t={mockTestimonials.agent} />
                     </div>
                 </section>
 

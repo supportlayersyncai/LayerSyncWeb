@@ -15,6 +15,7 @@ import {
     MapPin,
 } from 'lucide-react';
 import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
+import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 export const Home: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -83,12 +84,37 @@ export const Home: React.FC = () => {
                 {/* ===== HOW WE WORK ===== */}
                 <section className="relative py-20 md:py-32 px-4 md:px-6 overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <SectionHeader
-                            eyebrow={<>How we work</>}
-                            title={<>Diagnose. Build. <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">Own.</span></>}
-                            sub="Three steps, every time. No packages, no menu of services — just understanding the problem and building the thing that solves it."
-                        />
-                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-16">
+                        {/* Header: text LEFT, gorilla RIGHT */}
+                        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-4 md:mb-8">
+                            <motion.div
+                                initial={{ opacity: 0, x: -40 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="text-left"
+                            >
+                                <Eyebrow>How we work</Eyebrow>
+                                <h2 className="hero-heading mb-6">Diagnose. Build. <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">Own.</span></h2>
+                                <p className="sub-heading max-w-xl">Three steps, every time. No packages, no menu of services — just understanding the problem and building the thing that solves it.</p>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, x: 60, scale: 0.9 }}
+                                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
+                                className="flex justify-center md:justify-end"
+                            >
+                                <img
+                                    src="/harambe-ai.png"
+                                    alt=""
+                                    loading="lazy"
+                                    decoding="async"
+                                    width="520"
+                                    height="520"
+                                    className="w-[280px] md:w-[420px] lg:w-[480px] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.18)]"
+                                />
+                            </motion.div>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-12">
                             {howWeWork.map((s, i) => (
                                 <motion.div
                                     key={i}
@@ -227,17 +253,51 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* ===== FINAL CTA ===== */}
+                {/* ===== TESTIMONIALS ===== */}
+                <section className="py-16 md:py-24 px-4 md:px-6">
+                    <div className="max-w-7xl mx-auto">
+                        <SectionHeader
+                            align="center"
+                            title={<>What people <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">say.</span></>}
+                            sub="Operators who've stopped running their business out of spreadsheets and WhatsApp."
+                            className="mb-14"
+                        />
+                        <div className="grid md:grid-cols-3 gap-6">
+                            {[mockTestimonials.oasis, mockTestimonials.smb, mockTestimonials.principal].map((t, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 24 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                >
+                                    <TestimonialCard t={t} />
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* ===== FINAL CTA (with buffalo) ===== */}
                 <section className="relative py-20 md:py-40 px-4 md:px-6 max-w-7xl mx-auto z-20">
+                    {/* Buffalo peeking in beside the CTA */}
+                    <img
+                        src="/buffalo-ai.png"
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        className="hidden xl:block absolute right-0 bottom-16 w-[260px] z-0 animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.18)] pointer-events-none"
+                        style={{ animationDelay: '3s' }}
+                    />
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="p-10 md:p-24 lg:p-32 rounded-[40px] md:rounded-[64px] border border-black/5 dark:border-white/5 glass-card text-center relative overflow-hidden"
+                        className="max-w-5xl mx-auto p-10 md:p-24 lg:p-28 rounded-[40px] md:rounded-[64px] border border-black/5 dark:border-white/5 glass-card text-center relative z-10 overflow-hidden"
                     >
                         <div className="ambient-glow absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-brand-green/10 pointer-events-none" />
                         <div className="relative z-10">
-                            <h3 className="hero-heading mb-8 md:mb-12 text-shimmer leading-[1.1]">Start with a diagnostic.</h3>
+                            <h3 className="hero-heading mb-8 md:mb-12 text-shimmer">Start with a diagnostic.</h3>
                             <p className="sub-heading mb-12 max-w-2xl mx-auto">Tell us where your operation is losing time or deals. We'll tell you — honestly — whether a system can fix it, and what we'd build.</p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <CTAButton />
