@@ -103,7 +103,7 @@ export const Home: React.FC = () => {
                                 className="flex justify-center md:justify-end"
                             >
                                 <img
-                                    src="/harambe-ai.png"
+                                    src="/harambe-ai.webp"
                                     alt=""
                                     loading="lazy"
                                     decoding="async"
@@ -213,7 +213,7 @@ export const Home: React.FC = () => {
                                 className="flex justify-center md:justify-start order-2 md:order-1"
                             >
                                 <img
-                                    src="/lion-ai.png"
+                                    src="/lion-ai.webp"
                                     alt=""
                                     loading="lazy"
                                     decoding="async"
@@ -297,7 +297,7 @@ export const Home: React.FC = () => {
                 <section className="relative py-20 md:py-40 px-4 md:px-6 max-w-7xl mx-auto z-20">
                     {/* Buffalo peeking in beside the CTA */}
                     <img
-                        src="/buffalo-ai.png"
+                        src="/buffalo-ai.webp"
                         alt=""
                         loading="lazy"
                         decoding="async"

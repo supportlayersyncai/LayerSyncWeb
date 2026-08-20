@@ -171,9 +171,9 @@ export const About: React.FC = () => {
           </div>
           {/* Mascot collage */}
           <Reveal delay={0.15} className="relative h-[300px] md:h-[380px]">
-            <img src="/lion-ai.png" alt="" loading="lazy" className="absolute left-0 bottom-0 w-[58%] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.18)]" />
-            <img src="/buffalo-ai.png" alt="" loading="lazy" className="absolute right-0 top-2 w-[52%] animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.18)]" style={{ animationDelay: '2.5s' }} />
-            <img src="/harambe-ai.png" alt="" loading="lazy" className="absolute right-[20%] bottom-[-4%] w-[40%] animate-float drop-shadow-[0_0_30px_rgba(211,97,53,0.15)]" style={{ animationDelay: '4s' }} />
+            <img src="/lion-ai.webp" alt="" loading="lazy" className="absolute left-0 bottom-0 w-[58%] animate-float drop-shadow-[0_0_40px_rgba(211,97,53,0.18)]" />
+            <img src="/buffalo-ai.webp" alt="" loading="lazy" className="absolute right-0 top-2 w-[52%] animate-float drop-shadow-[0_0_40px_rgba(127,176,105,0.18)]" style={{ animationDelay: '2.5s' }} />
+            <img src="/harambe-ai.webp" alt="" loading="lazy" className="absolute right-[20%] bottom-[-4%] w-[40%] animate-float drop-shadow-[0_0_30px_rgba(211,97,53,0.15)]" style={{ animationDelay: '4s' }} />
           </Reveal>
         </div>
       </section>

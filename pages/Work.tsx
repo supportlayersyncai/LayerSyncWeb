@@ -20,8 +20,8 @@ export const Work: React.FC = () => {
     { title: 'SynCRM — pipeline dashboard', desc: 'Live lead pipeline, win rate and lead scoring', image: '/syncrm-dashboard.webp', tag: 'SynCRM', badge: 'Live product' },
     { title: 'SynCRM — agent performance', desc: 'Assigned, contacted, viewings and conversion by agent', image: '/syncrm-reports.webp', tag: 'SynCRM', badge: 'Live product' },
     { title: 'SynCRM Copilot', desc: 'Ask about your pipeline and act on leads in plain language', image: '/syncrm-copilot.webp', tag: 'SynCRM', badge: 'Live product' },
-    { title: 'Energy dashboard', desc: 'Operations dashboard design', image: '/portfolio-1.png', tag: 'Web', fit: 'object-left-top', badge: 'Concept' },
-    { title: 'Customer portal', desc: 'Client-facing portal design', image: '/portfolio-3.png', tag: 'Web', fit: 'object-center', badge: 'Concept' },
+    { title: 'Energy dashboard', desc: 'Operations dashboard design', image: '/portfolio-1.webp', tag: 'Web', fit: 'object-left-top', badge: 'Concept' },
+    { title: 'Customer portal', desc: 'Client-facing portal design', image: '/portfolio-3.webp', tag: 'Web', fit: 'object-center', badge: 'Concept' },
   ];
 
   const slots = [

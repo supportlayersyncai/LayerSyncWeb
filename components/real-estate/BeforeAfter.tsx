@@ -56,7 +56,7 @@ export const RealEstateFeatures: React.FC = () => {
                 >
                     {/* Before Image */}
                     <img
-                        src="/ai-staging-before.png"
+                        src="/ai-staging-before.webp"
                         alt="Before — Empty Room"
                         className="absolute inset-0 w-full h-full object-cover"
                         draggable={false}
@@ -65,7 +65,7 @@ export const RealEstateFeatures: React.FC = () => {
                     {/* After Image (clipped) */}
                     <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
                         <img
-                            src="/ai-staging-after.png"
+                            src="/ai-staging-after.webp"
                             alt="After — AI Staged"
                             className="absolute inset-0 w-full h-full object-cover"
                             draggable={false}

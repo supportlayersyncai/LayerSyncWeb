@@ -8,9 +8,9 @@ export const LaptopCarousel: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }
     // Design concepts — not claimed as delivered client work. Verified case
     // studies live on /work once we have them (we don't fabricate proof).
     const projects = [
-        { title: "Energy dashboard", image: "/portfolio-1.png", desc: "Design concept", fit: "object-left-top" },
-        { title: "ROI calculator", image: "/portfolio-2.png", desc: "Design concept", fit: "object-left-top" },
-        { title: "Customer portal", image: "/portfolio-3.png", desc: "Design concept", fit: "object-center" },
+        { title: "Energy dashboard", image: "/portfolio-1.webp", desc: "Design concept", fit: "object-left-top" },
+        { title: "ROI calculator", image: "/portfolio-2.webp", desc: "Design concept", fit: "object-left-top" },
+        { title: "Customer portal", image: "/portfolio-3.webp", desc: "Design concept", fit: "object-center" },
     ];
 
     const next = () => setCurrentIndex((prev) => (prev + 1) % projects.length);

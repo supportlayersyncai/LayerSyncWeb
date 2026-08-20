@@ -48,7 +48,7 @@ export const ProblemGap: React.FC = () => {
                             transition={{ duration: 0.8 }}
                             className="mb-10 w-full max-w-[300px] aspect-square rounded-[32px] overflow-hidden shadow-2xl shadow-indigo-500/20"
                         >
-                            <img src="/academy-brain.png" alt="Abstract AI Brain Mesh" className="w-full h-full object-cover mix-blend-screen opacity-90" />
+                            <img src="/academy-brain.webp" alt="Abstract AI Brain Mesh" className="w-full h-full object-cover mix-blend-screen opacity-90" />
                         </motion.div>
 
                         <h2 className="text-3xl md:text-5xl font-light mb-8 text-gray-900 dark:text-dark-text-primary leading-tight">
