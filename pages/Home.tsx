@@ -15,7 +15,6 @@ import {
     MapPin,
 } from 'lucide-react';
 import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
-import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 export const Home: React.FC = () => {
     const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
@@ -253,28 +252,44 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* ===== TESTIMONIALS ===== */}
-                <section className="py-16 md:py-24 px-4 md:px-6">
-                    <div className="max-w-7xl mx-auto">
+                {/* ===== REAL PRODUCT PROOF ===== */}
+                <section className="py-16 md:py-28 px-4 md:px-6">
+                    <div className="max-w-6xl mx-auto">
                         <SectionHeader
                             align="center"
-                            title={<>What people <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">say.</span></>}
-                            sub="Operators who've stopped running their business out of spreadsheets and WhatsApp."
+                            title={<>Software we've actually <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">shipped.</span></>}
+                            sub="SynCRM is live and running today. This is the real dashboard, not a mockup."
                             className="mb-14"
                         />
-                        <div className="grid md:grid-cols-3 gap-6">
-                            {[mockTestimonials.oasis, mockTestimonials.smb, mockTestimonials.principal].map((t, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: i * 0.1 }}
-                                >
-                                    <TestimonialCard t={t} />
-                                </motion.div>
-                            ))}
-                        </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 32 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <Link to="/syncrm" className="block group">
+                                <div className="rounded-[24px] md:rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl relative">
+                                    <img
+                                        src="/syncrm-dashboard.webp"
+                                        alt="The SynCRM pipeline dashboard, showing total, open, won and lost leads with win rate and lead score distribution"
+                                        loading="lazy"
+                                        decoding="async"
+                                        width="1800"
+                                        height="1058"
+                                        className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 p-5 md:p-8 bg-gradient-to-t from-black/85 to-transparent flex items-end justify-between gap-4">
+                                        <div>
+                                            <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-green mb-1.5">Live product</div>
+                                            <h3 className="text-lg md:text-2xl font-light text-white">SynCRM — pipeline dashboard</h3>
+                                        </div>
+                                        <span className="hidden sm:inline-flex text-[11px] uppercase tracking-[0.2em] font-bold text-white items-center gap-2 whitespace-nowrap">
+                                            Explore SynCRM <ArrowRight className="w-4 h-4 cta-arrow" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
                     </div>
                 </section>
 

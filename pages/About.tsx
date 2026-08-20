@@ -1,24 +1,151 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useOutletContext } from 'react-router-dom';
-import { Users } from 'lucide-react';
-import { CTAButton, Eyebrow, SectionHeader, ProofPlaceholder } from '../components/site/Primitives';
+import { Users, Landmark, ShieldCheck, Cloud, Cpu, FileText, CreditCard, Mail } from 'lucide-react';
+import { CTAButton, Eyebrow, SectionHeader } from '../components/site/Primitives';
 import { Aurora, Reveal } from '../components/site/Backgrounds';
 
 /**
- * About — editorial/human personality. Asymmetric hero with the brand mascots,
- * larger type, warmer feel. Partner names/bios are placeholders until supplied.
+ * About — editorial/human personality.
+ *
+ * Team profiles are REAL, taken from the LayerSync proposal for Fine & Country
+ * Zimbabwe (LS-FNC-2026-01). Do not embellish these — they are verifiable
+ * career claims and prospects may check them.
  */
+
+interface Person {
+  name: string;
+  role: string;
+  initials: string;
+  accent: 'orange' | 'green';
+  bio: string[];
+  experienceLabel: string;
+  experience: { icon: React.ReactNode; text: string }[];
+  stack?: string;
+  atLayerSync: string;
+}
+
+const people: Person[] = [
+  {
+    name: 'Tinotenda Joel Muchenje',
+    role: 'Senior Software Engineer · Enterprise Applications, AI & Solution Architecture',
+    initials: 'TM',
+    accent: 'orange',
+    bio: [
+      'Tino is a senior full-stack engineer with more than seven years designing and delivering enterprise software across financial services, insurance, healthcare and technology. His work spans the full lifecycle — solution architecture, backend, frontend, cloud infrastructure, systems integration and AI implementation.',
+      'Before co-founding LayerSync he held senior engineering roles building production software for organisations in highly regulated environments. At Sybrin, one of Africa’s leading enterprise software companies, he delivered digital transformation systems for banks and insurers across multiple African markets. He has also shipped software across legal technology, fintech and AI startups.',
+      'He specialises in practical AI for business — workflow automation, retrieval-augmented generation, intelligent document processing and enterprise AI assistants — and founded AI Community Zimbabwe, an initiative advancing AI knowledge and collaboration in Zimbabwe’s technology ecosystem.',
+    ],
+    experienceLabel: 'Systems delivered in production',
+    experience: [
+      { icon: <ShieldCheck className="w-4 h-4" />, text: 'KYC document management systems' },
+      { icon: <FileText className="w-4 h-4" />, text: 'OCR-powered document intelligence' },
+      { icon: <Landmark className="w-4 h-4" />, text: 'Core banking integrations' },
+      { icon: <Cpu className="w-4 h-4" />, text: 'Insurance workflow automation' },
+      { icon: <Cloud className="w-4 h-4" />, text: 'Financial reporting platforms' },
+      { icon: <Mail className="w-4 h-4" />, text: 'Enterprise email orchestration' },
+    ],
+    atLayerSync:
+      'Tino leads software architecture, full-stack engineering and AI implementation — making sure every platform is technically robust, scalable and built for long-term operation.',
+  },
+  {
+    name: 'Andre Dingiswayo',
+    role: 'Senior Software Engineer · Enterprise Systems, Backend Engineering & Cloud Infrastructure',
+    initials: 'AD',
+    accent: 'green',
+    bio: [
+      'Andre is a senior engineer specialising in enterprise backend development, cloud infrastructure and production-grade financial systems. He has built software for banks, stockbrokers and insurance organisations across Southern Africa, and brings enterprise engineering practice into every LayerSync build.',
+      'His systems run in live production environments where security, performance and reliability are non-negotiable. Beyond engineering, he has led projects end to end — from requirements gathering through implementation, deployment, client training and post-production support.',
+    ],
+    experienceLabel: 'Systems delivered in production',
+    experience: [
+      { icon: <Landmark className="w-4 h-4" />, text: 'Core banking API integrations' },
+      { icon: <CreditCard className="w-4 h-4" />, text: 'Direct debit & payment processing' },
+      { icon: <FileText className="w-4 h-4" />, text: 'Enterprise document management' },
+      { icon: <Cpu className="w-4 h-4" />, text: 'Insurance workflow automation' },
+      { icon: <Mail className="w-4 h-4" />, text: 'Enterprise email management' },
+    ],
+    stack: 'C#, .NET, Angular, TypeScript, SQL Server, AWS, REST APIs, enterprise systems integration',
+    atLayerSync:
+      'Andre leads backend engineering, cloud infrastructure, enterprise integrations and production reliability — the secure, resilient foundation under every LayerSync system.',
+  },
+];
+
+const PersonCard: React.FC<{ p: Person }> = ({ p }) => {
+  const ring =
+    p.accent === 'orange'
+      ? 'bg-brand-orange/12 text-brand-orange border-brand-orange/25'
+      : 'bg-brand-green/12 text-brand-green border-brand-green/25';
+  const chip =
+    p.accent === 'orange'
+      ? 'text-brand-orange bg-brand-orange/8'
+      : 'text-brand-green bg-brand-green/8';
+
+  return (
+    <article className="glass-card rounded-[32px] border border-black/5 dark:border-white/5 p-8 md:p-12 h-full">
+      <header className="flex items-start gap-5 mb-8">
+        <div className={`w-16 h-16 md:w-[72px] md:h-[72px] rounded-2xl border flex items-center justify-center text-lg font-semibold flex-shrink-0 ${ring}`}>
+          {p.initials}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-xl md:text-2xl font-light text-gray-900 dark:text-dark-text-primary leading-snug">
+            {p.name}
+          </h3>
+          <p className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] font-bold text-gray-500 dark:text-dark-text-tertiary mt-2 leading-relaxed">
+            {p.role}
+          </p>
+        </div>
+      </header>
+
+      <div className="space-y-4 mb-8">
+        {p.bio.map((para, i) => (
+          <p key={i} className="text-sm md:text-[15px] text-gray-600 dark:text-dark-text-secondary leading-relaxed">
+            {para}
+          </p>
+        ))}
+      </div>
+
+      <div className="mb-8">
+        <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-gray-400 dark:text-dark-text-tertiary mb-4">
+          {p.experienceLabel}
+        </div>
+        <ul className="grid sm:grid-cols-2 gap-2.5">
+          {p.experience.map((e, i) => (
+            <li
+              key={i}
+              className={`flex items-center gap-2.5 text-xs md:text-[13px] rounded-xl px-3 py-2.5 ${chip}`}
+            >
+              <span className="flex-shrink-0">{e.icon}</span>
+              <span className="text-gray-700 dark:text-dark-text-secondary leading-snug">{e.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {p.stack && (
+        <div className="mb-8">
+          <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-gray-400 dark:text-dark-text-tertiary mb-3">
+            Technical stack
+          </div>
+          <p className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed">{p.stack}</p>
+        </div>
+      )}
+
+      <div className="pt-6 border-t border-black/5 dark:border-white/5">
+        <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-gray-400 dark:text-dark-text-tertiary mb-3">
+          At LayerSync
+        </div>
+        <p className="text-sm md:text-[15px] text-gray-700 dark:text-dark-text-secondary leading-relaxed">
+          {p.atLayerSync}
+        </p>
+      </div>
+    </article>
+  );
+};
+
 export const About: React.FC = () => {
   const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
   const dark = isDarkMode ?? true;
-
-  const partners = [
-    'Partner 1 — name, role, and the operating experience they bring.',
-    'Partner 2 — name, role, and what they own day-to-day.',
-    'Partner 3 — name, role, the technical depth behind the builds.',
-    'Partner 4 — name, role, and how they got here.',
-  ];
 
   return (
     <div className={`relative z-20 ${dark ? 'bg-[#050505]' : 'bg-[#f5f5f7]'}`}>
@@ -30,14 +157,15 @@ export const About: React.FC = () => {
             <Reveal><Eyebrow><Users className="w-3 h-3" /> Who we are</Eyebrow></Reveal>
             <Reveal delay={0.05}>
               <h1 className="hero-heading mb-8 text-shimmer">
-                Four partners who'd rather build the system than <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">sell you one.</span>
+                Young company. <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">Experienced builders.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="sub-heading max-w-xl">
-                LayerSync is a small team based in Harare, building software for businesses across
-                Zimbabwe and the region. We're operators first — we've felt the
-                spreadsheet-and-WhatsApp chaos ourselves, which is why we build the way we do.
+                LayerSync is two years old. The engineering team behind it is not. Between them, our
+                engineers carry over a decade each of production experience in regulated,
+                business-critical environments — including core infrastructure inside Zimbabwean
+                enterprise banking. That is the honest position we bring to every engagement.
               </p>
             </Reveal>
           </div>
@@ -79,15 +207,20 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* PARTNERS */}
+      {/* TECHNICAL LEADERSHIP */}
       <section className="py-16 md:py-28 px-4 md:px-6 relative overflow-hidden">
         <div className="ambient-glow absolute bottom-[5%] right-[5%] w-[40vw] h-[40vw] blur-[150px] bg-brand-orange/10 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
-          <SectionHeader align="center" title={<>The <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">team.</span></>} />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
-            {partners.map((p, i) => (
-              <Reveal key={i} delay={(i % 4) * 0.08}>
-                <ProofPlaceholder note={`[TEAM — Kev to supply] ${p}`} className="h-full flex flex-col justify-center min-h-[220px]" />
+          <SectionHeader
+            align="center"
+            title={<>Technical <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">leadership.</span></>}
+            sub="The engineers who design, build and support what we deliver — the same people you meet on day one and the same people who are there after go-live."
+            className="mb-14"
+          />
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+            {people.map((p, i) => (
+              <Reveal key={p.name} delay={i * 0.1}>
+                <PersonCard p={p} />
               </Reveal>
             ))}
           </div>

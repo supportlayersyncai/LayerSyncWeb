@@ -8,6 +8,8 @@ export interface ShowcaseItem {
   image: string;
   tag?: string;
   fit?: string;
+  /** Corner label. Use "Live product" for real screens, "Concept" for design work. */
+  badge?: string;
 }
 
 /**
@@ -78,7 +80,13 @@ export const DeviceShowcase: React.FC<{ items: ShowcaseItem[]; isDarkMode: boole
                 <h3 className="text-lg md:text-2xl font-bold text-white mt-1">{current.title}</h3>
                 <p className="text-gray-300 text-xs md:text-sm">{current.desc}</p>
               </div>
-              <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-white/50 px-3 py-1.5 rounded-full border border-white/15">Concept</span>
+              <span className={`text-[9px] uppercase tracking-[0.25em] font-bold px-3 py-1.5 rounded-full border whitespace-nowrap ${
+                current.badge === 'Live product'
+                  ? 'text-brand-green border-brand-green/40 bg-brand-green/10'
+                  : 'text-white/50 border-white/15'
+              }`}>
+                {current.badge ?? 'Concept'}
+              </span>
             </div>
           </div>
           {/* Base */}

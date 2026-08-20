@@ -10,9 +10,34 @@ import {
   TrendingUp,
   Workflow,
 } from 'lucide-react';
-import { CTAButton, GhostLink, Eyebrow, SectionHeader, ProofPlaceholder } from '../components/site/Primitives';
+import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
 import { Aurora, ConicHalo, Reveal } from '../components/site/Backgrounds';
-import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
+import { DeviceShowcase, type ShowcaseItem } from '../components/site/DeviceShowcase';
+
+/** Real screens from a live SynCRM instance (contact details redacted). */
+const productShots: ShowcaseItem[] = [
+  {
+    title: 'Pipeline dashboard',
+    desc: 'Total, open, won and lost leads with live win rate and lead scoring',
+    image: '/syncrm-dashboard.webp',
+    tag: 'Live product',
+    badge: 'Live product',
+  },
+  {
+    title: 'Agent performance',
+    desc: 'Assigned, contacted, viewings, offers and conversion by agent',
+    image: '/syncrm-reports.webp',
+    tag: 'Live product',
+    badge: 'Live product',
+  },
+  {
+    title: 'SynCRM Copilot',
+    desc: 'Ask questions about your pipeline and act on leads in plain language',
+    image: '/syncrm-copilot.webp',
+    tag: 'Live product',
+    badge: 'Live product',
+  },
+];
 
 /** Animated pipeline board — the signature visual for SynCRM's hero. */
 const PipelineBoard: React.FC = () => {
@@ -214,42 +239,19 @@ export const SynCRM: React.FC = () => {
         </div>
       </section>
 
-      {/* ===== PROOF ===== */}
-      <section className="py-20 md:py-28 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
+      {/* ===== SEE IT WORKING — real product screenshots ===== */}
+      <section className="py-20 md:py-28 px-4 md:px-6 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
           <SectionHeader
             align="center"
-            title={<>Agencies running on <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">SynCRM.</span></>}
-            sub="Real results from real brokerages — added here as they're confirmed."
+            eyebrow={<><LayoutDashboard className="w-3 h-3" /> Inside the product</>}
+            title={<>This is SynCRM, <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">actually running.</span></>}
+            sub="Not mockups — screens from a live SynCRM instance. Contact details are blurred for privacy."
+            className="mb-14"
           />
-          <div className="grid md:grid-cols-3 gap-6 mt-14">
-            {/* Case study — Oasis Realty (placeholder copy until verified) */}
-            <Reveal>
-              <div className="glass-card card-hover-glow rounded-[28px] p-7 md:p-8 border border-black/5 dark:border-white/5 h-full flex flex-col">
-                <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-orange mb-3">Case study</div>
-                <h3 className="text-xl font-light mb-3 text-gray-900 dark:text-dark-text-primary">Oasis Realty</h3>
-                <p className="text-sm text-gray-600 dark:text-dark-text-secondary leading-relaxed flex-grow">
-                  Leads were scattered across personal WhatsApp accounts and a shared spreadsheet. After moving to SynCRM, every enquiry is captured and routed automatically — and the team works the whole pipeline from one board.
-                </p>
-                <div className="flex gap-6 mt-6 pt-6 border-t border-black/5 dark:border-white/5">
-                  <div>
-                    <div className="text-2xl font-light text-brand-orange">1</div>
-                    <div className="text-[9px] uppercase tracking-widest font-bold text-gray-500 dark:text-dark-text-tertiary">Source of truth</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-light text-brand-green">0</div>
-                    <div className="text-[9px] uppercase tracking-widest font-bold text-gray-500 dark:text-dark-text-tertiary">Leads in personal chats</div>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <ProofPlaceholder note="[PRODUCT UI — Kev to supply] Screenshot of the live pipeline board / WhatsApp capture." className="h-full flex flex-col justify-center" />
-            </Reveal>
-            <Reveal delay={0.16}>
-              <TestimonialCard t={mockTestimonials.oasis} />
-            </Reveal>
-          </div>
+          <Reveal y={32}>
+            <DeviceShowcase items={productShots} isDarkMode={dark} />
+          </Reveal>
         </div>
       </section>
 

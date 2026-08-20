@@ -7,7 +7,6 @@ import { ListingCopyDemo } from '../components/real-estate/ListingCopyDemo';
 import { IntegrationMap } from '../components/real-estate/IntegrationMap';
 import { ArrowRight, Building2 } from 'lucide-react';
 import { CTAButton, GhostLink, Eyebrow, SectionHeader } from '../components/site/Primitives';
-import { TestimonialCard, mockTestimonials } from '../components/site/Testimonial';
 
 /**
  * Real Estate — standalone services page. The product narrative lives on
@@ -81,18 +80,42 @@ export const RealEstate: React.FC = () => {
                     </Link>
                 </section>
 
-                {/* ===== PROOF (placeholder until verified) ===== */}
-                <section className="py-10 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
+                {/* ===== REAL PRODUCT PROOF ===== */}
+                <section className="py-10 md:py-20 px-4 md:px-6 max-w-6xl mx-auto">
                     <SectionHeader
                         align="center"
-                        title={<>Trusted by Zimbabwean <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">agencies.</span></>}
-                        sub="What principals and agents say about running their brokerage on SynCRM."
+                        title={<>The system behind the <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">marketing.</span></>}
+                        sub="Staging and listing copy win attention. SynCRM is what makes sure the enquiry actually gets worked — here it is running."
+                        className="mb-14"
                     />
-                    <div className="grid md:grid-cols-3 gap-6 mt-14">
-                        <TestimonialCard t={mockTestimonials.oasis} />
-                        <TestimonialCard t={mockTestimonials.principal} />
-                        <TestimonialCard t={mockTestimonials.agent} />
-                    </div>
+                    <Link to="/syncrm" className="block group">
+                        <motion.div
+                            initial={{ opacity: 0, y: 28 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                            className="rounded-[24px] md:rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl relative"
+                        >
+                            <img
+                                src="/syncrm-reports.webp"
+                                alt="SynCRM agent performance report showing leads assigned, contacted, viewings, offers and conversion rate per agent"
+                                loading="lazy"
+                                decoding="async"
+                                width="1800"
+                                height="1058"
+                                className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                            />
+                            <div className="absolute inset-x-0 bottom-0 p-5 md:p-8 bg-gradient-to-t from-black/85 to-transparent flex items-end justify-between gap-4">
+                                <div>
+                                    <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-green mb-1.5">Live product</div>
+                                    <h3 className="text-lg md:text-2xl font-light text-white">Agent performance, per agent</h3>
+                                </div>
+                                <span className="hidden sm:inline-flex text-[11px] uppercase tracking-[0.2em] font-bold text-white items-center gap-2 whitespace-nowrap">
+                                    See SynCRM <ArrowRight className="w-4 h-4 cta-arrow" />
+                                </span>
+                            </div>
+                        </motion.div>
+                    </Link>
                 </section>
 
                 {/* ===== FINAL CTA ===== */}
