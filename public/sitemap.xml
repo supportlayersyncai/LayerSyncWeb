@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://layersyncai.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://layersyncai.com/syncrm</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://layersyncai.com/what-we-build</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://layersyncai.com/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://layersyncai.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://layersyncai.com/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://layersyncai.com/solutions/real-estate</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://layersyncai.com/solutions/web-dev</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://layersyncai.com/solutions/academy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://layersyncai.com/privacy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://layersyncai.com/terms</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>

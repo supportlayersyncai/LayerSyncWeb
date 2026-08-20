@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useOutletContext } from 'react-router-dom';
-import { Briefcase } from 'lucide-react';
+import { useOutletContext, Link } from 'react-router-dom';
+import { Briefcase, Check, ArrowRight } from 'lucide-react';
 import { CTAButton, Eyebrow, SectionHeader, ProofPlaceholder } from '../components/site/Primitives';
 import { FloatingOrbs, Reveal } from '../components/site/Backgrounds';
 import { DeviceShowcase, type ShowcaseItem } from '../components/site/DeviceShowcase';
@@ -15,20 +15,19 @@ export const Work: React.FC = () => {
   const { isDarkMode } = useOutletContext<{ isDarkMode: boolean }>();
   const dark = isDarkMode ?? true;
 
+  // Real, shipped product screens lead. Design concepts are labelled as such.
   const showcase: ShowcaseItem[] = [
-    { title: 'Energy dashboard', desc: 'Operations dashboard concept', image: '/portfolio-1.png', tag: 'Custom systems', fit: 'object-left-top' },
-    { title: 'ROI calculator', desc: 'Interactive web tool concept', image: '/portfolio-2.png', tag: 'Web', fit: 'object-left-top' },
-    { title: 'Customer portal', desc: 'Client-facing portal concept', image: '/portfolio-3.png', tag: 'Web', fit: 'object-center' },
-    { title: 'AI virtual staging', desc: 'Real-estate marketing concept', image: '/ai-staging-after.png', tag: 'SynCRM', fit: 'object-center' },
+    { title: 'SynCRM — pipeline dashboard', desc: 'Live lead pipeline, win rate and lead scoring', image: '/syncrm-dashboard.webp', tag: 'SynCRM', badge: 'Live product' },
+    { title: 'SynCRM — agent performance', desc: 'Assigned, contacted, viewings and conversion by agent', image: '/syncrm-reports.webp', tag: 'SynCRM', badge: 'Live product' },
+    { title: 'SynCRM Copilot', desc: 'Ask about your pipeline and act on leads in plain language', image: '/syncrm-copilot.webp', tag: 'SynCRM', badge: 'Live product' },
+    { title: 'Energy dashboard', desc: 'Operations dashboard design', image: '/portfolio-1.png', tag: 'Web', fit: 'object-left-top', badge: 'Concept' },
+    { title: 'Customer portal', desc: 'Client-facing portal design', image: '/portfolio-3.png', tag: 'Web', fit: 'object-center', badge: 'Concept' },
   ];
 
   const slots = [
-    'SynCRM — a Zimbabwean brokerage. The pipeline problem, what we built, the verified result.',
+    'A Zimbabwean brokerage running on SynCRM. The pipeline problem, what we built, the result — written up with their permission.',
     'An operations system for an SMB drowning in manual admin. Before / after, in real numbers.',
     'A custom web platform. The brief, the build, what it changed for the business.',
-    'An AI agent handling first-line enquiries. What it replaced and what it freed up.',
-    'An enterprise / multi-team deployment. Scope, security posture, outcome.',
-    'Your project — the next one we add here.',
   ];
 
   return (
@@ -48,7 +47,7 @@ export const Work: React.FC = () => {
           <Reveal delay={0.1}>
             <p className="sub-heading max-w-2xl mx-auto">
               We'd rather show you one real system that changed how a business runs than a wall of
-              logos. Below: a few build concepts — verified case studies land here as we publish them.
+              logos. SynCRM is our flagship, and it's live today — these are its actual screens.
             </p>
           </Reveal>
         </div>
@@ -57,19 +56,61 @@ export const Work: React.FC = () => {
         </Reveal>
       </section>
 
-      {/* ===== CASE STUDY PLACEHOLDERS ===== */}
+      {/* ===== THE SYNCRM BUILD — real, verifiable scope ===== */}
+      <section className="pb-16 md:pb-24 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          <Reveal>
+            <article className="glass-card rounded-[32px] border border-black/5 dark:border-white/5 p-8 md:p-12">
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-orange mb-4">Flagship build · Live</div>
+              <h2 className="text-2xl md:text-4xl font-light mb-5 text-gray-900 dark:text-dark-text-primary">
+                SynCRM — a real estate operating system
+              </h2>
+              <p className="text-sm md:text-base text-gray-600 dark:text-dark-text-secondary leading-relaxed max-w-3xl mb-8">
+                Built from the ground up for how agencies actually work: every enquiry captured in one
+                place, routed to an agent, and worked through to close — with the whole pipeline
+                visible to management for the first time. It's in production today.
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {[
+                  'Lead & contact management',
+                  'Pipeline and Kanban deal tracking',
+                  'AI lead scoring & property matching',
+                  'Viewings, tasks and reminders',
+                  'Property & owner records',
+                  'Role-based access (admin / agent)',
+                  'Performance dashboards & reporting',
+                  'AI copilot over your own data',
+                  'Document generation & e-signature',
+                ].map((f, i) => (
+                  <div key={f} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-dark-text-secondary">
+                    <Check className="w-4 h-4 mt-0.5 text-brand-green flex-shrink-0" />
+                    <span className="leading-snug">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
+                <Link to="/syncrm" className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-orange inline-flex items-center gap-2 group">
+                  Explore SynCRM <ArrowRight className="w-4 h-4 cta-arrow" />
+                </Link>
+              </div>
+            </article>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ===== CASE STUDIES IN PROGRESS ===== */}
       <section className="pb-20 md:pb-28 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             align="center"
-            title={<>Case studies, <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">in progress.</span></>}
-            sub="Written up with the clients' permission — and only with numbers we can stand behind."
+            title={<>Client case studies, <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">in progress.</span></>}
+            sub="We publish these only with the client's permission, and only with numbers we can stand behind — so this section fills up slower than it could."
             className="mb-14"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {slots.map((s, i) => (
               <Reveal key={i} delay={(i % 3) * 0.08}>
-                <ProofPlaceholder note={`[CASE STUDY — Kev to supply] ${s}`} className="h-full flex flex-col justify-center min-h-[200px]" />
+                <ProofPlaceholder note={s} className="h-full flex flex-col justify-center min-h-[190px]" />
               </Reveal>
             ))}
           </div>

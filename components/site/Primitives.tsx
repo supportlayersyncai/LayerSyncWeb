@@ -54,15 +54,16 @@ export const Eyebrow: React.FC<{ children: React.ReactNode; className?: string }
  * existing testimonials/metrics/logos are replaced with these until Kev
  * supplies real assets — so nothing fabricated ships.
  */
-export const ProofPlaceholder: React.FC<{ note: string; className?: string }> = ({
-  note,
-  className = '',
-}) => (
+export const ProofPlaceholder: React.FC<{
+  note: string;
+  label?: string;
+  className?: string;
+}> = ({ note, label = 'In progress', className = '' }) => (
   <div
     className={`rounded-[24px] border border-dashed border-black/15 dark:border-white/15 bg-black/[0.02] dark:bg-white/[0.02] p-6 md:p-8 text-center ${className}`}
   >
     <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-brand-orange mb-2">
-      Placeholder
+      {label}
     </div>
     <p className="text-sm text-gray-500 dark:text-dark-text-tertiary leading-relaxed">{note}</p>
   </div>

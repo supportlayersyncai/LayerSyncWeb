@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, Link } from 'react-router-dom';
 import { Send, Check, Loader2, Calendar, Compass, Hammer, KeyRound } from 'lucide-react';
 import { Eyebrow } from '../components/site/Primitives';
 import { FloatingOrbs, Reveal } from '../components/site/Backgrounds';
@@ -143,6 +143,11 @@ export const Contact: React.FC = () => {
                 </button>
                 <p className="text-center text-[10px] uppercase tracking-widest text-gray-400 dark:text-dark-text-tertiary font-bold">
                   No commitment · We reply within one business day
+                </p>
+                <p className="text-center text-xs text-gray-400 dark:text-dark-text-tertiary leading-relaxed">
+                  We use these details only to reply to you. We never sell them or add you to a
+                  mailing list. See our{' '}
+                  <Link to="/privacy" className="underline hover:text-brand-orange">Privacy Policy</Link>.
                 </p>
               </motion.form>
             )}

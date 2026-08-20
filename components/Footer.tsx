@@ -49,7 +49,13 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
 
         <div className="pt-10 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <Logo isDarkMode={isDarkMode} className="h-8" />
-          <p className="text-[9px] md:text-[10px] tracking-[0.4em] font-black uppercase text-gray-400 dark:text-dark-text-tertiary">© 2026 LAYER SYNC TECHNOLOGIES (PRIVATE) LIMITED</p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <nav className="flex items-center gap-6">
+              <Link to="/privacy" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
+              <Link to="/terms" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Terms</Link>
+            </nav>
+            <p className="text-[9px] md:text-[10px] tracking-[0.35em] font-black uppercase text-gray-400 dark:text-dark-text-tertiary text-center md:text-right">© 2026 LAYER SYNC TECHNOLOGIES (PRIVATE) LIMITED</p>
+          </div>
         </div>
       </div>
     </footer>

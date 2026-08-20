@@ -7,6 +7,7 @@ import { WhatWeBuild } from './pages/WhatWeBuild';
 import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { Privacy, Terms } from './pages/Legal';
 import { RealEstate } from './pages/RealEstate';
 import { WebDev } from './pages/WebDev';
 import { Academy } from './pages/Academy';
@@ -23,6 +24,10 @@ const App: React.FC = () => {
         <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+
+        {/* Legal */}
+        <Route path="privacy" element={<Privacy />} />
+        <Route path="terms" element={<Terms />} />
 
         {/* Standalone real-estate services page (links to SynCRM) */}
         <Route path="solutions/real-estate" element={<RealEstate />} />

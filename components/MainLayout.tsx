@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { PageMeta } from './site/PageMeta';
 
 export const MainLayout: React.FC = () => {
     // Initialize with localStorage or default to true
@@ -33,6 +34,8 @@ export const MainLayout: React.FC = () => {
 
     return (
         <main className={`relative transition-colors duration-700 ${isDarkMode ? 'bg-[#050505] text-white' : 'bg-[#f5f5f7] text-black'}`}>
+
+            <PageMeta />
 
             {/* Background Ambience */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
