@@ -42,6 +42,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             <ul className="space-y-4">
               <li><Link to="/contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Book a diagnostic</Link></li>
               <li><a href="mailto:support@layersyncai.com" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">support@layersyncai.com</a></li>
+              <li><a href="tel:+263783771054" className="text-sm text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">+263 78 377 1054</a></li>
               <li><span className="text-sm text-gray-600 dark:text-gray-400">Harare, Zimbabwe</span></li>
             </ul>
           </div>
@@ -54,7 +55,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
               <Link to="/privacy" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
               <Link to="/terms" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Terms</Link>
             </nav>
-            <p className="text-[9px] md:text-[10px] tracking-[0.35em] font-black uppercase text-gray-400 dark:text-dark-text-tertiary text-center md:text-right">© 2026 LAYER SYNC TECHNOLOGIES (PRIVATE) LIMITED</p>
+            <p className="text-[9px] md:text-[10px] tracking-[0.35em] font-black uppercase text-gray-400 dark:text-dark-text-tertiary text-center md:text-right">© 2026 LAYER SYNC TECHNOLOGIES (PRIVATE) LIMITED · EST. 2024</p>
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   '/about': {
     title: 'About — Four founding partners | LayerSync',
     description:
-      'Meet the four founding partners behind LayerSync. Young company, experienced builders — over a decade each of production experience in banking, insurance and financial systems.',
+      'Meet the four founding partners behind LayerSync — an AI systems and software company founded in 2024 in Harare, building production platforms for banking, insurance and real estate.',
   },
   '/contact': {
     title: 'Book a diagnostic | LayerSync',

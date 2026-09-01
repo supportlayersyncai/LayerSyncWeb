@@ -31,67 +31,65 @@ interface Person {
 
 const people: Person[] = [
   {
-    name: 'Tadiwa Chidzidzi',
-    role: 'Sales, Business Development & Client Success',
-    photo: '/team-tadiwa.webp',
+    name: 'Kevin Chisango',
+    role: 'Founder & CEO · Product & Architecture',
+    photo: '/team-kevin.webp',
     accent: 'orange',
     bio: [
-      'Tadiwa owns the client relationship end to end. He is the person you meet first, the one who scopes the work with you, and the one still there after go-live — which is deliberate: the person who makes the commitments is the person accountable for them.',
+      'Kevin sets product and technical direction, and architects the systems the company builds — data models, multi-tenant platforms and AI systems, end to end.',
+      'He has a track record of shipped, live products, including KurimaSense (institutional agricultural-risk intelligence) and SynCRM (a real-estate system of record). His background spans systems engineering, product and strategy.',
     ],
     atLayerSync:
-      'Tadiwa leads sales, business development and client success — your primary point of contact from first conversation through to a live system.',
+      'Kevin owns the vision and the technical foundation — the architecture underneath every platform we ship.',
   },
   {
-    name: 'Kevin Chisango',
-    role: 'Product Strategy, Brand & Solution Architecture',
-    photo: '/team-kevin.webp',
+    name: 'Tadiwa Gerald Chidzidzi',
+    role: 'Co-Founder & Chief Operating Officer',
+    photo: '/team-tadiwa.webp',
     accent: 'green',
     bio: [
-      'Kevin works on how the pieces fit — which modules a business actually needs, how they connect, and how the finished system is presented to the people who have to use it every day. Good architecture that nobody adopts is a failed project, so he treats both halves as the same problem.',
+      'Tadiwa runs the company day to day — operations, delivery management and client relationships — turning build capability into a functioning, reliable business.',
+      'He is the person who makes sure scoped work ships on time and that the engine keeps running while the team builds. In practice he is also your primary point of contact, from first conversation through to go-live.',
     ],
     atLayerSync:
-      'Kevin leads product strategy, brand and solution architecture — shaping how our platforms fit together and how they land with your team.',
-  },
-  {
-    name: 'Tinotenda Muchenje',
-    role: 'Full-Stack Build, Automation & AI Workflows',
-    photo: '/team-tino.webp',
-    accent: 'orange',
-    bio: [
-      'Tino is a senior full-stack engineer with more than seven years designing and delivering enterprise software across financial services, insurance, healthcare and technology. His work spans the full lifecycle — solution architecture, backend, frontend, cloud infrastructure, systems integration and AI implementation.',
-      'Before LayerSync he held senior engineering roles building production software for organisations in highly regulated environments. At Sybrin, one of Africa’s leading enterprise software companies, he delivered digital transformation systems for banks and insurers across multiple African markets. He has also shipped software across legal technology, fintech and AI startups.',
-      'He specialises in practical AI for business — workflow automation, retrieval-augmented generation, intelligent document processing and enterprise AI assistants — and founded AI Community Zimbabwe, an initiative advancing AI knowledge and collaboration in Zimbabwe’s technology ecosystem.',
-    ],
-    experience: [
-      { icon: <ShieldCheck className="w-4 h-4" />, text: 'KYC document management systems' },
-      { icon: <FileText className="w-4 h-4" />, text: 'OCR-powered document intelligence' },
-      { icon: <Landmark className="w-4 h-4" />, text: 'Core banking integrations' },
-      { icon: <Cpu className="w-4 h-4" />, text: 'Insurance workflow automation' },
-      { icon: <Cloud className="w-4 h-4" />, text: 'Financial reporting platforms' },
-      { icon: <Mail className="w-4 h-4" />, text: 'Enterprise email orchestration' },
-    ],
-    atLayerSync:
-      'Tino leads full-stack build, automation and AI workflows — the modules themselves and the intelligence layers that connect them.',
+      'Tadiwa is the operator who makes delivery real — accountable for the commitments we make to you.',
   },
   {
     name: 'Andre Dingiswayo',
-    role: 'Engineering, Infrastructure & Reliability',
+    role: 'Co-Founder & Lead Engineer',
     photo: '/team-andre.webp',
     accent: 'green',
     bio: [
-      'Andre is a senior engineer specialising in enterprise backend development, cloud infrastructure and production-grade financial systems. He has built software for banks, stockbrokers and insurance organisations across Southern Africa, and brings enterprise engineering practice into every LayerSync build.',
-      'His systems run in live production environments where security, performance and reliability are non-negotiable. Beyond engineering, he has led projects end to end — from requirements gathering through implementation, deployment, client training and post-production support.',
+      'Andre is a full-stack engineer with four-plus years building and deploying production fintech systems for major banks, stockbrokers and insurers across Southern Africa.',
+      'At Sybrin he led development of core banking API integrations, document-management systems used by leading financial institutions, and payment-automation modules. He has delivered systems end to end — from requirements through to post-deployment support — and brings the discipline that financial-institution software demands.',
     ],
     experience: [
       { icon: <Landmark className="w-4 h-4" />, text: 'Core banking API integrations' },
-      { icon: <CreditCard className="w-4 h-4" />, text: 'Direct debit & payment processing' },
+      { icon: <CreditCard className="w-4 h-4" />, text: 'Payment-automation modules' },
       { icon: <FileText className="w-4 h-4" />, text: 'Enterprise document management' },
-      { icon: <Cpu className="w-4 h-4" />, text: 'Insurance workflow automation' },
-      { icon: <Mail className="w-4 h-4" />, text: 'Enterprise email management' },
+      { icon: <ShieldCheck className="w-4 h-4" />, text: 'Production fintech systems' },
     ],
-    stack: 'C#, .NET, Angular, TypeScript, SQL Server, AWS, REST APIs, enterprise systems integration',
+    stack: 'C#/.NET Core, Angular, TypeScript, AWS',
     atLayerSync:
-      'Andre leads engineering, infrastructure and reliability — the secure, resilient foundation every LayerSync system runs on.',
+      'Andre brings enterprise-grade engineering rigour — the secure, resilient foundation every LayerSync system runs on.',
+  },
+  {
+    name: 'Tino Muchenje',
+    role: 'Co-Founder & Full-Stack Engineer',
+    photo: '/team-tino.webp',
+    accent: 'orange',
+    bio: [
+      'Tino builds across the stack and specialises in AI workflow automation — a prize-winner at an n8n automation hackathon, and fast at turning an idea into a working system.',
+      'He is the team’s edge in connecting AI and automation tooling into real, shipped product: workflow automation, retrieval-augmented generation, intelligent document processing and AI assistants that do actual work inside a business.',
+    ],
+    experience: [
+      { icon: <Cpu className="w-4 h-4" />, text: 'AI workflow automation' },
+      { icon: <FileText className="w-4 h-4" />, text: 'Intelligent document processing' },
+      { icon: <Cloud className="w-4 h-4" />, text: 'Retrieval-augmented generation' },
+      { icon: <Mail className="w-4 h-4" />, text: 'AI assistants & copilots' },
+    ],
+    atLayerSync:
+      'Tino builds full-stack and wires in the AI and automation layers that connect the whole system together.',
   },
 ];
 
@@ -188,10 +186,11 @@ export const About: React.FC = () => {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="sub-heading max-w-xl">
-                LayerSync is two years old. The engineering team behind it is not. Our engineers
-                carry over a decade each of production experience in regulated, business-critical
-                environments — including core infrastructure inside Zimbabwean enterprise banking.
-                That is the honest position we bring to every engagement.
+                LayerSync was founded in 2024 in Harare. The company is young; the engineering
+                behind it is not. Between them our engineers carry over a decade of production
+                experience in regulated, business-critical environments — including core banking
+                infrastructure used by leading financial institutions. That is the honest position
+                we bring to every engagement.
               </p>
             </Reveal>
           </div>

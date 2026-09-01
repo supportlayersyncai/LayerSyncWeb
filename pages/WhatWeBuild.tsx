@@ -152,7 +152,7 @@ export const WhatWeBuild: React.FC = () => {
           <SectionHeader
             align="center"
             title={<>Built by engineers from <span className="italic font-extralight text-gray-400 dark:text-dark-text-secondary">regulated industries.</span></>}
-            sub="LayerSync is two years old. The engineering team behind it is not — our engineers each carry over a decade of production experience in banking, insurance and financial systems across Southern Africa."
+            sub="Founded in 2024, but the engineering behind it is not new — between them our engineers carry over a decade of production experience building fintech systems for banks, stockbrokers and insurers across Southern Africa."
             className="mb-14"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
