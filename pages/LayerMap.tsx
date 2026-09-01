@@ -136,19 +136,37 @@ export const LayerMap: React.FC = () => {
         </div>
       </section>
 
-      {/* ===== SOFT CTA ===== */}
+      {/* ===== WHO MADE THIS + WAY INTO THE SITE ===== */}
       <section className="pb-24 md:pb-32 px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto">
           <Reveal>
-            <p className="text-sm md:text-base text-gray-600 dark:text-dark-text-secondary leading-relaxed mb-6">
-              Worked out which layer you're on and want help getting to the next one?
-            </p>
-            <Link
-              to="/contact"
-              className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-orange inline-flex items-center gap-2 group"
-            >
-              Book a diagnostic <ArrowRight className="w-4 h-4 cta-arrow" />
-            </Link>
+            <div className="glass-card rounded-[28px] border border-black/5 dark:border-white/5 p-8 md:p-12 text-center">
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 dark:text-dark-text-tertiary mb-4">
+                Who made this
+              </div>
+              <h2 className="text-2xl md:text-3xl font-light mb-5 text-gray-900 dark:text-dark-text-primary">
+                We build the systems businesses run on.
+              </h2>
+              <p className="text-sm md:text-base text-gray-600 dark:text-dark-text-secondary leading-relaxed max-w-xl mx-auto mb-9">
+                LayerSync is an AI systems and software company in Harare. We build the custom
+                platforms, data systems and automation that move a business up the layers — including
+                SynCRM, our real-estate system of record.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <Link
+                  to="/"
+                  className="btn-glow group w-full sm:w-auto px-9 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center justify-center gap-3 bg-black text-white dark:bg-white dark:text-black"
+                >
+                  Explore LayerSync <ArrowRight className="w-4 h-4 cta-arrow" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="group w-full sm:w-auto px-9 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[11px] md:text-xs inline-flex items-center justify-center gap-3 border border-black/15 dark:border-white/20 text-gray-700 dark:text-dark-text-secondary hover:border-black/40 dark:hover:border-white/50 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Book a diagnostic <ArrowRight className="w-4 h-4 cta-arrow" />
+                </Link>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
