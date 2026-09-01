@@ -39,6 +39,12 @@ const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 const USE_SUPABASE = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+/** Optional fields arrive from the form as '' — store them as NULL, not ''. */
+const blankToNull = (v?: string) => {
+  const t = v?.trim();
+  return t ? t : null;
+};
+
 export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitResult> {
   // --- Backend connected: POST to Supabase REST endpoint -------------------
   if (USE_SUPABASE) {
@@ -52,12 +58,12 @@ export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitRe
           Prefer: 'return=minimal',
         },
         body: JSON.stringify({
-          name: req.name,
-          business: req.business,
-          role: req.role ?? null,
-          email: req.email,
-          whatsapp: req.whatsapp ?? null,
-          blind_spot: req.blindSpot,
+          name: req.name.trim(),
+          business: req.business.trim(),
+          role: blankToNull(req.role),
+          email: req.email.trim(),
+          whatsapp: blankToNull(req.whatsapp),
+          blind_spot: req.blindSpot.trim(),
           source: 'website',
         }),
       });
