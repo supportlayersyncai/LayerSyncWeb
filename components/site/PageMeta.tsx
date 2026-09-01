@@ -45,9 +45,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     image: `${SITE}/syncrm-dashboard.webp`,
   },
   '/about': {
-    title: 'About — Young company, experienced builders | LayerSync',
+    title: 'About — Four founding partners | LayerSync',
     description:
-      'LayerSync is two years old; the engineering team behind it is not. Over a decade each of production experience in banking, insurance and financial systems.',
+      'Meet the four founding partners behind LayerSync. Young company, experienced builders — over a decade each of production experience in banking, insurance and financial systems.',
   },
   '/contact': {
     title: 'Book a diagnostic | LayerSync',

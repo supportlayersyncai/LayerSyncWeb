@@ -175,7 +175,7 @@ export const WhatWeBuild: React.FC = () => {
           <Reveal delay={0.2}>
             <p className="text-center mt-10">
               <Link to="/about" className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-orange inline-flex items-center gap-2 group">
-                Meet the engineers <ArrowRight className="w-4 h-4 cta-arrow" />
+                Meet the team <ArrowRight className="w-4 h-4 cta-arrow" />
               </Link>
             </p>
           </Reveal>
