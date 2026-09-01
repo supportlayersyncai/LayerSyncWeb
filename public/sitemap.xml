@@ -9,6 +9,7 @@
   <url><loc>https://layersyncai.com/solutions/real-estate</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://layersyncai.com/solutions/web-dev</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://layersyncai.com/solutions/academy</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://layersyncai.com/layer-map</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://layersyncai.com/privacy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://layersyncai.com/terms</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

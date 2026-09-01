@@ -8,6 +8,7 @@ import { Work } from './pages/Work';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Privacy, Terms } from './pages/Legal';
+import { LayerMap } from './pages/LayerMap';
 import { RealEstate } from './pages/RealEstate';
 import { WebDev } from './pages/WebDev';
 import { Academy } from './pages/Academy';
@@ -24,6 +25,9 @@ const App: React.FC = () => {
         <Route path="work" element={<Work />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+
+        {/* Lead magnet — this URL is used in ManyChat campaigns, keep it stable */}
+        <Route path="layer-map" element={<LayerMap />} />
 
         {/* Legal */}
         <Route path="privacy" element={<Privacy />} />

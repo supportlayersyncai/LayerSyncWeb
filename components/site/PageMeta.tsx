@@ -69,6 +69,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       'Department-by-department AI training that turns your people into confident operators, in the workflows they actually run.',
   },
+  '/layer-map': {
+    title: 'The Layer Map — a free LayerSync field guide',
+    description:
+      'What using AI actually looks like at each stage of a business, how to tell which stage you are on, and exactly what has to change to reach the next one. 33 pages, free, no email required.',
+  },
   '/privacy': {
     title: 'Privacy Policy | LayerSync',
     description:
