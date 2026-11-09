@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+.vercel
+*.log
+
+# Agent skills installed by `npx convex ai-files install` (third-party,
+# regenerate with that command). CLAUDE.md, AGENTS.md and
+# convex/_generated/ai/guidelines.md are committed.
+.claude/
+.agents/
+skills-lock.json
+
+# Built from tracker/syncsite.ts by npm run build:tracker (part of dev and build).
+public/s.js
