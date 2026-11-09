@@ -11,6 +11,10 @@ interface ImportMetaEnv {
   readonly VITE_ENQUIRY_ENDPOINT?: string;
   /** The SyncEstate product site (default https://syncrm.vercel.app). */
   readonly VITE_SYNC_ESTATE_URL?: string;
+  /** SyncSite dashboard origin, e.g. https://dashboard.layersyncai.com. See lib/syncsite.ts. */
+  readonly VITE_SYNCSITE_URL?: string;
+  /** This site's SyncSite key (ss_...), from the dashboard's Settings, Sites. */
+  readonly VITE_SYNCSITE_KEY?: string;
 }
 
 interface ImportMeta {

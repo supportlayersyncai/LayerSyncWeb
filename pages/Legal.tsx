@@ -7,10 +7,11 @@ import { ShieldCheck, ScrollText } from 'lucide-react';
 /**
  * Privacy Policy and Terms of Service.
  *
- * These are drafted to cover how the site actually behaves today: one contact
- * form, no analytics, no advertising cookies, no third-party trackers. If
- * analytics or a chat widget are added later, the "What we collect" and
- * "Cookies" sections must be updated to match.
+ * These are drafted to cover how the site actually behaves today: two
+ * contact forms, our own cookie-free analytics (SyncSite, lib/syncsite.ts),
+ * no advertising cookies, no third-party trackers. If a chat widget or any
+ * third-party tracker is added later, "What we collect", "Cookies" and
+ * "Who else sees it" must be updated to match.
  *
  * NOTE: reviewed for accuracy against the codebase, but not legal advice —
  * worth a lawyer's eye before relying on it commercially.
@@ -18,7 +19,7 @@ import { ShieldCheck, ScrollText } from 'lucide-react';
 
 const COMPANY = 'Layer Sync Technologies (Private) Limited';
 const EMAIL = 'support@layersyncai.com';
-const UPDATED = 'August 2026';
+const UPDATED = 'November 2026';
 
 const Shell: React.FC<{
   eyebrow: React.ReactNode;
@@ -96,9 +97,10 @@ export const Privacy: React.FC = () => {
 
       <H2>What we collect</H2>
       <P>
-        We collect only what you type into our two forms: the short <strong>Get in touch</strong>{' '}
-        form (your name and phone number) and the longer diagnostic form. There is no account
-        system, no newsletter sign-up, and no tracking pixel on this site. Specifically:
+        We collect what you type into our two forms: the short <strong>Get in touch</strong>{' '}
+        form (your name and phone number) and the longer diagnostic form, plus simple visit
+        statistics described below. There is no account system, no newsletter sign-up, and no
+        advertising or third-party tracking pixel on this site. From the forms:
       </P>
       <UL
         items={[
@@ -110,6 +112,23 @@ export const Privacy: React.FC = () => {
           <><strong>What you asked about</strong> — which button you pressed (for example SyncEstate), so we know the context.</>,
         ]}
       />
+      <P>
+        <strong>Visit statistics.</strong> We count visits with our own analytics tool, SyncSite,
+        so we know which pages are useful and how people find us. For each visit it records the
+        pages viewed, how long they were on screen and how far down you scrolled, the website or
+        campaign link that sent you, your country and city, your device type and browser, and
+        taps on our WhatsApp, phone and download links. It uses <strong>no cookies</strong> and
+        stores nothing on your device. To tell visitors apart for a single day, your IP address
+        and browser are combined with a random value that changes every day and is then deleted,
+        and only the scrambled result is kept, so you cannot be recognised from one day to the
+        next and your IP address is never stored. If your browser sends a Do Not Track or Global
+        Privacy Control signal, none of this is recorded.
+      </P>
+      <P>
+        When you send one of our forms, we keep a note of how that visit began (for example "from
+        Google, landed on the SyncEstate page") alongside your enquiry, so we know what you were
+        reading when you got in touch.
+      </P>
       <P>
         Our web host records standard server logs (IP address, browser type, pages requested) for
         security and reliability. We do not use these to build a profile of you.
@@ -127,7 +146,7 @@ export const Privacy: React.FC = () => {
       <UL
         items={[
           'We do not sell, rent, or trade your personal information. Ever.',
-          'We do not run advertising or analytics trackers on this site.',
+          'We do not run advertising trackers or third-party analytics on this site, and our own visit statistics use no cookies.',
           'We do not add you to a mailing list because you filled in the form.',
           'We do not use your enquiry to train AI models.',
         ]}
@@ -135,16 +154,17 @@ export const Privacy: React.FC = () => {
 
       <H2>Cookies</H2>
       <P>
-        This site sets no advertising or analytics cookies. We store one item in your browser's local
-        storage — your light/dark theme preference — so the site looks the same next time you visit.
-        That never leaves your device and identifies nobody.
+        This site sets no cookies of any kind, including for analytics. We store one item in your
+        browser's local storage — your light/dark theme preference — so the site looks the same next
+        time you visit. That never leaves your device and identifies nobody.
       </P>
 
       <H2>Who else sees it</H2>
       <P>
         Your enquiry is read by the LayerSync team. We use a small number of service providers to
-        run the site and store enquiries — our web host and our database provider — who process the
-        data on our instructions only. We do not share it with anyone else, and we do not disclose
+        run the site, count visits and store enquiries — our web host (Vercel), our database
+        provider (Convex) and our email provider (Resend), which delivers enquiry alerts to our
+        team — who process the data on our instructions only. We do not share it with anyone else, and we do not disclose
         it to third parties for their own purposes.
       </P>
       <P>
@@ -154,8 +174,11 @@ export const Privacy: React.FC = () => {
 
       <H2>How long we keep it</H2>
       <P>
-        We keep enquiries for up to <strong>24 months</strong> from your last contact with us, so we
-        have context if we speak again. After that we delete them. If we go on to work together, the
+        Detailed visit records are deleted after <strong>90 days</strong> (individual page views)
+        and <strong>13 months</strong> (visits); after that only totals such as "120 visits from
+        Google on 3 March" remain, which identify nobody. We keep enquiries for up to{' '}
+        <strong>24 months</strong> from your last contact with us, so we have context if we speak
+        again. After that we delete them. If we go on to work together, the
         engagement is covered by our contract with you rather than by this policy.
       </P>
 

@@ -5,11 +5,16 @@
  * the visitor leaves a name and phone number, we save them, and WhatsApp
  * opens with a message that introduces them.
  *
- * Enquiries are stored by the SyncEstate backend (Convex), the same place
- * the SyncEstate landing page saves to, and LayerSync staff see them on the
- * SyncEstate Platform page. Override with VITE_ENQUIRY_ENDPOINT. (The longer
- * diagnostic form on /contact still goes through lib/submitDiagnostic.ts.)
+ * Enquiries go to SyncSite (lib/syncsite.ts) when it's configured: the lead
+ * inbox in the LayerSync dashboard, with where the visitor came from, and an
+ * email/push to the team. They also still go to the SyncEstate backend
+ * (Convex /website-enquiry, seen on the SyncEstate Platform page) until that
+ * is switched off with VITE_ENQUIRY_ENDPOINT=off, so nothing is lost while
+ * moving over. (The longer diagnostic form on /contact goes through
+ * lib/submitDiagnostic.ts.)
  */
+
+import { sendLead } from './syncsite';
 
 const env = import.meta.env;
 
@@ -25,9 +30,9 @@ export const PHONE_DISPLAY =
         ? `+263 ${WHATSAPP_NUMBER.slice(3, 5)} ${WHATSAPP_NUMBER.slice(5, 8)} ${WHATSAPP_NUMBER.slice(8)}`
         : PHONE_E164;
 
-/** Where the contact form posts. The SyncEstate Convex deployment's HTTP route. */
+/** The SyncEstate Convex deployment's enquiry route. "off" stops sending there. */
 export const ENQUIRY_ENDPOINT =
-    env.VITE_ENQUIRY_ENDPOINT || 'https://amiable-fox-488.convex.site/website-enquiry';
+    env.VITE_ENQUIRY_ENDPOINT === 'off' ? '' : env.VITE_ENQUIRY_ENDPOINT || 'https://amiable-fox-488.convex.site/website-enquiry';
 
 /** The SyncEstate product site. */
 export const SYNC_ESTATE_URL = env.VITE_SYNC_ESTATE_URL || 'https://syncrm.vercel.app';
@@ -77,16 +82,23 @@ export type Enquiry = {
  * throws: WhatsApp opens whether or not this succeeds.
  */
 export async function saveEnquiry(e: Enquiry): Promise<boolean> {
-    try {
-        const res = await fetch(ENQUIRY_ENDPOINT, {
-            method: 'POST',
-            mode: 'cors',
-            keepalive: true,
-            headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-            body: JSON.stringify({ ...e, site: 'layersync' }),
-        });
-        return res.ok;
-    } catch {
-        return false;
-    }
+    const toSyncSite = sendLead('get-in-touch', {
+        name: e.name,
+        phone: e.phone,
+        interest: e.interest,
+        button: e.cta,
+    }).then((r) => r.ok);
+    const toLegacy = ENQUIRY_ENDPOINT
+        ? fetch(ENQUIRY_ENDPOINT, {
+              method: 'POST',
+              mode: 'cors',
+              keepalive: true,
+              headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+              body: JSON.stringify({ ...e, site: 'layersync' }),
+          })
+              .then((res) => res.ok)
+              .catch(() => false)
+        : Promise.resolve(false);
+    const [a, b] = await Promise.all([toSyncSite, toLegacy]);
+    return a || b;
 }

@@ -3,6 +3,7 @@ import { Logo } from './Logo';
 import { Link } from 'react-router-dom';
 import { useContact } from './contact/ContactProvider';
 import { PHONE_DISPLAY, PHONE_E164 } from '../lib/contact';
+import { SYNCSITE_URL } from '../lib/syncsite';
 
 interface FooterProps {
   isDarkMode: boolean;
@@ -58,6 +59,9 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             <nav className="flex items-center gap-6">
               <Link to="/privacy" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Privacy</Link>
               <Link to="/terms" className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Terms</Link>
+              {SYNCSITE_URL && (
+                <a href={SYNCSITE_URL} className="text-xs text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">Client login</a>
+              )}
             </nav>
             <p className="text-[9px] md:text-[10px] tracking-[0.35em] font-black uppercase text-gray-400 dark:text-dark-text-tertiary text-center md:text-right">© 2026 LAYER SYNC TECHNOLOGIES (PRIVATE) LIMITED · EST. 2024</p>
           </div>
