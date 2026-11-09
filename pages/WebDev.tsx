@@ -4,6 +4,7 @@ import { ProblemSection } from '../components/web-dev/ProblemSection';
 import { TransformationSection } from '../components/web-dev/TransformationSection';
 import { WhyUsSection } from '../components/web-dev/WhyUsSection';
 import { ServicesSection } from '../components/web-dev/ServicesSection';
+import { DashboardSection } from '../components/web-dev/DashboardSection';
 import { LaptopCarousel } from '../components/web-dev/LaptopCarousel';
 import { BusinessImpactSection } from '../components/web-dev/BusinessImpactSection';
 import { ProcessSection } from '../components/web-dev/ProcessSection';
@@ -36,6 +37,9 @@ export const WebDev: React.FC = () => {
 
             {/* 5. What We Offer */}
             <ServicesSection isDarkMode={safeDarkMode} />
+
+            {/* Included: the SyncSite dashboard (dashboard/ in this repo) */}
+            <DashboardSection isDarkMode={safeDarkMode} />
 
             {/* 6. Business Impact */}
             <BusinessImpactSection isDarkMode={safeDarkMode} />

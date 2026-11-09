@@ -20,6 +20,8 @@
  *   );
  */
 
+import { sendLead, syncSiteEnabled } from './syncsite';
+
 export interface DiagnosticRequest {
   name: string;
   business: string;
@@ -46,6 +48,17 @@ const blankToNull = (v?: string) => {
 };
 
 export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitResult> {
+  // SyncSite (lib/syncsite.ts): the lead inbox in the LayerSync dashboard,
+  // with where the visitor came from, and an alert to the team.
+  const toSyncSite = sendLead('diagnostic', {
+    name: req.name.trim(),
+    business: req.business.trim(),
+    role: req.role?.trim(),
+    email: req.email.trim(),
+    whatsapp: req.whatsapp?.trim(),
+    blind_spot: req.blindSpot.trim(),
+  });
+
   // --- Backend connected: POST to Supabase REST endpoint -------------------
   if (USE_SUPABASE) {
     try {
@@ -70,12 +83,19 @@ export async function submitDiagnostic(req: DiagnosticRequest): Promise<SubmitRe
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
       return { ok: true, message: "Thanks — we'll be in touch within one business day." };
     } catch (err) {
+      // Supabase failed; if SyncSite has it, the request still reached us.
+      if ((await toSyncSite).ok) return { ok: true, message: "Thanks — we'll be in touch within one business day." };
       return {
         ok: false,
         message: 'Something went wrong sending that. Please email support@layersyncai.com instead.',
       };
     }
   }
+
+  // --- Supabase not configured: SyncSite alone ------------------------------
+  const synced = await toSyncSite;
+  if (synced.ok) return { ok: true, message: "Thanks — we'll be in touch within one business day." };
+  if (synced.error && syncSiteEnabled) return { ok: false, message: synced.error };
 
   // --- Backend NOT connected yet: graceful fallback ------------------------
   // Logs locally so the form is fully functional in the UI, and tells the
